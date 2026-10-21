@@ -19,6 +19,11 @@ Page {
         return false
     }
 
+    // The wizard texts still come from the QZ translations: show the product name instead
+    function brand(text) {
+        return text.split("QZ").join("TrainDeck")
+    }
+
     // Strip the RSSI proximity suffix (e.g. " (75%)") before saving device names
     function stripRssi(deviceName) {
         return deviceName.replace(/ \(\d+%\)$/, "")
@@ -116,9 +121,12 @@ Page {
 
                     Image {
                         Layout.alignment: Qt.AlignHCenter
-                        source: "qrc:/inner_templates/chartjs/qzlogo.png" // Replace with your logo path
-                        width: 100
-                        height: 100
+                        Layout.preferredWidth: 132
+                        Layout.preferredHeight: 132
+                        Layout.topMargin: 12
+                        source: "qrc:/inner_templates/chartjs/qzlogo.png"
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
                     }
 
                     Text {
@@ -126,31 +134,47 @@ Page {
                         horizontalAlignment: Text.AlignHCenter
                         Layout.fillWidth: true
                         Layout.alignment: Qt.AlignHCenter
-                        text: qsTr("Welcome to QZ")
-                        font.pixelSize: 28
+                        text: brand(qsTr("Welcome to QZ"))
+                        font.pixelSize: 30
                         font.bold: true
                         color: "white"
                     }
 
+                    // TrainDeck builds on QZ: keep the credit to its author, worded accurately
                     Text {
                         wrapMode: Text.WordWrap
                         horizontalAlignment: Text.AlignHCenter
                         Layout.fillWidth: true
                         Layout.alignment: Qt.AlignHCenter
-                        text: qsTr("Created by Roberto Viola")
-                        font.pixelSize: 24
-                        color: "white"
+                        Layout.topMargin: -10
+                        text: qsTr("Based on QZ by Roberto Viola")
+                        font.pixelSize: 15
+                        color: "#9a9aa8"
                     }
 
-                    Text {
-                        Layout.alignment: Qt.AlignHCenter
-                        text: qsTr("QZ is designed to maximize your workout experience on a range of fitness equipment, including indoor bikes, treadmills, ellipticals, and rower. By connecting seamlessly with your devices, QZ provides realtime data, personalized workout plans, and interactive elements to keep you motivated.\n\nThe following questions will customize QZ for your equipment and goals.")
-                        font.pixelSize: 20
-                        wrapMode: Text.WordWrap
+                    Rectangle {
                         Layout.fillWidth: true
-                        width: stackViewLocal.width * 0.8
-                        horizontalAlignment: Text.AlignHCenter
-                        color: "white"
+                        Layout.preferredHeight: introText.implicitHeight + 40
+                        radius: 18
+                        color: Qt.lighter(settings.theme_background_color, 1.25)
+                        border.width: 1
+                        border.color: Qt.rgba(1, 1, 1, 0.08)
+
+                        Text {
+                            id: introText
+                            anchors.left: parent.left
+                            anchors.right: parent.right
+                            anchors.top: parent.top
+                            anchors.margins: 20
+                            text: brand(qsTr("QZ is designed to maximize your workout experience on a range of fitness equipment, including indoor bikes, treadmills, ellipticals, and rower. By connecting seamlessly with your devices, QZ provides realtime data, personalized workout plans, and interactive elements to keep you motivated.
+
+The following questions will customize QZ for your equipment and goals."))
+                            font.pixelSize: 17
+                            lineHeight: 1.1
+                            wrapMode: Text.WordWrap
+                            horizontalAlignment: Text.AlignHCenter
+                            color: "white"
+                        }
                     }
 
                     WizardButton {
