@@ -28,6 +28,9 @@ HomeForm {
     signal minus_clicked(string name)
     signal largeButton_clicked(string name)
 
+    // The tile accent as a typed color, so the tiles can derive translucent variants of it
+    property color tileAccent: settings.theme_tile_shadow_color
+
     Settings {
         id: settings
         property real ui_zoom: 100.0
@@ -376,10 +379,15 @@ HomeForm {
             Rectangle {
                 width: id1.width - 2 * settings.ui_zoom / 100
                 height: 123 * settings.ui_zoom / 100
-                radius: 3
+                radius: 14 * settings.ui_zoom / 100
                 border.width: 1
-                border.color: (settings.theme_tile_shadow_enabled ? settings.theme_tile_shadow_color : settings.theme_tile_background_color)
-                color: settings.theme_tile_background_color
+                // Hairline in the theme accent when the shadow option is on, a neutral edge otherwise
+                border.color: (settings.theme_tile_shadow_enabled ? Qt.rgba(tileAccent.r, tileAccent.g, tileAccent.b, 0.55) : Qt.rgba(1, 1, 1, 0.08))
+                // Soft top-to-bottom lift so the tile reads as a card, not a flat box
+                gradient: Gradient {
+                    GradientStop { position: 0.0; color: Qt.lighter(settings.theme_tile_background_color, 1.18) }
+                    GradientStop { position: 1.0; color: settings.theme_tile_background_color }
+                }
                 id: rect
 
                 // Ignore for VoiceOver - decorative background only
@@ -390,11 +398,11 @@ HomeForm {
                 visible: settings.theme_tile_shadow_enabled
                 anchors.fill: rect
                 cached: true
-                horizontalOffset: 3
+                horizontalOffset: 0
                 verticalOffset: 3
-                radius: 8.0
-                samples: 16
-                color: settings.theme_tile_shadow_color
+                radius: 10.0
+                samples: 17
+                color: Qt.rgba(tileAccent.r, tileAccent.g, tileAccent.b, 0.35)
                 source: rect
             }
 
@@ -443,6 +451,7 @@ HomeForm {
                 objectName: "secondLine"
                 id: secondLineText
                 color: "white"
+                opacity: 0.65
                 y: myValue.bottom
                 anchors {
                     top: myValue.bottom
@@ -470,9 +479,11 @@ HomeForm {
                 }
                 font.bold: true
                 font.pointSize: labelFontSize
+                font.letterSpacing: 0.5
                 fontSizeMode: Text.Fit
                 minimumPointSize: 8
                 color: "white"
+                opacity: 0.8
                 text: name
                 horizontalAlignment: settings.theme_tile_icon_enabled ? Text.AlignLeft : Text.AlignHCenter
                 anchors.leftMargin: settings.theme_tile_icon_enabled ? 55 * settings.ui_zoom / 100 : 0
@@ -488,6 +499,8 @@ HomeForm {
                 objectName: minusName
                 autoRepeat: true
                 text: "-"
+                font.pixelSize: 22
+                background: Rectangle { radius: width / 2; color: Qt.rgba(1, 1, 1, parent.down ? 0.28 : 0.12) }
                 onClicked: minus_clicked(objectName)
                 visible: writable && !largeButton
                 anchors.top: myValue.top
@@ -507,6 +520,8 @@ HomeForm {
                 autoRepeat: true
                 objectName: plusName
                 text: "+"
+                font.pixelSize: 22
+                background: Rectangle { radius: width / 2; color: Qt.rgba(1, 1, 1, parent.down ? 0.28 : 0.12) }
                 onClicked: plus_clicked(objectName)
                 visible: writable && !largeButton
                 anchors.top: myValue.top
@@ -531,9 +546,11 @@ HomeForm {
                 anchors.fill: rect
                       background: Rectangle {
                           color: largeButtonColor
-                            radius: 20
+                            radius: 14 * settings.ui_zoom / 100
                             }
                 font.pointSize: 20 * settings.ui_zoom / 100
+                palette.buttonText: "white"
+                font.bold: true
 
                 // VoiceOver accessibility
                 Accessible.role: Accessible.Button

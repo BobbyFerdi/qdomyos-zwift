@@ -40,6 +40,10 @@ public:
     bool hasWaterfallDisplay() const { return m_waterfallTop > 0 || m_waterfallBottom > 0 || m_waterfallLeft > 0 || m_waterfallRight > 0; }
     int apiLevel() const;
 
+    // Android only: true lets the activity follow the sensor even with the system rotation lock on,
+    // false goes back to following the system setting
+    Q_INVOKABLE void setAutoRotateOverride(bool on);
+
 public slots:
     void onInsetsChanged(int top, int bottom, int left, int right, int waterfallTop, int waterfallBottom,
                          int waterfallLeft, int waterfallRight);

@@ -163,7 +163,7 @@
             item.className = 'legend-item';
             const swatch = document.createElement('div');
             swatch.className = 'legend-swatch';
-            swatch.style.backgroundColor = series.color || '#35baf6';
+            swatch.style.backgroundColor = series.color || '#7C4DFF';
             const label = document.createElement('div');
             label.textContent = series.label + (series.unit ? ' (' + series.unit + ')' : '');
             item.appendChild(swatch);
@@ -202,7 +202,7 @@
         const axes = buildAxes(seriesList);
         chart.options.scales = Object.assign({ x: buildTimeAxis(payload.totalSeconds) }, axes);
         chart.data.datasets = seriesList.map((series) => {
-            const color = String(series.color || '#35baf6');
+            const color = String(series.color || '#7C4DFF');
             const fillColor = String(series.fillColor || color) + '33';
             return ({
                 label: series.label || series.key || 'Series',

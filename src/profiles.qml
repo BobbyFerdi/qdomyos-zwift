@@ -205,13 +205,23 @@ ColumnLayout {
                     Rectangle {
                         property alias textColor: fileTextBox.color
                         width: parent.width
-                        height: 40
-                        color: Material.backgroundColor
+                        height: 54
+                        color: "transparent"
                         z: 1
+                        // Card behind the row: the row itself is see-through so the selection shows over it
+                        Rectangle {
+                            anchors.fill: parent
+                            anchors.margins: 3
+                            anchors.leftMargin: 8
+                            anchors.rightMargin: 8
+                            radius: 12
+                            color: Qt.lighter(Material.backgroundColor, 1.3)
+                            z: -1
+                        }
                         Text {
                             id: fileTextBox
                             color: Material.color(Material.Grey)
-                            font.pixelSize: Qt.application.font.pixelSize * 1.6
+                            font.pixelSize: Qt.application.font.pixelSize * 1.35
                             text: fileName.substring(0, fileName.length-4)
                             leftPadding: window.contentSideMargin
                         }
@@ -245,10 +255,10 @@ ColumnLayout {
                     }
                 }
                 highlight: Rectangle {
-                    color: Material.color(Material.Green)
+                    color: "#7C4DFF"
                     z:3
-                    radius: 5
-                    opacity: 0.4
+                    radius: 12
+                    opacity: 0.45
                     focus: true
                     /*Text {
                         anchors.centerIn: parent

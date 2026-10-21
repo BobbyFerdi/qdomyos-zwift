@@ -19,6 +19,12 @@ Page {
     // Search for the equipment ("Next search in 12 s"), set by Home.qml while no device is connected
     property string searchStatus: ""
 
+    // Design tokens shared with the tile grid (Home.qml keeps its own copy of the same values)
+    readonly property color accentColor: "#7C4DFF"
+    readonly property color dangerColor: "#EF5350"
+    readonly property color okColor: "#4CD27A"
+    readonly property color surfaceColor: Qt.lighter(settings.theme_background_color, 1.35)
+
     Settings {
 	     id: settings
 		  property real ui_zoom: 100.0
@@ -37,159 +43,168 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             height: topBar.height - 20
-            spacing: 5
+            spacing: 10
             padding: 5
 
+            // Connection chip: Bluetooth icon with a live status dot. A tap searches right away
+            // instead of waiting for the next search (with a device connected it does nothing)
             Rectangle {
-                width: 50
-                height: row.height
-					 color: settings.theme_background_color
+                id: connectionChip
+                width: 64
+                height: row.height - 10
+                anchors.verticalCenter: parent.verticalCenter
+                radius: height / 2
+                color: page.surfaceColor
+                border.width: 1
+                border.color: rootItem.device ? page.okColor : Qt.rgba(1, 1, 1, 0.12)
                 Accessible.ignored: true
 
-                Column {
-                    id: column
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.verticalCenter: parent.verticalCenter
-                    width: parent.width
-                    height: row.height
-                    spacing: 0
-                    padding: 0
-                    Accessible.ignored: true
+                Behavior on border.color { ColorAnimation { duration: 250 } }
 
-                    Rectangle {
-                        width: 50
-                        height: row.height
-                        color: settings.theme_background_color
-                        Accessible.ignored: true
-
-                        Image {
-                            anchors.verticalCenter: parent.verticalCenter
-                            id: treadmill_connection
-                            width: 48
-                            height: row.height - 52
-                            source: "icons/icons/bluetooth-icon.png"
-                            enabled: rootItem.device
-                            smooth: true
-
-                            // VoiceOver accessibility
-                            Accessible.role: Accessible.Indicator
-                            Accessible.name: qsTr("Bluetooth connection")
-                            Accessible.description: rootItem.device ? qsTr("Device connected") : qsTr("Device not connected")
-                            Accessible.focusable: true
-                        }
-                        ColorOverlay {
-                            anchors.fill: treadmill_connection
-                            source: treadmill_connection
-                            color: treadmill_connection.enabled ? "#00000000" : "#B0D3d3d3"
-                        }
-                        // No device yet: a tap searches right away instead of waiting for the next search
-                        // (with a device connected bluetoothSearchNow() does nothing)
-                        MouseArea {
-                            anchors.fill: parent
-                            onClicked: rootItem.bluetoothSearchNow()
-                        }
-                    }
-                    Image {
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        id: treadmill_signal
-                        width: 24
-                        height: row.height - 76
-                        source: rootItem.signal
-                        smooth: true
-                        Accessible.ignored: true
-                    }
-                }
-            }
-
-            Rectangle {
-                width: 120
-                height: row.height
-					 color: settings.theme_background_color
-                Accessible.ignored: true
-
-                RoundButton {
-                    icon.source: rootItem.startIcon
-                    icon.height: row.height - 54
-                    icon.width: 46
-                    text: rootItem.startText
-                    enabled: true
-                    id: start
-                    width: 120
-                    height: row.height - 4
-
-                    // VoiceOver accessibility
-                    Accessible.role: Accessible.Button
-                    Accessible.name: rootItem.startText
-                    Accessible.description: qsTr("Start workout")
-                    Accessible.focusable: true
-                }
-                ColorOverlay {
-                    anchors.fill: start
-                    source: start
-                    color: rootItem.startColor
-                    enabled: rootItem.startColor === "red" ? true : false
-                }
-            }
-
-            Rectangle {
-                width: 120
-                height: row.height
-					 color: settings.theme_background_color
-                Accessible.ignored: true
-
-                RoundButton {
-                    icon.source: rootItem.stopIcon
-                    icon.height: row.height - 54
-                    icon.width: 46
-                    text: rootItem.stopText
-                    enabled: true
-                    id: stop
-                    width: 120
-                    height: row.height - 4
-
-                    // VoiceOver accessibility
-                    Accessible.role: Accessible.Button
-                    Accessible.name: rootItem.stopText
-                    Accessible.description: qsTr("Stop workout")
-                    Accessible.focusable: true
-                }
-                ColorOverlay {
-                    anchors.fill: stop
-                    source: stop
-                    color: rootItem.stopColor
-                    enabled: rootItem.stopColor === "red" ? true : false
-                }
-            }
-
-            Rectangle {
-                id: item2
-                width: 50
-                height: row.height
-					 color: settings.theme_background_color
-                Accessible.ignored: true
-
-                RoundButton {
-                    anchors.verticalCenter: parent.verticalCenter
-                    id: lap
-                    width: 48
-                    height: row.height - 52
-                    icon.source: "icons/icons/lap.png"
-                    icon.width: 48
-                    icon.height: 48
-                    enabled: rootItem.lap
+                Image {
+                    id: treadmill_connection
+                    anchors.centerIn: parent
+                    width: Math.min(parent.width - 24, parent.height - 24)
+                    height: width
+                    fillMode: Image.PreserveAspectFit
+                    source: "icons/icons/bluetooth-icon.png"
+                    enabled: rootItem.device
                     smooth: true
+                    opacity: enabled ? 1.0 : 0.45
 
                     // VoiceOver accessibility
-                    Accessible.role: Accessible.Button
-                    Accessible.name: qsTr("Lap")
-                    Accessible.description: qsTr("Record a new lap")
+                    Accessible.role: Accessible.Indicator
+                    Accessible.name: qsTr("Bluetooth connection")
+                    Accessible.description: rootItem.device ? qsTr("Device connected") : qsTr("Device not connected")
                     Accessible.focusable: true
                 }
-                ColorOverlay {
-                    anchors.fill: lap
-                    source: lap
-                    color: lap.enabled ? "#00000000" : "#B0D3d3d3"
+
+                // Signal strength, tucked into the chip's corner
+                Image {
+                    id: treadmill_signal
+                    anchors.right: parent.right
+                    anchors.rightMargin: 6
+                    anchors.bottom: parent.bottom
+                    anchors.bottomMargin: 4
+                    width: 16
+                    height: 16
+                    fillMode: Image.PreserveAspectFit
+                    source: rootItem.signal
+                    smooth: true
+                    Accessible.ignored: true
                 }
+
+                // Status dot
+                Rectangle {
+                    width: 10
+                    height: 10
+                    radius: 5
+                    anchors.top: parent.top
+                    anchors.topMargin: 6
+                    anchors.right: parent.right
+                    anchors.rightMargin: 6
+                    color: rootItem.device ? page.okColor : page.dangerColor
+                    Behavior on color { ColorAnimation { duration: 250 } }
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: rootItem.bluetoothSearchNow()
+                }
+            }
+
+            Button {
+                icon.source: rootItem.startIcon
+                icon.height: 26
+                icon.width: 26
+                icon.color: "white"
+                text: rootItem.startText
+                enabled: true
+                id: start
+                width: 128
+                height: row.height - 10
+                anchors.verticalCenter: parent.verticalCenter
+                font.bold: true
+                font.pixelSize: 15
+                palette.buttonText: "white"
+
+                background: Rectangle {
+                    radius: height / 2
+                    color: rootItem.startColor === "red" ? page.dangerColor : page.accentColor
+                    opacity: start.down ? 0.75 : 1.0
+                    scale: start.down ? 0.97 : 1.0
+                    Behavior on opacity { NumberAnimation { duration: 80 } }
+                    Behavior on scale { NumberAnimation { duration: 80 } }
+                }
+
+                // VoiceOver accessibility
+                Accessible.role: Accessible.Button
+                Accessible.name: rootItem.startText
+                Accessible.description: qsTr("Start workout")
+                Accessible.focusable: true
+            }
+
+            Button {
+                icon.source: rootItem.stopIcon
+                icon.height: 26
+                icon.width: 26
+                icon.color: "white"
+                text: rootItem.stopText
+                enabled: true
+                id: stop
+                width: 128
+                height: row.height - 10
+                anchors.verticalCenter: parent.verticalCenter
+                font.bold: true
+                font.pixelSize: 15
+                palette.buttonText: "white"
+
+                background: Rectangle {
+                    radius: height / 2
+                    // Tonal until it matters: red when the app flags the stop as the primary action
+                    color: rootItem.stopColor === "red" ? page.dangerColor : page.surfaceColor
+                    border.width: rootItem.stopColor === "red" ? 0 : 1
+                    border.color: Qt.rgba(1, 1, 1, 0.12)
+                    opacity: stop.down ? 0.75 : 1.0
+                    scale: stop.down ? 0.97 : 1.0
+                    Behavior on opacity { NumberAnimation { duration: 80 } }
+                    Behavior on scale { NumberAnimation { duration: 80 } }
+                }
+
+                // VoiceOver accessibility
+                Accessible.role: Accessible.Button
+                Accessible.name: rootItem.stopText
+                Accessible.description: qsTr("Stop workout")
+                Accessible.focusable: true
+            }
+
+            RoundButton {
+                id: lap
+                width: row.height - 10
+                height: row.height - 10
+                anchors.verticalCenter: parent.verticalCenter
+                icon.source: "icons/icons/lap.png"
+                icon.width: 28
+                icon.height: 28
+                icon.color: "white"
+                enabled: rootItem.lap
+                smooth: true
+                opacity: enabled ? 1.0 : 0.4
+
+                background: Rectangle {
+                    radius: width / 2
+                    color: page.surfaceColor
+                    border.width: 1
+                    border.color: Qt.rgba(1, 1, 1, 0.12)
+                    scale: lap.down ? 0.94 : 1.0
+                    Behavior on scale { NumberAnimation { duration: 80 } }
+                }
+
+                // VoiceOver accessibility
+                Accessible.role: Accessible.Button
+                Accessible.name: qsTr("Lap")
+                Accessible.description: qsTr("Record a new lap")
+                Accessible.focusable: true
             }
         }
 
@@ -206,6 +221,8 @@ Page {
                 // grows upwards, so they are set closer to keep the first one off the buttons
                 horizontalAlignment: Text.AlignHCenter
                 lineHeight: text.indexOf("\n") >= 0 ? 0.8 : 1
+                font.pixelSize: 12
+                opacity: 0.9
                 text: page.searchStatus !== "" ? page.searchStatus : rootItem.info
             }
         }

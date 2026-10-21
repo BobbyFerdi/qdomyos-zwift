@@ -39,7 +39,8 @@ Item {
             id: title
             text: rootItem.workoutName
             font.pixelSize: 24
-            color: "yellow"
+            color: "#B388FF"
+            font.bold: true
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             anchors.horizontalCenter: parent.horizontalCenter
@@ -128,12 +129,15 @@ Item {
             anchors.right: parent.right
             anchors.top: instructor.bottom
             anchors.bottom: parent.bottom
-            contentHeight: powerChart.height+heartChart.height+cadenceChart.height
+            contentHeight: powerChart.height+heartChart.height+cadenceChart.height+24
 
             ChartView {
                 id: powerChart
                 objectName: "powerChart"
                 antialiasing: true
+                theme: ChartView.ChartThemeDark
+                backgroundColor: "#2e2e36"
+                backgroundRoundness: 16
                 legend.visible: false
                 height: 400
                 width: parent.width
@@ -181,8 +185,12 @@ Item {
                 height: 400
                 width: parent.width
                 antialiasing: true
+                theme: ChartView.ChartThemeDark
+                backgroundColor: "#2e2e36"
+                backgroundRoundness: 16
                 legend.visible: false
                 anchors.top: powerChart.bottom
+                anchors.topMargin: 12
                 title: qsTr("Heart Rate")
                 titleFont.pixelSize: 20
 
@@ -227,8 +235,12 @@ Item {
                 height: 400
                 width: parent.width
                 antialiasing: true
+                theme: ChartView.ChartThemeDark
+                backgroundColor: "#2e2e36"
+                backgroundRoundness: 16
                 legend.visible: true
                 anchors.top: heartChart.bottom
+                anchors.topMargin: 12
                 title: qsTr("Cadence")
                 titleFont.pixelSize: 20
 

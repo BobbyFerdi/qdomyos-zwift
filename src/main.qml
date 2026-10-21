@@ -19,6 +19,12 @@ ApplicationWindow {
 	 objectName: "stack"
     title: Qt.platform.os === "ios" ? "" : qsTr("qDomyos-Zwift")
 
+    // Android: apply the "rotate even when rotation lock is on" choice from the previous run
+    Component.onCompleted: {
+        if (Qt.platform.os === "android")
+            AndroidStatusBar.setAutoRotateOverride(settings.android_force_auto_rotate)
+    }
+
     // Force update on orientation change
     property int currentOrientation: Screen.orientation
     onCurrentOrientationChanged: {
@@ -223,6 +229,7 @@ ApplicationWindow {
         property string shortcut_stop: ""
         property bool android_landscape_cutout_margin: true
         property bool android_landscape_cutout_prompt_shown: false
+        property bool android_force_auto_rotate: false
     }
 
 
@@ -1382,6 +1389,23 @@ ApplicationWindow {
         leftPadding: getLeftPadding()
         rightPadding: getRightPadding()
         Accessible.ignored: !drawer.opened
+        // Every ItemDelegate in the menu inherits this size
+        font.pixelSize: 16
+
+        // Rounded panel with a soft accent edge instead of the flat full-height slab
+        background: Rectangle {
+            color: Qt.lighter(settings.theme_background_color, 1.12)
+            radius: 20
+            // Square off the left side, which sits against the screen edge
+            Rectangle { width: parent.radius; height: parent.height; color: parent.color }
+            Rectangle {
+                anchors.right: parent.right
+                width: 2
+                height: parent.height
+                color: "#7C4DFF"
+                opacity: 0.55
+            }
+        }
 
         ScrollView {
             contentWidth: -1
@@ -1391,7 +1415,33 @@ ApplicationWindow {
 
             Column {
                 anchors.fill: parent
-                spacing: 3
+                spacing: 2
+
+                // Brand header
+                Item {
+                    width: parent.width
+                    height: 84
+                    Accessible.ignored: true
+
+                    Rectangle {
+                        anchors.fill: parent
+                        anchors.margins: 10
+                        radius: 16
+                        gradient: Gradient {
+                            orientation: Gradient.Horizontal
+                            GradientStop { position: 0.0; color: "#7C4DFF" }
+                            GradientStop { position: 1.0; color: "#B388FF" }
+                        }
+                        Column {
+                            anchors.verticalCenter: parent.verticalCenter
+                            anchors.left: parent.left
+                            anchors.leftMargin: 16
+                            spacing: 2
+                            Label { text: "QZ Fitness"; font.bold: true; font.pixelSize: 20; color: "white" }
+                            Label { text: settings.profile_name; font.pixelSize: 12; color: "white"; opacity: 0.85 }
+                        }
+                    }
+                }
 
                 ItemDelegate {
                     text: qsTr("Profile: ") + settings.profile_name

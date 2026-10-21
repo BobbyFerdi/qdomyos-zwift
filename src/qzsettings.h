@@ -3375,6 +3375,10 @@ class QZSettings {
     static const QString android_notification_v2;
     static constexpr bool default_android_notification_v2 = true;
 
+    // Android only: keep the app rotating with the phone's sensor even when the system rotation lock is on
+    static const QString android_force_auto_rotate;
+    static constexpr bool default_android_force_auto_rotate = false;
+
     /**
      * @brief Write the QSettings values using the constants from this namespace.
      * @param showDefaults Optionally indicates if the default should be shown with the key.

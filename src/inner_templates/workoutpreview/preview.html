@@ -13,8 +13,8 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #1d2330;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1c1c22;
             color: white;
             padding: 10px;
         }
@@ -22,9 +22,11 @@
         #chart-container {
             width: 100%;
             height: 400px;
-            background: white;
-            border-radius: 8px;
-            padding: 10px;
+            background: #26262e;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+            padding: 14px;
         }
 
         canvas {
@@ -72,8 +74,8 @@
                 datasets.push({
                     label: primaryMetric.label,
                     data: primaryMetric.data,
-                    borderColor: '#3b82f6',
-                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    borderColor: '#9d7bff',
+                    backgroundColor: 'rgba(157, 123, 255, 0.12)',
                     borderWidth: 2,
                     fill: true,
                     tension: 0.1,
@@ -137,7 +139,8 @@
                     plugins: {
                         legend: {
                             display: datasets.length > 1,
-                            position: 'top'
+                            position: 'top',
+                            labels: { color: '#c9c9d4' }
                         },
                         tooltip: {
                             enabled: true,
@@ -146,7 +149,7 @@
                             backgroundColor: 'rgba(0, 0, 0, 0.8)',
                             titleColor: '#fff',
                             bodyColor: '#fff',
-                            borderColor: '#3b82f6',
+                            borderColor: '#9d7bff',
                             borderWidth: 1,
                             callbacks: {
                                 label: function(context) {
@@ -169,10 +172,10 @@
                             title: {
                                 display: true,
                                 text: tq('chart.timeSeconds', 'Time (seconds)'),
-                                color: '#666'
+                                color: '#9a9aa8'
                             },
                             grid: {
-                                color: 'rgba(0, 0, 0, 0.05)'
+                                color: 'rgba(255, 255, 255, 0.07)'
                             },
                             ticks: {
                                 callback: function(value) {
@@ -180,7 +183,7 @@
                                     const seconds = Math.floor(value % 60);
                                     return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
                                 },
-                                color: '#666'
+                                color: '#9a9aa8'
                             }
                         },
                         y: {
@@ -189,13 +192,13 @@
                             title: {
                                 display: true,
                                 text: primaryMetric ? primaryMetric.label : tq('chart.value', 'Value'),
-                                color: '#3b82f6'
+                                color: '#9d7bff'
                             },
                             grid: {
-                                color: 'rgba(0, 0, 0, 0.05)'
+                                color: 'rgba(255, 255, 255, 0.07)'
                             },
                             ticks: {
-                                color: '#3b82f6'
+                                color: '#9d7bff'
                             }
                         },
                         y1: {

@@ -56,12 +56,12 @@ import org.cagnulein.qdomyoszwift 1.0
 Item {
 
     Text {
-        padding: 5
+        padding: 16
         id: description
         width: parent.width
         anchors.horizontalCenter: parent.horizontalCenter
         color: "white"
-        font.pointSize: 22
+        font.pointSize: 18
         wrapMode: TextArea.Wrap
         text: qsTr("Hi! Do you know that QZ is just an Open Source Indie App?<br><br>No Big Companies are running this!<br>The \"Swag Bag\" is a way to support the ongoing development, maintenance and support of QZ Fitness!")
     }
@@ -71,6 +71,8 @@ Item {
         //anchors.bottom: restoreButton.top
         anchors.right: parent.right
         anchors.left: parent.left
+        anchors.leftMargin: 12
+        anchors.rightMargin: 12
         id: itemSwagBag
 
         SwagBagItem {
@@ -98,6 +100,8 @@ Item {
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.width * .5
+        anchors.bottomMargin: 12
+        highlighted: true
         text: qsTr("Restore Purchases")
         onClicked: {
             console.log("restoring...");

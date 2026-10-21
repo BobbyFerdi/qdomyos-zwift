@@ -2242,6 +2242,7 @@ import AndroidStatusBar 1.0
             property bool freemotion_t10_9b_hci: false
             property bool treadmill_runn_closed_loop: false
             property string treadmill_pid_heart_control: "Speed"
+            property bool android_force_auto_rotate: false
         }
 
 
@@ -6841,6 +6842,36 @@ import AndroidStatusBar 1.0
 
                     Label {
                         text: qsTr("In landscape, keeps a margin on the camera side so the camera hole does not cover the content. Turn off to let the content extend under the camera cutout. Default is on.")
+                        visible: Qt.platform.os === "android"
+                        font.bold: true
+                        font.italic: true
+                        font.pixelSize: Qt.application.font.pixelSize - 2
+                        textFormat: Text.PlainText
+                        wrapMode: Text.WordWrap
+                        verticalAlignment: Text.AlignVCenter
+                        Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+                        Layout.fillWidth: true
+                        color: Material.color(Material.Lime)
+                    }
+
+                    IndicatorOnlySwitch {
+                        id: forceAutoRotateDelegate
+                        text: qsTr("Rotate Even When Rotation Lock Is On")
+                        visible: Qt.platform.os === "android"
+                        spacing: 0
+                        bottomPadding: 0
+                        topPadding: 0
+                        rightPadding: 0
+                        leftPadding: 0
+                        clip: false
+                        checked: settings.android_force_auto_rotate
+                        Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+                        Layout.fillWidth: true
+                        onClicked: { settings.android_force_auto_rotate = checked; AndroidStatusBar.setAutoRotateOverride(checked); }
+                    }
+
+                    Label {
+                        text: qsTr("Lets the app rotate with the phone even when the system rotation lock is on. Turn off to follow the system rotation lock. Default is off.")
                         visible: Qt.platform.os === "android"
                         font.bold: true
                         font.italic: true

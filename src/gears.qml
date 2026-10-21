@@ -619,9 +619,9 @@ ScrollView {
                 Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 40
-                    color: "#f0f0f0"
+                    color: "#2e2e36"
                     border.width: 1
-                    border.color: "#cccccc"
+                    border.color: "#4a4a54"
 
                     Row {
                         anchors.fill: parent
@@ -630,14 +630,14 @@ ScrollView {
                             width: parent.width / 3
                             height: parent.height
                             border.width: 1
-                            border.color: "#cccccc"
+                            border.color: "#4a4a54"
                             color: "transparent"
 
                             Text {
                                 anchors.centerIn: parent
                                 text: qsTr("Gear")
                                 font.bold: true
-                                color: "black"
+                                color: "#ececf1"
                             }
                         }
 
@@ -645,14 +645,14 @@ ScrollView {
                             width: parent.width / 3
                             height: parent.height
                             border.width: 1
-                            border.color: "#cccccc"
+                            border.color: "#4a4a54"
                             color: "transparent"
 
                             Text {
                                 anchors.centerIn: parent
                                 text: qsTr("Chainring")
                                 font.bold: true
-                                color: "black"
+                                color: "#ececf1"
                             }
                         }
 
@@ -660,14 +660,14 @@ ScrollView {
                             width: parent.width / 3
                             height: parent.height
                             border.width: 1
-                            border.color: "#cccccc"
+                            border.color: "#4a4a54"
                             color: "transparent"
 
                             Text {
                                 anchors.centerIn: parent
                                 text: qsTr("Rear Cog")
                                 font.bold: true
-                                color: "black"
+                                color: "#ececf1"
                             }
                         }
                     }
@@ -720,13 +720,13 @@ ScrollView {
                                 width: parent.width / 3
                                 height: parent.height
                                 border.width: 1
-                                border.color: "#cccccc"
+                                border.color: "#4a4a54"
                                 color: "transparent"
 
                                 Text {
                                     anchors.centerIn: parent
                                     text: gear
-                                    color: "black"
+                                    color: "#ececf1"
                                 }
                             }
 
@@ -735,7 +735,7 @@ ScrollView {
                                 width: parent.width / 3
                                 height: parent.height
                                 border.width: 1
-                                border.color: "#cccccc"
+                                border.color: "#4a4a54"
                                 color: "transparent"
 
                                 SpinBox {
@@ -756,7 +756,7 @@ ScrollView {
                                         z: 2
                                         text: cranksetSpinBox.textFromValue(cranksetSpinBox.value, cranksetSpinBox.locale)
                                         font: cranksetSpinBox.font
-                                        color: "black"
+                                        color: "#ececf1"
                                         selectionColor: "#21be2b"
                                         selectedTextColor: "#ffffff"
                                         horizontalAlignment: Qt.AlignHCenter
@@ -768,11 +768,11 @@ ScrollView {
                                         height: parent.height
                                         width: height
                                         color: parent.up.pressed ? "#e4e4e4" : "#f6f6f6"
-                                        border.color: "#cccccc"
+                                        border.color: "#4a4a54"
 
                                         Text {
                                             text: "+"
-                                            color: "black"
+                                            color: "#ececf1"
                                             anchors.centerIn: parent
                                             font.pixelSize: 12
                                         }
@@ -783,19 +783,19 @@ ScrollView {
                                         height: parent.height
                                         width: height
                                         color: parent.down.pressed ? "#e4e4e4" : "#f6f6f6"
-                                        border.color: "#cccccc"
+                                        border.color: "#4a4a54"
 
                                         Text {
                                             text: "-"
-                                            color: "black"
+                                            color: "#ececf1"
                                             anchors.centerIn: parent
                                             font.pixelSize: 12
                                         }
                                     }
 
                                     background: Rectangle {
-                                        color: "white"
-                                        border.color: "#cccccc"
+                                        color: "#3a3a44"
+                                        border.color: "#4a4a54"
                                     }
                                 }
                             }
@@ -805,7 +805,7 @@ ScrollView {
                                 width: parent.width / 3
                                 height: parent.height
                                 border.width: 1
-                                border.color: "#cccccc"
+                                border.color: "#4a4a54"
                                 color: "transparent"
 
                                 SpinBox {
@@ -826,7 +826,7 @@ ScrollView {
                                         z: 2
                                         text: cogSpinBox.textFromValue(cogSpinBox.value, cogSpinBox.locale)
                                         font: cogSpinBox.font
-                                        color: "black"
+                                        color: "#ececf1"
                                         selectionColor: "#21be2b"
                                         selectedTextColor: "#ffffff"
                                         horizontalAlignment: Qt.AlignHCenter
@@ -838,11 +838,11 @@ ScrollView {
                                         height: parent.height
                                         width: height
                                         color: parent.up.pressed ? "#e4e4e4" : "#f6f6f6"
-                                        border.color: "#cccccc"
+                                        border.color: "#4a4a54"
 
                                         Text {
                                             text: "+"
-                                            color: "black"
+                                            color: "#ececf1"
                                             anchors.centerIn: parent
                                             font.pixelSize: 12
                                         }
@@ -853,19 +853,19 @@ ScrollView {
                                         height: parent.height
                                         width: height
                                         color: parent.down.pressed ? "#e4e4e4" : "#f6f6f6"
-                                        border.color: "#cccccc"
+                                        border.color: "#4a4a54"
 
                                         Text {
                                             text: "-"
-                                            color: "black"
+                                            color: "#ececf1"
                                             anchors.centerIn: parent
                                             font.pixelSize: 12
                                         }
                                     }
 
                                     background: Rectangle {
-                                        color: "white"
-                                        border.color: "#cccccc"
+                                        color: "#3a3a44"
+                                        border.color: "#4a4a54"
                                     }
                                 }
                             }

@@ -22,6 +22,14 @@ ComboBox {
         font: control.font
     }
 
+    // Rounded card for the list, matching the rest of the app
+    popup.background: Rectangle {
+        radius: 14
+        color: "#34343c"
+        border.width: 1
+        border.color: "#4a4a54"
+    }
+
     popup.topMargin: 12 + window.getTopPadding()
     popup.bottomMargin: 12 + window.getBottomPadding()
     popup.leftMargin: 12

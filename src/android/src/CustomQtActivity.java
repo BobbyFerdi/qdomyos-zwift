@@ -2,6 +2,7 @@ package org.cagnulen.qdomyoszwift;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -333,6 +334,18 @@ public class CustomQtActivity extends QtActivity {
         intent.setType((mimeType == null || mimeType.isEmpty()) ? "*/*" : mimeType);
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         startActivityForResult(Intent.createChooser(intent, "Select file"), requestCode);
+    }
+
+    // Called from QML (AndroidStatusBar.setAutoRotateOverride). FULL_SENSOR rotates with the phone even
+    // when the system rotation lock is on; UNSPECIFIED goes back to following the system setting
+    public void setAutoRotateOverride(final boolean on) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                setRequestedOrientation(on ? ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
+                                           : ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+            }
+        });
     }
 
     // This method is still needed for the QML check

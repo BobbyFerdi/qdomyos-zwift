@@ -60,18 +60,25 @@ Rectangle {
     state: "NORMAL"
 
     visible: product.status == Product.Registered
-    radius: 10
-    color: "white"
+    radius: 16
+    color: "#34343c"
+    border.width: 1
+    border.color: "#7C4DFF"
 
-    height: titleText.contentHeight + descriptionText.contentHeight +  2
+    height: titleText.contentHeight + descriptionText.contentHeight + 32
     // ![0]
     Text {
         id: titleText
         text: product.title
         font.bold: true
+        font.pixelSize: 17
+        color: "white"
         anchors.right: priceText.left
+        anchors.rightMargin: 12
         anchors.top: parent.top
+        anchors.topMargin: 14
         anchors.left: parent.left
+        anchors.leftMargin: 16
     }
 
     Text {
@@ -79,14 +86,22 @@ Rectangle {
         text: product.description
         anchors.right: priceText.left
         anchors.left: parent.left
+        anchors.leftMargin: 16
+        anchors.rightMargin: 12
         anchors.top: titleText.bottom
+        anchors.topMargin: 4
+        color: "white"
+        opacity: 0.7
         wrapMode: Text.WordWrap
     }
 
     Text {
         id: priceText
         text: product.price
+        font.bold: true
+        color: "white"
         anchors.right: parent.right
+        anchors.rightMargin: 16
         anchors.verticalCenter: parent.verticalCenter
     }
 
@@ -112,10 +127,12 @@ Rectangle {
         id: pendingRect
         anchors.fill: parent
         opacity: 0.0
-        color: "white"
+        color: "#34343c"
         radius: parent.radius
         Text {
             id: statusText
+            color: "white"
+            leftPadding: 16
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             anchors.left: parent.left
@@ -150,8 +167,8 @@ Rectangle {
             name: "NORMAL"
             PropertyChanges {
                 target: storeItem
-                color: "white"
-                border.color: "transparent"
+                color: "#34343c"
+                border.color: "#7C4DFF"
             }
             PropertyChanges {
                 target: pendingRect
@@ -162,7 +179,7 @@ Rectangle {
             name: "PRESSED"
             PropertyChanges {
                 target: storeItem
-                color: "transparent"
+                color: "#2a2a31"
                 border.color: "white"
             }
         },

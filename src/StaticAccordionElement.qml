@@ -20,27 +20,35 @@ ColumnLayout {
         color: "red"
         Layout.alignment: Qt.AlignTop
         Layout.fillWidth: true;
-        height: 48
+        Layout.topMargin: 6
+        Layout.leftMargin: 8
+        Layout.rightMargin: 8
+        height: 52
+        radius: 12
 
         Rectangle{
            id:indicatRect
-           x: 16; y: 20
+           x: 18; y: 22
            width: 8; height: 8
-           radius: 8
+           radius: 4
            color: "white"
         }
 
         Text {
             id: accordionText
-            x:34;y:13
+            x: 40
+            anchors.verticalCenter: parent.verticalCenter
+            font.bold: true
+            font.pixelSize: 15
             color: "#FFFFFF"
             text: rootElement.title
         }
         Image {
-            y:13
+            anchors.verticalCenter: parent.verticalCenter
             anchors.right:  parent.right
-            anchors.rightMargin: 20
-            width: 30; height: 30
+            anchors.rightMargin: 16
+            width: 26; height: 26
+            opacity: 0.85
             id: indicatImg
             // Bound to isOpen: a section opened from code (a search result) shows the right arrow
             source: rootElement.isOpen ? "qrc:/icons/arrow-expand-vertical.png" : "qrc:/icons/arrow-collapse-vertical.png"

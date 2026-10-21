@@ -226,9 +226,9 @@ ScrollView {
         Rectangle {
             Layout.fillWidth: true
             Layout.preferredHeight: 40
-            color: "#f0f0f0"
+            color: "#2e2e36"
             border.width: 1
-            border.color: "#cccccc"
+            border.color: "#4a4a54"
 
             Row {
                 anchors.fill: parent
@@ -237,14 +237,14 @@ ScrollView {
                     width: parent.width * 0.43
                     height: parent.height
                     border.width: 1
-                    border.color: "#cccccc"
+                    border.color: "#4a4a54"
                     color: "transparent"
 
                     Text {
                         anchors.centerIn: parent
                         text: qsTr("Inclination (%)")
                         font.bold: true
-                        color: "black"
+                        color: "#ececf1"
                     }
                 }
 
@@ -252,14 +252,14 @@ ScrollView {
                     width: parent.width * 0.43
                     height: parent.height
                     border.width: 1
-                    border.color: "#cccccc"
+                    border.color: "#4a4a54"
                     color: "transparent"
 
                     Text {
                         anchors.centerIn: parent
                         text: qsTr("Resistance")
                         font.bold: true
-                        color: "black"
+                        color: "#ececf1"
                     }
                 }
 
@@ -267,7 +267,7 @@ ScrollView {
                     width: parent.width * 0.14
                     height: parent.height
                     border.width: 1
-                    border.color: "#cccccc"
+                    border.color: "#4a4a54"
                     color: "transparent"
                 }
             }
@@ -293,7 +293,7 @@ ScrollView {
                         width: parent.width * 0.43
                         height: parent.height
                         border.width: 1
-                        border.color: "#cccccc"
+                        border.color: "#4a4a54"
                         color: "transparent"
 
                         RowLayout {
@@ -317,14 +317,14 @@ ScrollView {
                                 Layout.fillWidth: true
                                 Layout.fillHeight: true
                                 text: formatNumber(inclination)
-                                color: "black"
+                                color: "#ececf1"
                                 selectedTextColor: "white"
                                 selectionColor: Material.accent
                                 horizontalAlignment: Text.AlignHCenter
                                 inputMethodHints: Qt.ImhFormattedNumbersOnly
                                 background: Rectangle {
-                                    color: "white"
-                                    border.color: "#cccccc"
+                                    color: "#3a3a44"
+                                    border.color: "#4a4a54"
                                     radius: 2
                                 }
                                 function applyValue() {
@@ -351,7 +351,7 @@ ScrollView {
                         width: parent.width * 0.43
                         height: parent.height
                         border.width: 1
-                        border.color: "#cccccc"
+                        border.color: "#4a4a54"
                         color: "transparent"
 
                         RowLayout {
@@ -372,14 +372,14 @@ ScrollView {
                                 Layout.fillWidth: true
                                 Layout.fillHeight: true
                                 text: formatNumber(resistance)
-                                color: "black"
+                                color: "#ececf1"
                                 selectedTextColor: "white"
                                 selectionColor: Material.accent
                                 horizontalAlignment: Text.AlignHCenter
                                 inputMethodHints: Qt.ImhFormattedNumbersOnly
                                 background: Rectangle {
-                                    color: "white"
-                                    border.color: "#cccccc"
+                                    color: "#3a3a44"
+                                    border.color: "#4a4a54"
                                     radius: 2
                                 }
                                 function applyValue() {
@@ -402,7 +402,7 @@ ScrollView {
                         width: parent.width * 0.14
                         height: parent.height
                         border.width: 1
-                        border.color: "#cccccc"
+                        border.color: "#4a4a54"
                         color: "transparent"
 
                         Button {

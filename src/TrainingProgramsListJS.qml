@@ -213,7 +213,7 @@ ColumnLayout {
                     delegate: ItemDelegate {
                         id: workoutDelegate
                         width: ListView.view.width
-                        height: 50
+                        height: 58
 
                         // Determine item properties based on which model is active
                         property bool isItemFolder: isSearching ? model.isFolder : folderModel.isFolder(index)
@@ -222,7 +222,15 @@ ColumnLayout {
                         property string itemRelativePath: isSearching ? model.relativePath : ""
 
                         background: Rectangle {
-                            color: ListView.isCurrentItem ? Material.color(Material.Green, Material.Shade800) : Material.backgroundColor
+                            color: "transparent"
+                            Rectangle {
+                                anchors.fill: parent
+                                anchors.margins: 3
+                                anchors.leftMargin: 8
+                                anchors.rightMargin: 8
+                                radius: 12
+                                color: workoutDelegate.ListView.isCurrentItem ? "#5E3BD6" : Qt.lighter(Material.backgroundColor, 1.3)
+                            }
                         }
 
                         contentItem: RowLayout {

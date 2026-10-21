@@ -13,6 +13,9 @@ ScrollView {
         id: lblHelp
         width: parent.width
         horizontalAlignment: Text.AlignHCenter
+        font.pixelSize: 18
+        lineHeight: 1.15
+        topPadding: 24
         anchors.top: row1.bottom
         anchors.topMargin: 30
         text: "<b>" + qsTr("Credits") + "</b><br><br>" + qsTr("A very big thanks to<br>all the developers<br>(alphabetical sorted):") + "<br><br>ben75020<br>d3m3vilurr<br>lifof<br>p3g4asus<br>Roberto Viola"

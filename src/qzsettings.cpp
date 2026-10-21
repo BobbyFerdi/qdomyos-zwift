@@ -1313,8 +1313,9 @@ const QString QZSettings::android_landscape_cutout_margin = QStringLiteral("andr
 const QString QZSettings::android_landscape_cutout_prompt_shown = QStringLiteral("android_landscape_cutout_prompt_shown");
 const QString QZSettings::android_notification_prompt_disabled = QStringLiteral("android_notification_prompt_disabled");
 const QString QZSettings::android_notification_v2 = QStringLiteral("android_notification_v2");
+const QString QZSettings::android_force_auto_rotate = QStringLiteral("android_force_auto_rotate");
 
-const uint32_t allSettingsCount = 1020;
+const uint32_t allSettingsCount = 1021;
 
 QVariant allSettings[allSettingsCount][2] = {
     {QZSettings::cryptoKeySettingsProfiles, QZSettings::default_cryptoKeySettingsProfiles},
@@ -2361,6 +2362,7 @@ QVariant allSettings[allSettingsCount][2] = {
     {QZSettings::pafers_rower, QZSettings::default_pafers_rower},
     {QZSettings::android_notification_prompt_disabled, QZSettings::default_android_notification_prompt_disabled},
     {QZSettings::android_notification_v2, QZSettings::default_android_notification_v2},
+    {QZSettings::android_force_auto_rotate, QZSettings::default_android_force_auto_rotate},
 };
 
 void QZSettings::qDebugAllSettings(bool showDefaults) {

@@ -38,6 +38,17 @@ int AndroidStatusBar::apiLevel() const
 #endif
 }
 
+void AndroidStatusBar::setAutoRotateOverride(bool on)
+{
+#ifdef Q_OS_ANDROID
+    QAndroidJniObject activity = QtAndroid::androidActivity();
+    if (activity.isValid())
+        activity.callMethod<void>("setAutoRotateOverride", "(Z)V", static_cast<jboolean>(on));
+#else
+    Q_UNUSED(on)
+#endif
+}
+
 void AndroidStatusBar::onInsetsChanged(int top, int bottom, int left, int right, int waterfallTop,
                                         int waterfallBottom, int waterfallLeft, int waterfallRight)
 {

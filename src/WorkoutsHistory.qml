@@ -111,7 +111,7 @@ Page {
         Rectangle {
             Layout.fillWidth: true
             height: 60
-            color: "#f5f5f5"
+            color: "#26262c"
 
             // Calendar Icon Button - positioned absolutely on the left
             Button {
@@ -125,8 +125,8 @@ Page {
                 
                 background: Rectangle {
                     radius: 8
-                    color: calendarButton.pressed ? "#e0e0e0" : "#f0f0f0"
-                    border.color: "#d0d0d0"
+                    color: calendarButton.pressed ? "#4a4a54" : "#3a3a44"
+                    border.color: "#4a4a54"
                     border.width: 1
                 }
                 
@@ -146,7 +146,7 @@ Page {
                         visible: Qt.platform.os === "android"
                         name: "calendar_month"
                         size: 26
-                        color: "#444444"
+                        color: "#ececf1"
                     }
                 }
                 
@@ -213,7 +213,7 @@ Page {
                     text: workoutModel && workoutModel.isDateFiltered ?
                           qsTr("Filtered: %1").arg(workoutModel.filteredDate.toLocaleDateString()) : ""
                     font.pixelSize: 12
-                    color: "#666666"
+                    color: "#a8a8b3"
                     elide: Text.ElideRight
                     visible: workoutModel && workoutModel.isDateFiltered
                 }
@@ -231,8 +231,8 @@ Page {
 
                 background: Rectangle {
                     radius: 8
-                    color: importButton.pressed ? "#e0e0e0" : "#f0f0f0"
-                    border.color: "#d0d0d0"
+                    color: importButton.pressed ? "#4a4a54" : "#3a3a44"
+                    border.color: "#4a4a54"
                     border.width: 1
                 }
 
@@ -252,7 +252,7 @@ Page {
                         visible: Qt.platform.os === "android"
                         name: "download"
                         size: 26
-                        color: "#444444"
+                        color: "#ececf1"
                     }
                 }
 
@@ -278,7 +278,7 @@ Page {
             text: qsTr("Importing workouts...")
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignHCenter
-            color: "#666666"
+            color: "#a8a8b3"
             font.pixelSize: 16
         }
 
@@ -291,7 +291,7 @@ Page {
             text: qsTr("Processing workout files...\nThis may take a few moments on first startup.")
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignHCenter
-            color: "#666666"
+            color: "#a8a8b3"
             font.pixelSize: 16
         }
 
@@ -376,8 +376,8 @@ Page {
                     anchors.leftMargin: window.contentSideMargin
                     anchors.rightMargin: window.contentSideMargin
                     radius: 10
-                    color: "white"
-                    border.color: "#e0e0e0"
+                    color: "#2e2e36"
+                    border.color: "#464650"
 
                     // Workout Type Tag - positioned absolutely in top-right
                     WorkoutTypeTag {
@@ -499,7 +499,7 @@ Page {
                                 visible: Qt.platform.os === "android"
                                 name: getSportIconName(sport)
                                 size: 32
-                                color: "#444444"
+                                color: "#ececf1"
                             }
                         }
 
@@ -569,7 +569,7 @@ Page {
 
                             Text {
                                 text: date
-                                color: "#666666"
+                                color: "#a8a8b3"
                             }
 
                             // Stats row
@@ -774,7 +774,7 @@ Page {
         y: (parent.height - height) / 2
 
         background: Rectangle {
-            color: "white"
+            color: "#2e2e36"
             radius: 8
             border.color: trainingProgramDialog.isSuccess ? "#4caf50" : "#f44336"
             border.width: 2
@@ -1026,9 +1026,9 @@ Page {
         }
 
         background: Rectangle {
-            color: "white"
+            color: "#2e2e36"
             radius: 12
-            border.color: "#d0d0d0"
+            border.color: "#464650"
             border.width: 1
             
             // Shadow effect
@@ -1097,7 +1097,7 @@ Page {
                         font.bold: true
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
-                        color: "#666666"
+                        color: "#a8a8b3"
                     }
                 }
                 
@@ -1135,13 +1135,13 @@ Page {
                         }
 
                         color: {
-                            if (mouseArea.pressed) return "#e3f2fd"
-                            if (isToday) return "#bbdefb"
-                            if (!isCurrentMonth) return "#f5f5f5"
-                            return "white"
+                            if (mouseArea.pressed) return "#3b3560"
+                            if (isToday) return "#4a3f8f"
+                            if (!isCurrentMonth) return "#26262c"
+                            return "#2e2e36"
                         }
                         
-                        border.color: isToday ? "#2196f3" : "#e0e0e0"
+                        border.color: isToday ? "#2196f3" : "#464650"
                         border.width: isToday ? 2 : 1
                         radius: 4
                         
@@ -1152,7 +1152,7 @@ Page {
                             Text {
                                 anchors.horizontalCenter: parent.horizontalCenter
                                 text: dayDate.getDate()
-                                color: isCurrentMonth ? "black" : "#cccccc"
+                                color: isCurrentMonth ? "#ececf1" : "#6a6a74"
                                 font.pixelSize: 14
                             }
                             
