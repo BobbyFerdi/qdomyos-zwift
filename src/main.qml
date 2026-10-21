@@ -1135,7 +1135,8 @@ ApplicationWindow {
 
     header: ToolBar {
         contentHeight: toolButton.implicitHeight
-        Material.primary: settings.theme_status_bar_background_color
+        // The old default purple shows as the TrainDeck purple; a colour the user picked is kept as it is
+        Material.primary: settings.theme_status_bar_background_color === "#800080" ? "#5E3BD6" : settings.theme_status_bar_background_color
         id: headerToolbar
         // Opacity, not visible: some pages set headerToolbar.visible themselves
         opacity: window.rootReady ? 1 : 0
