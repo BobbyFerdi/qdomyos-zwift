@@ -1394,7 +1394,7 @@ ApplicationWindow {
 
         // Rounded panel with a soft accent edge instead of the flat full-height slab
         background: Rectangle {
-            color: Qt.lighter(settings.theme_background_color, 1.12)
+            color: Qt.lighter(Material.background, 1.12)
             radius: 20
             // Square off the left side, which sits against the screen edge
             Rectangle { width: parent.radius; height: parent.height; color: parent.color }

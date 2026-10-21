@@ -121,7 +121,12 @@ Page {
                 text: rootItem.startText
                 enabled: true
                 id: start
-                width: 128
+                // Material buttons draw 6 dp smaller than their size: match the connection chip
+                topInset: 0
+                bottomInset: 0
+                // 128 where there is room: on a narrow phone the chip, both buttons and the lap button would
+                // otherwise be wider than the screen and get clipped at both ends
+                width: Math.min(128, Math.max(88, (topBar.width - connectionChip.width - lap.width - 44) / 2))
                 height: row.height - 10
                 anchors.verticalCenter: parent.verticalCenter
                 font.bold: true
@@ -152,7 +157,12 @@ Page {
                 text: rootItem.stopText
                 enabled: true
                 id: stop
-                width: 128
+                // Material buttons draw 6 dp smaller than their size: match the connection chip
+                topInset: 0
+                bottomInset: 0
+                // 128 where there is room: on a narrow phone the chip, both buttons and the lap button would
+                // otherwise be wider than the screen and get clipped at both ends
+                width: Math.min(128, Math.max(88, (topBar.width - connectionChip.width - lap.width - 44) / 2))
                 height: row.height - 10
                 anchors.verticalCenter: parent.verticalCenter
                 font.bold: true
@@ -180,6 +190,9 @@ Page {
 
             RoundButton {
                 id: lap
+                // Material buttons draw 6 dp smaller than their size: match the connection chip
+                topInset: 0
+                bottomInset: 0
                 width: row.height - 10
                 height: row.height - 10
                 anchors.verticalCenter: parent.verticalCenter
