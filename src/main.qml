@@ -17,7 +17,7 @@ ApplicationWindow {
     visibility: Qt.WindowFullScreen
     visible: true
 	 objectName: "stack"
-    title: Qt.platform.os === "ios" ? "" : qsTr("qDomyos-Zwift")
+    title: Qt.platform.os === "ios" ? "" : qsTr("TrainDeck")
 
     // Android: apply the "rotate even when rotation lock is on" choice from the previous run
     Component.onCompleted: {
@@ -1437,7 +1437,7 @@ ApplicationWindow {
                             anchors.left: parent.left
                             anchors.leftMargin: 16
                             spacing: 2
-                            Label { text: "QZ Fitness"; font.bold: true; font.pixelSize: 20; color: "white" }
+                            Label { text: "TrainDeck"; font.bold: true; font.pixelSize: 20; color: "white" }
                             Label { text: settings.profile_name; font.pixelSize: 12; color: "white"; opacity: 0.85 }
                         }
                     }

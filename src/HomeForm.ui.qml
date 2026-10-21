@@ -6,7 +6,7 @@ import Qt.labs.settings 1.0
 
 Page {
 
-    title: qsTr("QZ Fitness")
+    title: qsTr("TrainDeck")
     id: page
 
     // VoiceOver accessibility - ignore Page itself, only children are accessible

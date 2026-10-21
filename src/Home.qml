@@ -423,6 +423,25 @@ HomeForm {
                 source: icon
                 visible: settings.theme_tile_icon_enabled && !largeButton
 
+                // Several tile icons are pure black and vanish on the dark tiles: lift near-black
+                // pixels to white, leave the coloured icons and the transparency as they are
+                layer.enabled: true
+                layer.smooth: true
+                layer.effect: ShaderEffect {
+                    fragmentShader: "
+                        varying highp vec2 qt_TexCoord0;
+                        uniform lowp float qt_Opacity;
+                        uniform lowp sampler2D source;
+                        void main() {
+                            lowp vec4 c = texture2D(source, qt_TexCoord0);
+                            lowp float a = c.a;
+                            lowp vec3 rgb = a > 0.0 ? c.rgb / a : vec3(0.0);
+                            lowp float m = max(rgb.r, max(rgb.g, rgb.b));
+                            rgb = mix(vec3(1.0), rgb, smoothstep(0.0, 0.35, m));
+                            gl_FragColor = vec4(rgb * a, a) * qt_Opacity;
+                        }"
+                }
+
                 // Ignore for VoiceOver - decorative only
                 Accessible.ignored: true
             }
