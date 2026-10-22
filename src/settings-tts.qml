@@ -112,6 +112,8 @@ ScrollView {
             Button {
                 id: okTTSSummarySec
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: ttsSummarySecTextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: { settings.tts_summary_sec = ttsSummarySecTextField.value; toast.show(qsTr("Setting saved!")); }

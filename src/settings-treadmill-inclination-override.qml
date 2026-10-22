@@ -90,6 +90,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverrideGainTextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_ovveride_gain = treadmillOverrideGainTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -116,6 +118,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverrideOffsetTextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_ovveride_offset = treadmillOverrideOffsetTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -143,6 +147,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride0TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_0 = treadmillOverride0TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -169,6 +175,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride05TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_05 = treadmillOverride05TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -195,6 +203,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride10TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_10 = treadmillOverride10TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -221,6 +231,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride15TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_15 = treadmillOverride15TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -247,6 +259,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride20TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_20 = treadmillOverride20TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -273,6 +287,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride25TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_25 = treadmillOverride25TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -299,6 +315,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride30TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_30 = treadmillOverride30TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -325,6 +343,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride35TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_35 = treadmillOverride35TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -351,6 +371,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride40TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_40 = treadmillOverride40TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -377,6 +399,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride45TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_45 = treadmillOverride45TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -403,6 +427,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride50TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_50 = treadmillOverride50TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -429,6 +455,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride55TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_55 = treadmillOverride55TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -455,6 +483,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride60TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_60 = treadmillOverride60TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -481,6 +511,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride65TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_65 = treadmillOverride65TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -507,6 +539,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride70TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_70 = treadmillOverride70TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -533,6 +567,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride75TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_75 = treadmillOverride75TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -559,6 +595,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride80TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_80 = treadmillOverride80TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -585,6 +623,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride85TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_85 = treadmillOverride85TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -611,6 +651,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride90TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_90 = treadmillOverride90TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -637,6 +679,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride95TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_95 = treadmillOverride95TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -663,6 +707,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride100TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_100 = treadmillOverride100TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -689,6 +735,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride105TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_105 = treadmillOverride105TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -715,6 +763,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride110TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_110 = treadmillOverride110TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -741,6 +791,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride115TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_115 = treadmillOverride115TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -767,6 +819,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride120TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_120 = treadmillOverride120TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -793,6 +847,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride125TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_125 = treadmillOverride125TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -819,6 +875,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride130TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_130 = treadmillOverride130TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -845,6 +903,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride135TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_135 = treadmillOverride135TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -871,6 +931,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride140TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_140 = treadmillOverride140TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -897,6 +959,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride145TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_145 = treadmillOverride145TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -923,6 +987,8 @@ ScrollView {
             }
             Button {
                 text: qsTr("OK")
+                flat: true
+                Material.foreground: "#B388FF"
                 enabled: treadmillOverride150TextField.valid
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {settings.treadmill_inclination_override_150 = treadmillOverride150TextField.value; toast.show(qsTr("Setting saved!")); }

@@ -2492,9 +2492,9 @@ import AndroidStatusBar 1.0
                                 Layout.preferredHeight: visible ? implicitHeight : 0
                                 Layout.maximumHeight: visible ? implicitHeight : 0
                                 text: entry.description || ""
-                                color: Material.color(Material.Lime)
-                                font.bold: true
-                                font.italic: true
+                                color: "#9a9aa8"
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
@@ -2523,6 +2523,8 @@ import AndroidStatusBar 1.0
 
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     onClicked: settingsPane.setSettingValue(entry, searchSettingTextField.text)
                                 }
                             }
@@ -2641,15 +2643,17 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okUiZoomButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: uiZoomTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.ui_zoom = uiZoomTextField.value; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                         }
                     }
-                    Label {
+                    SettingHelp {
                         text: qsTr("This changes the size of the tiles that display your metrics. The default is 100%. To fit more tiles on your screen, choose a smaller percentage. To make them larger, choose a percentage over 100%. Do not enter the percent symbol")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
@@ -2657,7 +2661,7 @@ import AndroidStatusBar 1.0
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         width: column1.width * 0.8
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -2689,6 +2693,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okAppLanguageButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: {
                                 settings.app_language = appLanguageOptions[appLanguageCombo.currentIndex].value
@@ -2697,17 +2703,17 @@ import AndroidStatusBar 1.0
                             }
                         }
                     }
-                    Label {
+                    SettingHelp {
                         text: qsTr("Choose Auto to follow your device language, or pick a specific language for QZ. Restart required.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -2732,22 +2738,24 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okWeightButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: weightTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.weight = ((settings.miles_unit && !settings.weight_kg_unit)?weightTextField.value / 2.20462:weightTextField.value); toast.show(qsTr("Setting saved!")); }
                         }
                     }
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enter your weight in kilograms so QZ can more accurately calculate calories burned. NOTE: If you choose to use miles as the unit for distance traveled, you will be asked to enter your weight in pounds (lbs) unless you enable 'Use kg for weight'.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -2780,6 +2788,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okHeightButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: heightTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: {
@@ -2798,17 +2808,17 @@ import AndroidStatusBar 1.0
                             }
                         }
                     }
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enter your height for more accurate BMR and active calories calculation. Use centimeters for metric or feet'inches\" format (e.g., 5'10\") for imperial units.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -2834,23 +2844,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okAgeButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: ageTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.age = ageTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enter your age so that calories burned can be more accurately calculated.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -2875,22 +2887,24 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okSex
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.sex = sexTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Select your gender so that calories burned can be more accurately calculated.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
 
@@ -2916,23 +2930,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okFTPButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: ftpTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.ftp = ftpTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("If you train to specific output (or watts) levels, for example in Peloton Power Zone classes,and have taken an FTP test (Functional Threshold Power), enter your FTP here. This number is used to calculate your Power Zones (Zones 1 to 7 for Peloton and 1 to 6 for Zwift).")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -2955,23 +2971,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: ftpRunTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.ftp_run = ftpRunTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("If you train to specific output (or watts) levels, for example with Stryd,and have taken an CP test (Critical Power Test), enter your CP here. This number is used to calculate your RSS.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -2993,22 +3011,24 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okNicknameButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.user_nickname = nicknameTextField.text; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("No need to enter data here. It is for a possible future QZ feature.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -3032,23 +3052,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okEmailButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: emailTextField.acceptableInput
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.user_email = emailTextField.text; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enter your email address to receive an automated email with stats and charts when you hit STOP at the end of each workout. Make sure there are no spaces before or after the email address; this is the most common reason the automated email is not sent. Privacy Note: Email addresses are not collected by the developer and are only saved locally on your device.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -3066,17 +3088,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.miles_unit = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn on if you want QZ to display distance traveled in miles. Default is off and set to kilometers.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -3095,17 +3117,17 @@ import AndroidStatusBar 1.0
                         visible: settings.miles_unit
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn on if you want to use kilograms (kg) for weight instead of pounds (lbs). Useful for UK users who use miles for distance but kg for weight.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                         visible: settings.miles_unit
                     }
 
@@ -3124,17 +3146,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.pause_on_start = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn on to set QZ to always open in PAUSE mode. This is important for Peloton classes so that you can sync the start of your QZ workout with the start of the Peloton class. Turn off to have QZ start tracking and timing your workout as soon as it opens.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -3152,17 +3174,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.continuous_moving = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn this on for: - Peloton Bootcamp classes or other workouts that are on and off the bike or treadmill. QZ will continue to track your workout even when you step away from your equipment. - Capturing non-equipment-based workouts, such as yoga or strength training. NOTE: All such workouts are labeled as “Rides” in Strava, but you can edit the label in Strava.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }                    
                 }
             }
@@ -3201,17 +3223,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.bike_heartrate_service = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("(For Android Version 10 and above, this setting cannot be changed. This setting can be changed for Android Version 9 and below and for iOS.) When this setting is turned off, QZ sends heart rate data in a format designed to improve compatibility with third-party apps, such as Zwift and Peloton. Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -3229,17 +3251,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.heart_ignore_builtin = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn this on to prevent a built-in heart rate monitor (HRM) on your exercise equipment from sending that data to QZ. This allows QZ to connect to your external HRM, such as a chest band or Apple Watch.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -3257,17 +3279,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.kcal_ignore_builtin = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("This prevents your bike or treadmill from sending its calories-burned calculation to QZ and defaults to QZ's more accurate calculation.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -3285,17 +3307,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.calories_active_only = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enable to calculate only active calories (excluding basal metabolic rate) similar to Apple Watch. When disabled, total calories including BMR are calculated. This affects both display and Apple Health integration.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -3313,17 +3335,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.calories_from_hr = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enable to calculate calories based on heart rate data instead of power. Requires heart rate sensor connection for accurate calorie estimation.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     Label {
@@ -3349,6 +3371,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okHeartBeltNameButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.heart_rate_belt_name = stripRssi(heartBeltNameTextField.value); window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                         }
@@ -3403,6 +3427,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okHeartRateZone1Button
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: heartRateZone1TextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.heart_rate_zone1 = heartRateZone1TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -3430,6 +3456,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okHeartRateZone2Button
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: heartRateZone2TextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.heart_rate_zone2 = heartRateZone2TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -3457,6 +3485,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okHeartRateZone3Button
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: heartRateZone3TextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.heart_rate_zone3 = heartRateZone3TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -3484,36 +3514,38 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okHeartRateZone4Button
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: heartRateZone4TextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.heart_rate_zone4 = heartRateZone4TextField.value; toast.show(qsTr("Setting saved!")); }
                                 }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Zone 5 will be calculated automatically based on Zone 4 end percentage and max HR.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Choose the percentages for where you want your zones 1-4 to end and click OK.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             AccordionElement {
@@ -3561,23 +3593,25 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okHeartRateMaxOverrideValue
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: heartRateMaxOverrideValueTextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.heart_max_override_value = heartRateMaxOverrideValueTextField.value; toast.show(qsTr("Setting saved!")); }
                                         }
                                     }
 
-                                    Label {
+                                    SettingHelp {
                                         text: qsTr("QZ uses a standard age-based calculation for maximum heart rate and then sets the heart rate zones based on that max heart rate. If you know your actual max heart rate (the highest your heart rate is known to reach), turn this option on and enter your actual max heart rate. Then click OK.")
-                                        font.bold: true
-                                        font.italic: true
+                                        font.bold: false
+                                        font.italic: false
                                         font.pixelSize: Qt.application.font.pixelSize - 2
                                         textFormat: Text.PlainText
                                         wrapMode: Text.WordWrap
                                         verticalAlignment: Text.AlignVCenter
                                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                         Layout.fillWidth: true
-                                        color: Material.color(Material.Lime)
+                                        color: "#9a9aa8"
                                     }
 
                                     RowLayout {
@@ -3603,23 +3637,25 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okHeartRateRestingValue
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: heartRateRestingValueTextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.heart_rate_resting = heartRateRestingValueTextField.value; toast.show(qsTr("Setting saved!")); }
                                         }
                                     }
 
-                                    Label {
+                                    SettingHelp {
                                         text: qsTr("Enter your resting heart rate (the lowest your heart rate reaches when fully rested). This is used for accurate training load calculations. Default is 60 bpm.")
-                                        font.bold: true
-                                        font.italic: true
+                                        font.bold: false
+                                        font.italic: false
                                         font.pixelSize: Qt.application.font.pixelSize - 2
                                         textFormat: Text.PlainText
                                         wrapMode: Text.WordWrap
                                         verticalAlignment: Text.AlignVCenter
                                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                         Layout.fillWidth: true
-                                        color: Material.color(Material.Lime)
+                                        color: "#9a9aa8"
                                     }
                                 }
                             }
@@ -3654,6 +3690,8 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okPowerFromHeartPWR1
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: powerFromHeartPWR1TextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.power_hr_pwr1 = powerFromHeartPWR1TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -3682,6 +3720,8 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okPowerFromHeartHR1
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: powerFromHeartHR1TextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.power_hr_hr1 = powerFromHeartHR1TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -3710,6 +3750,8 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okPowerFromHeartPWR2
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: powerFromHeartPWR2TextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.power_hr_pwr2 = powerFromHeartPWR2TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -3738,6 +3780,8 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okPowerFromHeartHR2
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: powerFromHeartHR2TextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.power_hr_hr2 = powerFromHeartHR2TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -3745,17 +3789,17 @@ import AndroidStatusBar 1.0
                                     }
                                 }
                             }
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Expand the bars to the right to display the options under this setting. These settings are used to calculate power (watts) for bikes that do not have power meters. Instead QZ estimates power from your cadence and heart rate. You can calibrate how QZ calculates your power from heart rate as follows: If you know that at a stable pace you produce 100W of power at a heart rate of 150 BPM and 150W at 170 BPM, you can add these values under Sessions 1 and 2 Watt and HR and QZ will calculate your power based on that trend line.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
                         }
                     }               
@@ -3787,17 +3831,17 @@ import AndroidStatusBar 1.0
                         Layout.fillWidth: true
                         onClicked: settings.speed_power_based = checked
                     }
-                    Label {
+                    SettingHelp {
                         text: qsTr("QZ calculates speed based on your pedal cadence (RPMs). Enable this setting if you want your speed to be calculated based on your power output (watts), as Zwift and some other apps do. Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -3816,17 +3860,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.gears_restore_value = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("QZ will remember the last Gears value and it will restore on startup")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     // Add the new specific gear value restore setting
@@ -3874,6 +3918,8 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             enabled: gearsRestoreValueDelegate.checked && specificGearValueField.valid
                             onClicked: {
@@ -3883,17 +3929,17 @@ import AndroidStatusBar 1.0
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Specify a particular gear value to be restored at startup. This will override the 'Restore Gears on Startup' setting.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
                     RowLayout {
                         spacing: 10
@@ -3915,6 +3961,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okRollingResistanceButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: rollingreistanceTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.rolling_resistance = rollingreistanceTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -3948,23 +3996,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okBikeWeightButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: bikeweightTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.bike_weight = ((settings.miles_unit && !settings.weight_kg_unit)?bikeweightTextField.value / 2.20462:bikeweightTextField.value); toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enables QZ to include the weight of your bike when calculating speed. For example, if you are competing against yourself on VZfit, adding bike weight will 'level the playing field' against your virtual self. If you have set QZ to calculate distance in miles, enter the bike weight in pounds (lbs) unless you enable 'Use kg for weight'. Default unit is kilograms (kgs).")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -3987,6 +4037,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okCRRGainButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: crrGainTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.crrGain = crrGainTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -4012,6 +4064,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okCWGainButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: cwGainTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.cwGain = cwGainTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -4032,17 +4086,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.zwift_erg = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enable this setting ONLY when using Zwift in ERG (workout) Mode. QZ will communicate the target resistance (or automatically adjust your resistance if your bike has this capability) to match the target watts based on your cadence (RPM). In ERG Mode, the changes in road slope will not affect target resistance, as is the case in Simulation Mode. Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }                    
 
                     AccordionElement {
@@ -4068,14 +4122,14 @@ import AndroidStatusBar 1.0
                                 }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Enable TCP server on port 21587 to send control commands using the OpenBikeControl link protocol")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 wrapMode: Text.WordWrap
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             IndicatorOnlySwitch {
@@ -4085,14 +4139,14 @@ import AndroidStatusBar 1.0
                                 onClicked: { settings.mywhoosh_link_override_gears = checked; window.settings_restart_to_apply = true; }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("When enabled, gear shift commands go only to OpenBikeControl clients. When disabled, they go to both OpenBikeControl clients and the local gear system")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 wrapMode: Text.WordWrap
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             Label {
@@ -4292,23 +4346,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okBikeResistanceOffsetButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: bikeResistanceOffsetTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.bike_resistance_offset = bikeResistanceOffsetTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("This setting sets your “flat road” in Zwift. All communicated resistance changes will be based on this setting. The value entered is personal preference and will be dependent on your level of fitness. The suggested value for Echelon bikes is between 18 and 20. Default is 4.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -4333,23 +4389,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okBikePowerOffsetButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: bikePowerOffsetTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.bike_power_offset = bikePowerOffsetTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Add an offset in watts to the requested power from apps like Zwift. Positive values increase power, negative values decrease it. Default is 0.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -4372,23 +4430,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okBikeResistanceGainButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: bikeResistanceGainTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.bike_resistance_gain_f = bikeResistanceGainTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("(for bikes and treadmills when using “treadmill as a bike” setting). This setting scales the resistance from your bike or the speed from your treadmill before sending it to Zwift. Default is 1.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -4411,23 +4471,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okzwiftErgFilterButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: zwiftErgFilterTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.zwift_erg_filter = zwiftErgFilterTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("In ERG Mode or during a Power Zone workout on Peloton, the app sends a “target output” request. If the output requested doesn’t match your current output (calculated using cadence and resistance level), your target resistance will change to help you get closer to the target output. If the filter is set to higher values, you will get less adjustment of the target resistance and you will have to increase your cadence to match the target output. The Up and Down Watt Filter settings are the upper and lower margin before the adjustment of resistance is communicated. Example: if the up and down filters are set to 10 and the target output is 100 watts, a change of your resistance will only be communicated if your bike produces less than 90 watts or more than 110 watts. Default is 10.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -4450,23 +4512,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okzwiftErgDownFilterButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: zwiftErgDownFilterTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.zwift_erg_filter_down = zwiftErgDownFilterTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("See above. Default is 10.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -4489,23 +4553,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okzwiftErgResistanceDownButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: zwiftErgResistanceDownTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.zwift_erg_resistance_down = zwiftErgResistanceDownTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Use this setting to set a minimum target resistance. For example, if you do not want to ride at a resistance below 25, enter a value of 25 and QZ will not set a target resistance below 25. Default is 0.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -4528,23 +4594,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okzwiftErgResistanceUpButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: zwiftErgResistanceUpTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.zwift_erg_resistance_up = zwiftErgResistanceUpTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Similar to the above, but sets a maximum target resistance. Default is 999.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -4568,23 +4636,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okBikeResistanceStartButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: bikeResistanceStartTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.bike_resistance_start = bikeResistanceStartTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("(only for bikes with electronically-controlled resistance): Enter the resistance level you want QZ to set at startup. Default is 1.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -4605,23 +4675,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: gearsGainTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.gears_gain = gearsGainTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Applies a multiplier to the gears. Default is 1.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     NewPageElement {
@@ -4659,23 +4731,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: gearsOffsetTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.gears_offset = gearsOffsetTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Applies an offset to the gears. Default is 0.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     AccordionElement {
@@ -4702,17 +4776,17 @@ import AndroidStatusBar 1.0
                                 onClicked: settings.automatic_virtual_shifting_enabled = checked
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Enable automatic gear shifting based on cadence thresholds. When enabled, QZ will automatically shift gears up or down based on your pedaling cadence.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                                 visible: automaticVirtualShiftingEnabledDelegate.checked
                             }
 
@@ -4767,6 +4841,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: automaticVirtualShiftingGearUpCadenceTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.automatic_virtual_shifting_gear_up_cadence = automaticVirtualShiftingGearUpCadenceTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -4792,6 +4868,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: automaticVirtualShiftingGearUpTimeTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.automatic_virtual_shifting_gear_up_time = automaticVirtualShiftingGearUpTimeTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -4820,6 +4898,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: automaticVirtualShiftingGearDownCadenceTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.automatic_virtual_shifting_gear_down_cadence = automaticVirtualShiftingGearDownCadenceTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -4845,6 +4925,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: automaticVirtualShiftingGearDownTimeTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.automatic_virtual_shifting_gear_down_time = automaticVirtualShiftingGearDownTimeTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -4883,6 +4965,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: automaticVirtualShiftingClimbGearUpCadenceTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.automatic_virtual_shifting_climb_gear_up_cadence = automaticVirtualShiftingClimbGearUpCadenceTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -4908,6 +4992,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: automaticVirtualShiftingClimbGearUpTimeTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.automatic_virtual_shifting_climb_gear_up_time = automaticVirtualShiftingClimbGearUpTimeTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -4936,6 +5022,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: automaticVirtualShiftingClimbGearDownCadenceTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.automatic_virtual_shifting_climb_gear_down_cadence = automaticVirtualShiftingClimbGearDownCadenceTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -4961,6 +5049,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: automaticVirtualShiftingClimbGearDownTimeTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.automatic_virtual_shifting_climb_gear_down_time = automaticVirtualShiftingClimbGearDownTimeTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -4999,6 +5089,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: automaticVirtualShiftingSprintGearUpCadenceTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.automatic_virtual_shifting_sprint_gear_up_cadence = automaticVirtualShiftingSprintGearUpCadenceTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -5024,6 +5116,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: automaticVirtualShiftingSprintGearUpTimeTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.automatic_virtual_shifting_sprint_gear_up_time = automaticVirtualShiftingSprintGearUpTimeTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -5052,6 +5146,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: automaticVirtualShiftingSprintGearDownCadenceTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.automatic_virtual_shifting_sprint_gear_down_cadence = automaticVirtualShiftingSprintGearDownCadenceTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -5077,6 +5173,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: automaticVirtualShiftingSprintGearDownTimeTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.automatic_virtual_shifting_sprint_gear_down_time = automaticVirtualShiftingSprintGearDownTimeTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -5106,35 +5204,37 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.ftms_bike = stripRssi(ftmsBikeTextField.value); window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("If you have a generic FTMS bike and the tiles don't appear on the main QZ screen, select here the Bluetooth name of your bike.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Expand the bars to the right to display the options under this setting. Select your specific model (if it is listed) and leave all other settings on default. If you encounter problems or have a question about the QZ settings for your equipment, open a support ticket on GitHub or ask the QZ community on the QZ Facebook Group.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }                    
 
                     NewPageElement {
@@ -5215,22 +5315,24 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okschwinnResistanceSmoothButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: scwhinnResistanceSmoothTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.schwinn_resistance_smooth = scwhinnResistanceSmoothTextField.value; toast.show(qsTr("Setting saved!")); }
                                 }
                             }
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Since this bike doesn't send resistance over Bluetooth, QZ is calculating it using cadence and wattage. The result could be a little 'jumpy' and so, with this setting, you can filter the resistance tile value. The unit is a pure resistance level, so putting 5 means that you will see a resistance changes only when the resistance is changing by 5 levels.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
                         }
                     }
@@ -5260,6 +5362,8 @@ import AndroidStatusBar 1.0
                             Button {
                                 id: okhorizonGr7CadenceMultiplierButton
                                 text: qsTr("OK")
+                                flat: true
+                                Material.foreground: "#B388FF"
                                 enabled: horizonGr7CadenceMultiplierTextField.valid
                                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                 onClicked: { settings.horizon_gr7_cadence_multiplier = horizonGr7CadenceMultiplierTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -5300,6 +5404,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okEchelonWattTable
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.echelon_watttable = echelonWattTableTextField.displayText; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -5324,6 +5430,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okechelonResistanceGainButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: echelonResistanceGainTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.echelon_resistance_gain = echelonResistanceGainTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -5352,6 +5460,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okechelonResistanceOffsetButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: echelonResistanceOffsetTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.echelon_resistance_offset = echelonResistanceOffsetTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -5591,17 +5701,17 @@ import AndroidStatusBar 1.0
                                 Layout.fillWidth: true
                                 onClicked: { settings.skandika_wiri_x2000_protocol = checked; window.settings_restart_to_apply = true; }
                             }
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Enable this for Skandika X-2000 bikes. Disable for other Skandika models (e.g., HT211212095)")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
                         }
                     }
@@ -5725,6 +5835,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okflywheelBikeFilterButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: flywheelBikeFilterTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.flywheel_filter = flywheelBikeFilterTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -5788,6 +5900,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okDomyosBikeCadenceFilter
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: domyosBikeCadenceFilterTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.domyos_bike_cadence_filter = domyosBikeCadenceFilterTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -5881,17 +5995,17 @@ import AndroidStatusBar 1.0
                                 Layout.fillWidth: true
                                 onClicked: settings.tacxneo2_disable_negative_inclination = checked
                             }
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Enabling this QZ will ignore changing gears if the value is too low for this trainer. Default: disabled.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
                         }
                     }
@@ -5922,6 +6036,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okproformBikeWheelRatioButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: proformBikeWheelRatioTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.proform_wheel_ratio = proformBikeWheelRatioTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -6106,6 +6222,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: proformTDF1IPTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.proformtdf1ip = proformTDF1IPTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -6133,6 +6251,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okproformTDF4IPButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: proformTDF4IPTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.proformtdf4ip = proformTDF4IPTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -6159,6 +6279,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okproformTDFCompanionIPButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: proformTDFCompanionIPTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.tdf_10_ip = proformTDFCompanionIPTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -6220,6 +6342,8 @@ import AndroidStatusBar 1.0
                             Button {
                                 id: okcomputrainerSerialPortButton
                                 text: qsTr("OK")
+                                flat: true
+                                Material.foreground: "#B388FF"
                                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                 onClicked: { settings.computrainer_serialport = computrainerSerialPortTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                             }
@@ -6254,6 +6378,8 @@ import AndroidStatusBar 1.0
                             Button {
                                 id: okKettlerUsbSerialPortButton
                                 text: qsTr("OK")
+                                flat: true
+                                Material.foreground: "#B388FF"
                                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                 onClicked: { settings.kettler_usb_serialport = kettlerUsbSerialPortTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                             }
@@ -6279,6 +6405,8 @@ import AndroidStatusBar 1.0
                             Button {
                                 id: okKettlerUsbBaudrateButton
                                 text: qsTr("OK")
+                                flat: true
+                                Material.foreground: "#B388FF"
                                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                 onClicked: {
                                     settings.kettler_usb_baudrate = parseInt(kettlerUsbBaudrateComboBox.displayText);
@@ -6318,6 +6446,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okFreebeatSerialPortButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.freebeat_serialport = freebeatSerialPortTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -6373,6 +6503,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okm3iBikeIdButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: m3iBikeIdTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.m3i_bike_id = m3iBikeIdTextField.value; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -6400,6 +6532,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okm3iBikeSpeedBuffsizeButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: m3iBikeSpeedBuffsizeTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.m3i_bike_speed_buffsize = m3iBikeSpeedBuffsizeTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -6512,6 +6646,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okAntBikeDeviceNumberButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: antBikeDeviceNumberTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.ant_bike_device_number = antBikeDeviceNumberTextField.value; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -6543,17 +6679,17 @@ import AndroidStatusBar 1.0
                                 onClicked: settings.toputure_teb1 = checked
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Enable the special SPORT01 instant power formula only for the Toputure TEB1 bike. Leave disabled to use the standard FTMS instant power reported by the device.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
                         }
                     }
@@ -6600,17 +6736,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.ant_cadence = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn this on if you need to use ANT+ along with Bluetooth. Power is also sent.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -6632,23 +6768,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: antspeedOffsetTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.ant_speed_offset = antspeedOffsetTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("You can increase/decrease your speed sent over ANT+. The number you enter as an Offset adds that amount to your speed.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
 
@@ -6670,23 +6808,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: antspeedGainTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.ant_speed_gain = antspeedGainTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("You can increase/decrease your speed output sent over ANT+. For example, to use a rower to cycle in Zwift, you could double your speed output to better match your cycling speed. The number you enter is a multiplier applied to your actual speed.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -6726,23 +6866,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okAntHeartDeviceNumberButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: antHeartDeviceNumberTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.ant_heart_device_number = antHeartDeviceNumberTextField.value; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("This setting enables receiving the heart rate from an external HRM over ANT+ instead of from QZ.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -6759,17 +6901,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.android_antbike = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Use this to connect to your bike using ANT+ instead of Bluetooth. Default: Disabled")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
                 }
             }
@@ -6840,18 +6982,18 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.android_landscape_cutout_margin = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("In landscape, keeps a margin on the camera side so the camera hole does not cover the content. Turn off to let the content extend under the camera cutout. Default is on.")
                         visible: Qt.platform.os === "android"
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -6870,18 +7012,18 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.android_force_auto_rotate = checked; AndroidStatusBar.setAutoRotateOverride(checked); }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Lets the app rotate with the phone even when the system rotation lock is on. Turn off to follow the system rotation lock. Default is off.")
                         visible: Qt.platform.os === "android"
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -6904,35 +7046,37 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okFloatingWindowTypeButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.floatingwindow_type = floatingWindowTypeComboBox.currentIndex; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Choose the floating window layout type. Classic uses the standard floating.htm file, while Horizontal uses the hfloating.htm file for horizontal layout.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Allows continuous display of the Start/Pause and Stop buttons across the top of the screen during your workouts. Default is on.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -6956,23 +7100,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okFloatingWidthButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: floatingWidthField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.floating_width = floatingWidthField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Android Only: width of the floating window.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -6996,23 +7142,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okFloatingHeightButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: floatingHeightField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.floating_height = floatingHeightField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Android Only: height of the floating window.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -7036,23 +7184,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okFloatingTransparencyButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: floatingTransparencyField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.floating_transparency = floatingTransparencyField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Android Only: transparency percentage of the floating window.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -7070,17 +7220,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.floating_startup = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Android Only: if enabled the floating window will start as soon as the fitness devices is connected.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     Button {
@@ -7109,22 +7259,24 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okChartDisplayModeButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.chart_display_mode = chartDisplayModeComboBox.currentIndex; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Choose which charts to display in the footer: both heart rate and power charts, only heart rate chart, or only power chart.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -7143,6 +7295,8 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.ios_live_activity_compact_leading_metric = iosLiveActivityCompactLeadingMetricComboBox.displayText; toast.show(qsTr("Setting saved!")); }
                         }
@@ -7164,22 +7318,24 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.ios_live_activity_compact_trailing_metric = iosLiveActivityCompactTrailingMetricComboBox.displayText; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("iOS only: choose which two metrics are shown in the compact Dynamic Island bar for Live Activities. Default is Heart Rate on the left and Watt on the right.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     AccordionElement {
@@ -7224,6 +7380,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okBackgroundColor
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.theme_background_color = backgroundColorTextField.text; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -7258,6 +7416,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: oktileBackgroundColor
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.theme_tile_background_color = tilebackgroundColorTextField.text; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -7305,6 +7465,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: oktileShadowColor
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.theme_tile_shadow_color = tileShadowColorTextField.text; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -7338,6 +7500,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okStatusbarBackgroundColor
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.theme_status_bar_background_color = statusbarbackgroundColorTextField.text; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -7372,6 +7536,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: secondLineTextSizeField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.theme_tile_secondline_textsize = secondLineTextSizeField.value; window.settings_restart_to_apply = true;  toast.show(qsTr("Setting saved!")); }
@@ -7410,23 +7576,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okPelotonUsernameButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.peloton_username = pelotonUsernameTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enter the email address you use to login to Peloton (NOT your leaderboard name). Ensure there are no spaces before or after your email. Click OK.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -7459,22 +7627,24 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okPelotonPasswordButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.peloton_password = pelotonPasswordTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enter the password you use to login to Peloton. Click OK. If you have entered the correct login credentials and the QZ is able to access your account, you will see a when you reopen QZ. This is a secure login, not accessible by anyone but you.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 */
 
@@ -7515,22 +7685,24 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okPelotonDifficultyButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.peloton_difficulty = pelotonDifficultyTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Typically, Peloton coaches call out a range for target incline, resistance and/or speed. Use this setting to choose the difficulty of the target QZ communicates. Difficulty level can be set to lower, upper or average. Click OK.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -7553,22 +7725,24 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.peloton_treadmill_level = parseInt(pelotonTreadmillLevelTextField.displayText); toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Difficulty level for Peloton treadmill classes. 1 is easy 10 is hard.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -7591,22 +7765,24 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.peloton_treadmill_walk_level = parseInt(pelotonTreadmillWalkLevelTextField.displayText); toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Difficulty level for Peloton treadmill walking classes. 1 is easy 10 is hard.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -7625,23 +7801,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: pelotonTreadmillWalkingMinSpeedTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.peloton_treadmill_walking_min_speed = (settings.miles_unit ? pelotonTreadmillWalkingMinSpeedTextField.value / 0.621371 : pelotonTreadmillWalkingMinSpeedTextField.value); toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Minimum speed for Peloton walking sessions. Set to 0 to disable. Applied to all speed targets in walking workouts.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -7660,23 +7838,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: pelotonTreadmillRunningMinSpeedTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.peloton_treadmill_running_min_speed = (settings.miles_unit ? pelotonTreadmillRunningMinSpeedTextField.value / 0.621371 : pelotonTreadmillRunningMinSpeedTextField.value); toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Minimum speed for Peloton running sessions. Set to 0 to disable. Applied to all speed targets in running workouts.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -7699,22 +7879,24 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.peloton_rower_level = parseInt(pelotonRowerLevelTextField.displayText); toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Difficulty level for Peloton rower classes. 1 is easy 10 is hard.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -7736,22 +7918,24 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okPZPUsernameButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.pzp_username = pzpUsernameTextField.text; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("As of 4/1/2022, this feature is broken due to a Power Zone Pack (PZP) website change. Leave (or change back to) the default of “username” (without quotation marks, all lowercase and all one word) until further notice.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -7784,22 +7968,24 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okPZPPasswordButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.pzp_password = pzpPasswordTextField.text; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("As of 4/1/2022, this feature is broken due to a Power Zone Pack (PZP) website change. Leave this setting blank until further notice.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -7822,23 +8008,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okPelotonGainButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: pelotonGainTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.peloton_gain = pelotonGainTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Conversion gain is a multiplier. Use this setting to align the Peloton resistance calculated by QZ with the relative effort required by your bike. In most cases the default values will be correct.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -7862,23 +8050,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okPelotonOffsetButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: pelotonOffsetTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.peloton_offset = pelotonOffsetTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Increases the resistance that QZ displays in the Peloton Resistance tile. If QZ’s calculated conversion from your bike’s resistance scale to Peloton’s seems too low, the number you enter here will be added to the calculated resistance without increasing your effort or actual resistance. (Example: If QZ displays Peloton resistance of 30 and you enter 5, QZ will display 35.)")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -7896,17 +8086,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.bike_cadence_sensor = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn this on compatibility to Peloton over Bluetooth. Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }                    
 
                     IndicatorOnlySwitch {
@@ -7923,17 +8113,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.peloton_auto_start_with_intro = checked; if(settings.peloton_auto_start_with_intro === true) { settings.peloton_auto_start_without_intro = false; } }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn this on to start a workout automatically when you start a workout on Peloton (waiting the intro). Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -7950,17 +8140,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.peloton_auto_start_without_intro = checked; if(settings.peloton_auto_start_without_intro === true) { settings.peloton_auto_start_with_intro = false; } }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn this on to start a workout automatically when you start a workout on Peloton (skipping the intro). Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     /*
@@ -7986,6 +8176,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okPelotonCadenceMetric
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: settings.peloton_cadence_metric = pelotonCadenceMetricTextField.displayText;
                         }
@@ -8013,22 +8205,24 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okPelotonHeartRateMetric
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.peloton_heartrate_metric = pelotonHeartRateMetricTextField.displayText; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("By default, QZ communicates heart rate to Peloton. Use this setting to change the metric that appears on the Peloton screen.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -8053,22 +8247,24 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okPelotonDateOnStrava
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.peloton_date = pelotonDateOnStravaTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Allows you to choose whether you would like the Peloton class air date to display before or after the class title on Strava.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -8091,6 +8287,8 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.peloton_date_format = pelotonDateFormatTextField.displayText; toast.show(qsTr("Setting saved!")); }
                         }
@@ -8111,17 +8309,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.peloton_description_link = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn this on if you want QZ to capture a link to the Peloton class and display it in Strava.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -8138,17 +8336,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.peloton_spinups_autoresistance = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("By default, QZ treats Spin-UPS in Power Zone rides as an increasing ramp to warm you up. You can disable this, to leave the resistance up to you.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -8166,17 +8364,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.peloton_workout_ocr = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Only for Android where QZ is running on the same Peloton device. This setting enables the AI (Artificial Intelligence) on QZ that will read the Peloton workout screen and will adjust the Peloton offset in order to stay in sync in realtime with your Peloton workout. A popup about screen recording will appear in order to notify this.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -8193,17 +8391,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.peloton_companion_workout_ocr = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("This setting enables the AI (Artificial Intelligence) on the QZ Companion AI app that will read the Peloton workout screen and will adjust the Peloton offset in order to stay in sync in realtime with your Peloton workout.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
                     /*
                     IndicatorOnlySwitch {
@@ -8223,15 +8421,15 @@ import AndroidStatusBar 1.0
 
                     Label {
                         text: qsTr("Only if you are on a real Peloton Bike/Bike+! This will allow QZ to collect metrics from your Bike/Bike+ and send it to Zwift. Peloton Free ride must running.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }*/
                 }
             }
@@ -8262,23 +8460,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okZwiftUsernameButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.zwift_username = zwiftUsernameTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enter the email address you use to login to Zwift. Ensure there are no spaces before or after your email. Click OK.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -8311,23 +8511,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okZwiftPasswordButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.zwift_password = zwiftPasswordTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         //text: qsTr("Enter the password you use to login to Zwift. Click OK. If you have entered the correct login credentials and the QZ is able to access your account, you will see a when you reopen QZ. This is a secure login, not accessible by anyone but you.")
                         text: qsTr("Enter the password you use to login to Zwift. Click OK.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }              
 
                     MessageDialog {
@@ -8367,17 +8569,17 @@ import AndroidStatusBar 1.0
                          }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("This setting bring virtual gearing from zwift to all the bikes directly from the Zwift interface. You have to configure Zwift: Wahoo virtual device from QZ as for power and cadence, and your QZ device as resistance. MUST be disabled for Mywhoosh app. Default: disabled.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 /*
                     IndicatorOnlySwitch {
@@ -8394,17 +8596,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.watt_bike_emulator = checked; if(checked) { settings.zwift_play_emulator = false; } window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("This setting shows the actual gear from QZ to Zwift. Negative values are not displayed on Zwift and it could have also limitation to higher gain value. Default: disabled.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 */
 
@@ -8422,17 +8624,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.zwift_gear_ui_aligned = checked; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("By default QZ is showing the actual gears from the bike. Enabling this, QZ will show the same gears that you see on Zwift. This doesn't affect the real gear value one the bike. Default: disabled.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -8454,6 +8656,8 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: zwiftPollTimeTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.zwift_api_poll = zwiftPollTimeTextField.value; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -8461,17 +8665,17 @@ import AndroidStatusBar 1.0
                     }
 
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Define the number of delay seconds between each inclination change from Zwift. This value can't be less than 5. Default: 5")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }               
 
                     IndicatorOnlySwitch {
@@ -8488,17 +8692,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.zwift_api_autoinclination = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Only for Android and iOS: QZ will read the inclination in real time from the Zwift app and will adjust the inclination on your treadmill. It doesn't work on workout")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -8515,17 +8719,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.zwift_ocr = checked; settings.zwift_workout_ocr = false; settings.zwift_ocr_climb_portal = false; settings.android_notification_v2 = true; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Only for PC where QZ is running on the same Zwift device. This setting enables the AI (Artificial Intelligence) on QZ that will read the Zwift inclination from the Zwift app and will adjust the inclination on your treadmill. A popup about screen recording will appear in order to notify this.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -8556,17 +8760,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.zwift_workout_ocr = checked; settings.zwift_ocr = false; settings.zwift_ocr_climb_portal = false; settings.android_notification_v2 = true; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Only for PC where QZ is running on the same Zwift device. This setting enables the AI (Artificial Intelligence) on QZ that will read the Zwift inclination and speed from the Zwift app during a workout and will adjust the inclination and the speed on your treadmill. A popup about screen recording will appear in order to notify this.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
                 }
             }
@@ -8593,17 +8797,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.rouvy_compatibility = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Wifi Compatibility for Rouvy")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
                 }
             }
@@ -8631,17 +8835,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.garmin_bluetooth_compatibility = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("If you want to send metrics to your Garmin device from your Mac, enable this. Otherwise leave it disabled.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -8658,17 +8862,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.garmin_companion = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("You have to install the QZ Companion App on your Garmin Watch/Computer first.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -8685,17 +8889,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.antbike = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Use your garmin watch to get the ANT+ metrics from a bike")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     Label {
@@ -8720,17 +8924,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.garmin_upload_enabled = checked; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enable automatic upload of FIT files to Garmin Connect after workouts.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -8747,17 +8951,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.rpe_feel_popup_enabled = checked; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Show a popup after Stop to rate perceived exertion (RPE) and how you felt; the values are saved into the FIT file and shown in Garmin Connect.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -8774,17 +8978,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.garmin_download_workouts_on_start = checked; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enable automatic download of today's Garmin workout when QZ starts. Default: enabled.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -8806,6 +9010,8 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: garminEmailTextField.acceptableInput
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: {
@@ -8834,6 +9040,8 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: {
                                 rootItem.garmin_connect_logout();
@@ -8960,17 +9168,17 @@ import AndroidStatusBar 1.0
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enter your Garmin Connect credentials to enable automatic upload. Your password is stored locally and securely.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -8987,17 +9195,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.fit_file_garmin_device_training_effect = checked; window.settings_restart_to_apply = false; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("With this enabled, QZ will write the FIT file as a Garmin device so Garmin will consider this fit file for the training effect. Default: disabled.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     Label {
@@ -9765,17 +9973,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.trainprogram_stop_at_end = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Treadmill only: enabling this if you want that QZ will stop the tape at the end of the current train program.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -9792,17 +10000,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.trainprogram_clipboard_workout_enabled = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enable detection of ZWO/XML workouts copied to the clipboard. Default: disabled.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -9819,17 +10027,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.trainprogram_sound_on_segment = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Play a short sound when a training program starts a new row. Default: disabled.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -9847,17 +10055,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.trainprogram_auto_lap_on_segment = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Automatically trigger a lap when completing each workout segment/row. For ramp segments, lap is triggered only at the end of the ramp to avoid creating a lap every second.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -9874,17 +10082,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.treadmill_follow_wattage = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Treadmill only: Automatically adjusts speed to maintain consistent power output. Speed adjustments occur on incline changes and adapt to manual speed modifications.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -9909,6 +10117,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTreadmillPidHR
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.treadmill_pid_heart_zone = treadmillPidHRTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
@@ -9932,6 +10142,8 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: {
                                 settings.treadmill_pid_heart_control = treadmillPidHRControlTextField.value;
@@ -9940,17 +10152,17 @@ import AndroidStatusBar 1.0
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("QZ controls your treadmill or bike to keep you within a chosen Heart Rate Zone. The global PID HR actuator setting selects speed or inclination for treadmills; a workout interval can override it in the Workout Editor. The PID HR tile changes only the target HR zone.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -9973,6 +10185,8 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: treadmillPidHRminTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.treadmill_pid_heart_min = treadmillPidHRminTextField.value ; toast.show(qsTr("Setting saved!")); }
@@ -9999,23 +10213,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: treadmillPidHRmaxTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.treadmill_pid_heart_max = treadmillPidHRmaxTextField.value ; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Alternatively to 'PID on Heart Zone' setting you can use this couple of settings in order to specify a HR range.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -10032,17 +10248,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.trainprogram_pid_pushy = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enabling this the PID is trying to motivate yourself to always increase a little the effort trying anyway to keep you in the zone. Default: Enabled.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -10062,23 +10278,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: pidHrRecoveryZoneLimitTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.trainprogram_pid_hr_recovery_zone_limit = pidHrRecoveryZoneLimitTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Lower HR boundary (% of max HR) that defines the bottom of Zone 1 for 'Pushy' mode. Below this percentage the treadmill is at the bottom of the recovery area. Default: 60.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -10097,23 +10315,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: pidHrPushyZoneLimitTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.trainprogram_pid_hr_pushy_zone_limit = pidHrPushyZoneLimitTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Fraction of zone above the target zone where 'Pushy' mode stops pushing. 0.8 means the PID stops pushing at zone+0.8. Default: 0.8.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -10130,17 +10350,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.trainprogram_pid_ignore_inclination = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enabling this the PID will ignore the inclination changes. Default: Disabled.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -10163,23 +10383,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTrainProgramPace1Mile
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: trainProgramPace1mileTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.pacef_1mile = (((parseInt(trainProgramPace1mileTextField.text.split(":")[0]) * 3600) + (parseInt(trainProgramPace1mileTextField.text.split(":")[1]) * 60) + parseInt(trainProgramPace1mileTextField.text.split(":")[2]))) / 1.60934; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enter your 1 mile time goal, click OK. This setting will be used when you’re following a training program with the speed control. These settings should also match the Zwift app settings. More info: https://github.com/cagnulein/qdomyos-zwift/issues/609.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -10202,23 +10424,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTrainProgramPace5km
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: trainProgramPace5kmTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.pacef_5km = (((parseInt(trainProgramPace5kmTextField.text.split(":")[0]) * 3600) + (parseInt(trainProgramPace5kmTextField.text.split(":")[1]) * 60) + parseInt(trainProgramPace5kmTextField.text.split(":")[2]))) / 5; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("See 1 Mile Pace above; same except 5 km instead of 1 mile.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -10241,23 +10465,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTrainProgramPace10KM
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: trainProgramPace10kmTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.pacef_10km = (((parseInt(trainProgramPace10kmTextField.text.split(":")[0]) * 3600) + (parseInt(trainProgramPace10kmTextField.text.split(":")[1]) * 60) + parseInt(trainProgramPace10kmTextField.text.split(":")[2]))) / 10; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("See 1 Mile Pace above; same except 10 km instead of 1 mile.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -10280,23 +10506,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTrainProgramPaceHalfMarathon
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: trainProgramPaceHalfMarathonTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.pacef_halfmarathon = (((parseInt(trainProgramPaceHalfMarathonTextField.text.split(":")[0]) * 3600) + (parseInt(trainProgramPaceHalfMarathonTextField.text.split(":")[1]) * 60) + parseInt(trainProgramPaceHalfMarathonTextField.text.split(":")[2]))) / 21; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("See 1 Mile Pace above; same except half marathon distance instead of 1 mile.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -10319,23 +10547,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTrainProgramPaceMarathon
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: trainProgramPaceMarathonTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.pacef_marathon = (((parseInt(trainProgramPaceMarathonTextField.text.split(":")[0]) * 3600) + (parseInt(trainProgramPaceMarathonTextField.text.split(":")[1]) * 60) + parseInt(trainProgramPaceMarathonTextField.text.split(":")[2]))) / 42; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("See 1 Mile Pace above; same except marathon distance instead of 1 mile.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -10357,6 +10587,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTrainProgramWarmupSpeed
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: trainProgramWarmupSpeedTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.trainprogram_warmup_speed = timeToPaceSeconds(trainProgramWarmupSpeedTextField.text); toast.show(qsTr("Setting saved!")); }
@@ -10382,6 +10614,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTrainProgramCooldownSpeed
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: trainProgramCooldownSpeedTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.trainprogram_cooldown_speed = timeToPaceSeconds(trainProgramCooldownSpeedTextField.text); toast.show(qsTr("Setting saved!")); }
@@ -10407,6 +10641,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTrainProgramRestSpeed
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: trainProgramRestSpeedTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.trainprogram_rest_speed = timeToPaceSeconds(trainProgramRestSpeedTextField.text); toast.show(qsTr("Setting saved!")); }
@@ -10435,22 +10671,24 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTreadmillPaceDefault
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.pace_default = treadmillPaceDefaultTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Select the default Pace to be used when the ZWO file does not indicate a precise pace.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -10473,23 +10711,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okPidHeartZoneErgModeWattStep
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: pidHeartZoneErgModeWattStepTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.pid_heart_zone_erg_mode_watt_step = parseInt(pidHeartZoneErgModeWattStepTextField.value); toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Set the wattage step increment for ERG mode heart rate zone training. Default: 5 watts.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -10525,6 +10765,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTrainProgramRandomDuration
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: trainProgramRandomDurationTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.trainprogram_total = trainProgramRandomDurationTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -10552,6 +10794,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTrainProgramRandomPeriod
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: trainProgramRandomPeriodTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.trainprogram_period_seconds = trainProgramRandomPeriodTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -10578,6 +10822,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTrainProgramRandomSpeedMin
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: trainProgramRandomSpeedMinTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.trainprogram_speed_min = trainProgramRandomSpeedMinTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -10604,6 +10850,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTrainProgramRandomSpeedMax
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: trainProgramRandomSpeedMaxTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.trainprogram_speed_max = trainProgramRandomSpeedMaxTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -10631,6 +10879,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTrainProgramRandomInclineMin
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: trainProgramRandomInclineMinTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.trainprogram_incline_min = trainProgramRandomInclineMinTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -10657,6 +10907,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTrainProgramRandomInclineMax
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: trainProgramRandomInclineMaxTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.trainprogram_incline_max = trainProgramRandomInclineMaxTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -10683,6 +10935,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTrainProgramRandomResistanceMin
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: trainProgramRandomResistanceMinTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.trainprogram_resistance_min = trainProgramRandomResistanceMinTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -10709,23 +10963,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTrainProgramRandomResistanceMax
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: trainProgramRandomResistanceMaxTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.trainprogram_resistance_max = trainProgramRandomResistanceMaxTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn on and enter your choices for workout time (in minutes and seconds) and the maximum and minimum speed, incline (treadmill), and resistance (bike) and QZ will randomly change your speed and resistance or incline accordingly for the period of time you have selected.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
                 }
             }
@@ -10752,17 +11008,17 @@ import AndroidStatusBar 1.0
                         Layout.fillWidth: true
                         onClicked: { settings.virtual_device_force_bike = checked; window.settings_restart_to_apply = true; }
                     }
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn on to convert your treadmill output to bike output when riding on Zwift. QZ sends your treadmill metrics to Zwift over Bluetooth so that you can participate as a bike rider. Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -10780,17 +11036,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.treadmill_force_speed = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn this on to have QZ control the speed of your treadmill during, for example, Peloton classes based on the coach’s speed callouts. Your speed will be in the low, upper or average range based on your Peloton Options > Difficulty setting. Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -10808,17 +11064,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.treadmill_force_running_activity = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn this on to write treadmill FIT files as running activities even when the average speed is below 6.5 km/h. This can help Garmin calculate Training Effect for high-incline treadmill workouts. Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -10836,17 +11092,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.pause_on_start_treadmill = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn this on to have QZ go into Pause mode upon opening when using a treadmill. This is for treadmills only. Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -10864,17 +11120,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.treadmill_direct_distance = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn this on to read the distance directly from the treadmill instead of calculating it from speed. Some treadmills report distance more accurately than the speed-based calculation. Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -10892,17 +11148,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.treadmill_difficulty_gain_or_offset = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Target Speed and Target Incline tile offer a way to increase/decrease the current difficulty with the plus/minus buttons. By default, with this setting disabled, the speed and the inclination change with a 3% gain for every pressure. Switching this ON, QZ will add a 0.1 speed offset or a 0.5 incline offset instead.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -10925,23 +11181,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTreadmillSpeedStepButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: treadmillSpeedStepTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.treadmill_step_speed = (settings.miles_unit?treadmillSpeedStepTextField.value * 1.60934:treadmillSpeedStepTextField.value); toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("(Speed Tile) This controls the amount of the increase or decrease in the speed (in kph/mph) when you press the plus or minus button in the Speed Tile. Default is 0.5 kph.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
 
@@ -10966,23 +11224,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: treadmillInclinationMinTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.treadmill_incline_min = treadmillInclinationMinTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("This overrides the minimum inclination value of your treadmill (in order to reduce the inclination movement). Default is -100")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }                
 
                     RowLayout {
@@ -11005,23 +11265,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: treadmillInclinationMaxTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.treadmill_incline_max = treadmillInclinationMaxTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("This overrides the maximum inclination value of your treadmill (in order to reduce the inclination movement). Default is -100")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -11042,23 +11304,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: treadmillSpeedMaxTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.treadmill_speed_max = (settings.miles_unit?treadmillSpeedMaxTextField.value * 1.60934:treadmillSpeedMaxTextField.value); toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("This overrides the maximum speed value of your treadmill (in order to limit the max speed). Default is 100 km/h (62.1 mph)")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -11079,23 +11343,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: treadmillSpeedMinTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.treadmill_speed_min = (settings.miles_unit?treadmillSpeedMinTextField.value * 1.60934:treadmillSpeedMinTextField.value); toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("This overrides the minimum speed value of your treadmill (in order to limit the min speed). Default is 0 km/h (0 mph)")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -11118,23 +11384,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okStepGainButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: stepGainTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.step_gain = stepGainTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Multiplier applied to the step count calculated from cadence for calibration. Increase above 1.0 to count more steps, decrease below 1.0 to count fewer steps. Default is 1.0.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     NewPageElement {
@@ -11146,17 +11414,17 @@ import AndroidStatusBar 1.0
                         accordionContent: "settings-treadmill-inclination-override.qml"
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Overrides the default inclination values sent from the treadmill")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -11173,17 +11441,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.treadmill_simulate_inclination_with_speed = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("For treadmills without inclination: turning this on and QZ will transform inclination requests into speed changes.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     Label {
@@ -11207,35 +11475,37 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.ftms_treadmill = stripRssi(ftmsTreadmillTextField.value); window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("If you have a generic FTMS bike and the tiles doesn't appear on the main QZ screen, select here the Bluetooth name of your bike.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Expand the bars to the right to display the options under this setting. Select your specific model (if it is listed) and leave all other settings on default. If you encounter problems or have a question about settings for your specific equipment with QZ, click here to open a support ticket on GitHub or ask the QZ community on the QZ Facebook Group.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     AccordionElement {
@@ -11586,6 +11856,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okproformtreadmillIPButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: proformtreadmillIPTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.proformtreadmillip = proformtreadmillIPTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -11612,6 +11884,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: oknordictrack2950IPButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: nordictrack2950IPTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.nordictrack_2950_ip = nordictrack2950IPTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -11814,17 +12088,17 @@ import AndroidStatusBar 1.0
                                 onClicked: { settings.kingsmith_r2_enable_hw_buttons = checked; window.settings_restart_to_apply = true; }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Enable handling of physical Start/Pause/Stop buttons on the treadmill hardware")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
                         }
                     }
@@ -12007,6 +12281,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: domyosTreadmillButton5KmhTimeTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.domyos_treadmill_button_5kmh = domyosTreadmillButton5KmhTimeTextField.value; toast.show(qsTr("Setting saved!")); window.settings_restart_to_apply = true;}
@@ -12031,6 +12307,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: domyosTreadmillButton10KmhTimeTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.domyos_treadmill_button_10kmh = domyosTreadmillButton10KmhTimeTextField.value; toast.show(qsTr("Setting saved!")); window.settings_restart_to_apply = true;}
@@ -12055,6 +12333,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: domyosTreadmillButton16KmhTimeTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.domyos_treadmill_button_16kmh = domyosTreadmillButton16KmhTimeTextField.value; toast.show(qsTr("Setting saved!")); window.settings_restart_to_apply = true;}
@@ -12079,6 +12359,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: domyosTreadmillButton22KmhTimeTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.domyos_treadmill_button_22kmh = domyosTreadmillButton22KmhTimeTextField.value; toast.show(qsTr("Setting saved!")); window.settings_restart_to_apply = true;}
@@ -12105,22 +12387,24 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: pollDeviceTimeTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.poll_device_time = pollDeviceTimeTextField.value; toast.show(qsTr("Setting saved!")); window.settings_restart_to_apply = true;}
                                 }
                             }
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Default: 200. Change this only if you have random issues with speed or inclination (try to put 300)")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
                         }
                     }
@@ -12327,6 +12611,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okfitshowTreadmillUserIdButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: fitshowTreadmillUserIdTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.fitshow_user_id = fitshowTreadmillUserIdTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -12500,6 +12786,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okhorizonTreadmillProfile1Button
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.horizon_treadmill_profile_user1 = horizonTreadmillProfile1TextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -12523,6 +12811,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okhorizonTreadmillProfile2Button
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.horizon_treadmill_profile_user2 = horizonTreadmillProfile2TextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -12546,6 +12836,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okhorizonTreadmillProfile3Button
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.horizon_treadmill_profile_user3 = horizonTreadmillProfile3TextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -12569,6 +12861,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okhorizonTreadmillProfile4Button
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.horizon_treadmill_profile_user4 = horizonTreadmillProfile4TextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -12592,6 +12886,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okhorizonTreadmillProfile5Button
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.horizon_treadmill_profile_user5 = horizonTreadmillProfile5TextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -13050,6 +13346,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.csafe_rower = csaferowerSerialPortTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -13078,6 +13376,8 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.ftms_rower = stripRssi(ftmsRowerTextField.value); window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                         }
@@ -13089,17 +13389,17 @@ import AndroidStatusBar 1.0
                         onClicked: refresh_bluetooth_devices_clicked();
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Allows you to force QZ to connect to your FTMS Rower. If you are in doubt, leave this Disabled and send an email to the QZ support. Default is “Disabled.”")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     CheckBox {
@@ -13188,6 +13488,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: proformRowerIPTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.proform_rower_ip = proformRowerIPTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -13233,6 +13535,8 @@ import AndroidStatusBar 1.0
                             Button {
                                 id: okDomyosEllipticalRatioButton
                                 text: qsTr("OK")
+                                flat: true
+                                Material.foreground: "#B388FF"
                                 enabled: domyosEllipticalSpeedRatioTextField.valid
                                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                 onClicked: { settings.domyos_elliptical_speed_ratio = domyosEllipticalSpeedRatioTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -13277,6 +13581,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.csafe_elliptical_port = csafeellipticalSerialPortTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -13305,6 +13611,8 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.ftms_elliptical = stripRssi(ftmsEllipticalTextField.value); window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                         }
@@ -13316,17 +13624,17 @@ import AndroidStatusBar 1.0
                         onClicked: refresh_bluetooth_devices_clicked();
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Allows you to force QZ to connect to your FTMS Elliptical. If you are in doubt, leave this Disabled and send an email to the QZ support. Default is Disabled.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
                     IndicatorOnlySwitch {
                         id: gymstickGX60EllipticalDelegate
@@ -13436,6 +13744,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: proformEllipticalCompanionIPTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.proform_elliptical_ip = proformEllipticalCompanionIPTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -13553,6 +13863,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okFilterDeviceButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.filter_device = stripRssi(filterDeviceTextField.value); window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                         }
@@ -13565,17 +13877,17 @@ import AndroidStatusBar 1.0
                         onClicked: refresh_bluetooth_devices_clicked();
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Allows you to force QZ to connect to your equipment (see “Bluetooth Troubleshooting” below). Default is “Disabled.”")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -13592,17 +13904,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.confirm_stop_workout = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Shows a confirmation popup before stopping the workout from the UI.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -13626,23 +13938,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okwattOffsetButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: wattOffsetTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.watt_offset = wattOffsetTextField.value; settings.treadmillDataPoints = ""; settings.ergDataPoints = ""; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("You can increase/decrease your watt output for moving your avatar faster/slower in Zwift or other similar apps as a way of calibrating your equipment. The number you enter as an Offset adds that amount to your watts.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -13665,23 +13979,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okWattGainButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: wattGainTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.watt_gain = wattGainTextField.value; settings.treadmillDataPoints = ""; settings.ergDataPoints = ""; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("You can increase/decrease your watt output for moving your avatar faster/slower in Zwift or other similar apps as a way of calibrating your equipment. For example, to use a rower to cycle in Zwift, you could double your watt output to better match your cycling speed by entering 2. The number you enter is a multiplier applied to your actual watts.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -13703,23 +14019,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okWattMaxButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: wattMaxTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.watt_max = wattMaxTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Limits the watt output sent by QZ. Set to 0 to disable the limit. Default is 9999 W.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -13743,23 +14061,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okspeedOffsetButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: speedOffsetTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.speed_offset = speedOffsetTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("You can increase/decrease your speed for moving your avatar faster/slower in Zwift if your equipment outputs speed but not watts. The number you enter as an Offset adds that amount to your speed.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
 
@@ -13783,23 +14103,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okSpeedGainButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: speedGainTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.speed_gain = speedGainTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("You can increase/decrease your speed output for moving your avatar faster/slower in Zwift or other apps as a way of calibrating your equipment if your equipment outputs speed but not watts. For example, to use a rower to cycle in Zwift, you could double your speed output to better match your cycling speed. The number you enter is a multiplier applied to your actual speed.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -13823,23 +14145,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okcadenceOffsetButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: cadenceOffsetTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.cadence_offset = cadenceOffsetTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("You can increase/decrease your cadence output. The number you enter as an Offset adds that amount to your cadence.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -13862,23 +14186,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okCadenceGainButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: cadenceGainTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.cadence_gain = cadenceGainTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("You can increase/decrease your cadence output as a way of calibrating your equipment if your equipment outputs cadence but not watts. The number you enter is a multiplier applied to your actual cadence.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }                   
 
                     Label {
@@ -13909,6 +14235,8 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.strava_upload_mode = stravaUploadMode.value; toast.show(qsTr("Setting saved!")); }
                         }
@@ -13933,22 +14261,24 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okStravaSuffixButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.strava_suffix = stravaSuffixTextField.text; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Default is “QZ.” Please leave this set to default so that other Strava users will see the QZ; a tiny bit of advertising that helps promote the app and support its development. If you choose to remove it, please consider contributing to the developer’s Patreon or Buy Me a Coffee accounts or just subscribe to the Swag bag in the left side bar to allow me to continue developing and supporting the app.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -13965,17 +14295,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.strava_auth_external_webbrowser = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("QZ can open an external browser to authorize Strava. Default: disabled.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }                    
 
                     IndicatorOnlySwitch {
@@ -13993,17 +14323,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.strava_virtual_activity = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Append the Virtual Tag to the Strava Activity")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -14020,17 +14350,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.strava_treadmill = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Append the Treadmill Tag to the Strava Activity when you are using a treadmill. If you want to see the elevation on Strava, you need to disable this.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -14047,17 +14377,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.strava_date_prefix = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Append the Date to the Strava Activity as a prefix only for non-Peloton workout")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -14075,17 +14405,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.volume_change_gears = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Allows you to change resistance during auto-follow mode using the volume buttons of the device running QZ, Bluetooth headphones or a Bluetooth remote. Changes made using these external controls will be visible in the Gears tile. This is a VERY USEFUL feature! Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -14102,17 +14432,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.gears_volume_debouncing = checked; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Debounce the volume buttons, so you will only see 1 gear step if there are 2 or more volume near steps.  Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -14147,17 +14477,17 @@ import AndroidStatusBar 1.0
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("If the power output/watts your equipment sends to QZ is quite variable, this setting will result in smoother Power Zone graphs. This is also helpful for use with Power Meter Pedals. Uses harmonic averaging which smooths power spikes better than arithmetic averaging. If any reading is 0, power immediately becomes 0. Default is Off.\n\nIMPORTANT NOTES:\n- No Average/smooth in Hometrainer config for standard home trainers which work at 1hz (No race mode available)\n- Disable Average on 3rd party apps (Rouvy/Zwift/MyWhoosh etc) or select 1sec in the app!\n- Need to use QZ in bridge mode!\n- For Elite home trainers or those who have a race mode (10hz), if it's not sufficient for some users, using Elite/Hometrainer smoothing in addition to QZ smoothing will improve it.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -14175,17 +14505,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.instant_power_on_pause = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Enables the calculation of watts, even while in Pause mode. Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -14203,17 +14533,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.zwift_negative_inclination_x2 = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn this on if you have a bike with inclination capabilities to fix Zwift’s bug that sends half-negative downhill inclination")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -14237,23 +14567,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTreadmillInclinationOffsetButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: treadmillInclinationOffsetTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.zwift_inclination_offset = treadmillInclinationOffsetTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Inclination Offset and Gain are used to adjust the incline set by Zwift instead of, or in addition to, using the QZ Zwift Gain setting. For example, when Zwift changes the incline to 1%, you can have your treadmill change to 2%. The number you enter as an offset adds to the inclination sent from Zwift or any other 3rd party app. Default is 0.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -14276,23 +14608,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okTreadmillInclinationGainButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: treadmillInclinationGainTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.zwift_inclination_gain = treadmillInclinationGainTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("The number you enter as a Gain is a multiplier applied to the inclination sent from Zwift or any other 3rd party app. Default is 1.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -14314,23 +14648,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: minInclinationTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.min_inclination = minInclinationTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("If you don't want to go below a certain inclination value for bikes and treadmill set the min. value here. Default: -999.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -14353,23 +14689,25 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okInclinationStepButton
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: inclinationStepTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.treadmill_step_incline = inclinationStepTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("(Incline Tile) This controls the amount of the increase or decrease in the inclination when you press the plus or minus button in the Incline Tile for both treadmills and bikes. Default is 0.5.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }           
 
                     IndicatorOnlySwitch {
@@ -14386,17 +14724,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.real_inclination_to_virtual_treamill_bridge = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("By default QZ sends to the virtual Bluetooth/DIRCON bridge the current inclination of the treadmill. Enabling this, it will send instead the one wihtout considering inclination gain or offset. Default: False.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
 
@@ -14414,17 +14752,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.watt_ignore_builtin = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("This prevents your fitness device from sending its wattage calculation to QZ and defaults to QZ’s more accurate calculation.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -14441,17 +14779,17 @@ import AndroidStatusBar 1.0
                         onClicked: settings.force_resistance_instead_inclination = checked
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("For the smart trainers, use resistance instead of inclination. This should help if you don't want to have the Wahoo Climb or similar to change inclination when you change gears. Default: disabled")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }                    
 
                     RowLayout {
@@ -14472,23 +14810,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: autoLapOnDistanceTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.autolap_distance = (settings.miles_unit?autoLapOnDistanceTextField.value * 1.60934:autoLapOnDistanceTextField.value); toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("You can trigger auto laps in the FIT file based on distance. Unit: %1 Default: 0 (disabled).").arg(settings.miles_unit ? qsTr("Mi") : qsTr("KM"))
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     RowLayout {
@@ -14509,23 +14849,25 @@ import AndroidStatusBar 1.0
                         }
                         Button {
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: treadmillInclinationDelayTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.inclination_delay_seconds = treadmillInclinationDelayTextField.value; toast.show(qsTr("Setting saved!")); }
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("This slow down the inclination changes adding a delay between each change. This is not applied to all the model of treadmill/bike. Default is 0.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }                    
                 }
             }
@@ -14601,17 +14943,17 @@ import AndroidStatusBar 1.0
                                 }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("If your equipment doesn’t have Bluetooth, these settings allow you to use a cadence sensor so it will work with QZ as a bike or treadmill. Default is off.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             Label {
@@ -14637,6 +14979,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okCadenceSensorNameButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.cadence_sensor_name = stripRssi(cadenceSensorNameTextField.value); window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -14649,17 +14993,17 @@ import AndroidStatusBar 1.0
                                 onClicked: refresh_bluetooth_devices_clicked();
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Use this setting to connect QZ to your cadence sensor. Default is Disabled.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             RowLayout {
@@ -14682,23 +15026,25 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okCadenceSpeedRatio
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: cadenceSpeedRatioTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.cadence_sensor_speed_ratio = cadenceSpeedRatioTextField.value; toast.show(qsTr("Setting saved!")); }
                                 }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Wheel ratio is the multiplier used by QZ to calculate your speed based on your cadence. For example, if you enter 1 for your wheel ratio and you are riding at a cadence of 30, QZ will display your speed as 30 km/h. The default of 0.33 is correct for most bikes.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             IndicatorOnlySwitch {
@@ -14715,17 +15061,17 @@ import AndroidStatusBar 1.0
                                 onClicked: { settings.rogue_echo_bike = checked; window.settings_restart_to_apply = true; }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Enable special wattage calculation for Rogue Echo Bike: m_watt = 0.000602337 * pow(rpm, 3.11762) + 32.6404. Default is off.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             IndicatorOnlySwitch {
@@ -14742,17 +15088,17 @@ import AndroidStatusBar 1.0
                                 onClicked: { settings.cscbike_custom_resistance_power_table = checked; window.settings_restart_to_apply = true; }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Enable a custom linear resistance/watt table for CSC bikes. Joroto bikes keep using their dedicated resistance power profile. Resistance is clamped using the existing Min. Resistance and Max. Resistance settings.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             RowLayout {
@@ -14773,6 +15119,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: cscBikeCustomResistanceLevel1TextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.cscbike_custom_resistance_level_1 = cscBikeCustomResistanceLevel1TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -14797,6 +15145,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: cscBikeCustomWatt1TextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.cscbike_custom_watt_1 = cscBikeCustomWatt1TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -14821,6 +15171,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: cscBikeCustomResistanceLevel2TextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.cscbike_custom_resistance_level_2 = cscBikeCustomResistanceLevel2TextField.value; toast.show(qsTr("Setting saved!")); }
@@ -14845,23 +15197,25 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: cscBikeCustomWatt2TextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.cscbike_custom_watt_2 = cscBikeCustomWatt2TextField.value; toast.show(qsTr("Setting saved!")); }
                                 }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("QZ will build a linear equation from the two resistance/watt points and clamp the effective resistance using the existing Min. Resistance and Max. Resistance settings.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
                         }
                     }
@@ -14889,17 +15243,17 @@ import AndroidStatusBar 1.0
                                 onClicked: { settings.power_sensor_as_bike = checked; window.settings_restart_to_apply = true; }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("If your bike doesn’t have Bluetooth, this setting allows you to use a power meter pedal sensor so your bike will work with QZ. Default is off.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             IndicatorOnlySwitch {
@@ -14917,17 +15271,17 @@ import AndroidStatusBar 1.0
                                 onClicked: { settings.power_sensor_as_treadmill = checked; window.settings_restart_to_apply = true; }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("If your treadmill doesn’t have Bluetooth, this setting allows you to use a Stryde sensor (or similar) so your treadmill will work with QZ. Default is off.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             IndicatorOnlySwitch {
@@ -14945,17 +15299,17 @@ import AndroidStatusBar 1.0
                                 onClicked: settings.powr_sensor_running_cadence_double = checked
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Some power sensors send cadence divided by 2. This setting will fix this behavior.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             IndicatorOnlySwitch {
@@ -14973,17 +15327,17 @@ import AndroidStatusBar 1.0
                                 onClicked: settings.powr_sensor_running_cadence_half_on_strava = checked
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Divide the cadence sent to Strava by 2.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             IndicatorOnlySwitch {
@@ -15000,17 +15354,17 @@ import AndroidStatusBar 1.0
                                 onClicked: settings.stryd_speed_instead_treadmill = checked
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("If you have a Bluetooth treadmill and also a Stryd device connected to QZ and you want to use the speed from the stryd instead of the speed of the treadmill, enable this. Default: disabled.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             IndicatorOnlySwitch {
@@ -15027,17 +15381,17 @@ import AndroidStatusBar 1.0
                                 onClicked: settings.treadmill_runn_closed_loop = checked
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Experimental: gradually correct QZ-controlled treadmill speed using Runn/Stryd feedback, when the driver provides independent machine speed measurements. Requires 'Use speed from the power sensor'. Disabled by default.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             Label {
@@ -15058,23 +15412,25 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: powerSensorSpeedCorrectionThresholdTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.power_sensor_speed_correction_threshold = powerSensorSpeedCorrectionThresholdTextField.value; toast.show(qsTr("Setting saved!")); }
                                 }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Maximum allowed difference between power sensor speed and treadmill speed before QZ stops applying the relative correction. Default: 20%.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             IndicatorOnlySwitch {
@@ -15091,17 +15447,17 @@ import AndroidStatusBar 1.0
                                 onClicked: settings.stryd_inclination_instead_treadmill = checked
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("If you have a Bluetooth treadmill and also a Runn device connected to QZ and you want to use the inclination from the RUNN instead of the inclination of the treadmill, enable this. Default: disabled.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             IndicatorOnlySwitch {
@@ -15118,17 +15474,17 @@ import AndroidStatusBar 1.0
                                 onClicked: settings.power_sensor_cadence_instead_treadmill = checked
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("If you have a Bluetooth treadmill and also a power sensor (like Stryd) connected to QZ and you want to use the cadence from the power sensor instead of the cadence of the treadmill, enable this. This is useful when the treadmill cadence sensor is unreliable at low speeds (walking/jogging). Default: disabled.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             IndicatorOnlySwitch {
@@ -15145,17 +15501,17 @@ import AndroidStatusBar 1.0
                                 onClicked: settings.stryd_add_inclination_gain = checked
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("If you have a Bluetooth treadmill and also a Stryd device connected to QZ, by default Stryd can't get the inclination from the treadmill. Enabling this and QZ will add an inclination gain to the power read from the Stryd. Default: disabled.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             Label {
@@ -15175,6 +15531,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: powerSensorSpeedInclinationCoeffATextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.power_sensor_speed_inclination_coeff_a = powerSensorSpeedInclinationCoeffATextField.value; toast.show(qsTr("Setting saved!")); }
@@ -15198,23 +15556,25 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: powerSensorSpeedInclinationCoeffBTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.power_sensor_speed_inclination_coeff_b = powerSensorSpeedInclinationCoeffBTextField.value; toast.show(qsTr("Setting saved!")); }
                                 }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Custom coefficients for power sensor inclination calculation using formula: vwatts = (A + B × speed) × inclination.\n\nFor Stryd sensors use: A = -0.96, B = 1.33\n\nExamples with these values:\n• 8 km/h, 10% incline: (-0.96 + 1.33×8) × 10 = 97W added\n• 11 km/h, 10% incline: (-0.96 + 1.33×11) × 10 = 137W added\n\nIf both A and B are 0, QZ will use the default formula: 9.8 × weight × (inclination/100).\n\nDefault: A = -0.96, B = 1.33")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             Label {
@@ -15240,6 +15600,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okPowerSensorNameButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.power_sensor_name = stripRssi(powerSensorNameTextField.value); settings.treadmillDataPoints = ""; settings.ergDataPoints = ""; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -15252,17 +15614,17 @@ import AndroidStatusBar 1.0
                                 onClicked: refresh_bluetooth_devices_clicked();
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Leave on Disabled or select from list of found Bluetooth devices.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
                         }
                     }
@@ -15306,6 +15668,8 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okEliteRizerNameButton
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.elite_rizer_name = stripRssi(eliteRizerNameTextField.value); window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                                         }
@@ -15337,6 +15701,8 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okEliteRizerGainButton
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: eliteRizerGainTextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.elite_rizer_gain = eliteRizerGainTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -15375,6 +15741,8 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okEliteSterzoSmartNameButton
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.elite_sterzo_smart_name = stripRssi(eliteSterzoSmartNameTextField.value); window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                                         }
@@ -15422,6 +15790,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okFTMSAccessoryNameButton
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.ftms_accessory_name = stripRssi(ftmsAccessoryNameTextField.value); window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -15469,6 +15839,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okSS2kShiftStep
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: ss2kShiftStepTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.ss2k_shift_step = ss2kShiftStepTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -15494,6 +15866,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okSS2kMaxResistance
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: ss2kMaxResistanceTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.ss2k_max_resistance = ss2kMaxResistanceTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -15519,6 +15893,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okSS2kMinResistance
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: ss2kMinResistanceTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.ss2k_min_resistance = ss2kMinResistanceTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -15553,6 +15929,8 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okSS2kResistanceSample1
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: ss2kResistanceSample1TextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.ss2k_resistance_sample_1 = ss2kResistanceSample1TextField.value; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -15577,6 +15955,8 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okSS2kShiftStepSample1
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: ss2kShiftStepSample1TextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.ss2k_shift_step_sample_1 = ss2kShiftStepSample1TextField.value; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -15602,6 +15982,8 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okSS2kResistanceSample2
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: ss2kResistanceSample2TextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.ss2k_resistance_sample_2 = ss2kResistanceSample2TextField.value; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -15626,6 +16008,8 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okSS2kShiftStepSample2
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: ss2kShiftStepSample2TextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.ss2k_shift_step_sample_2 = ss2kShiftStepSample2TextField.value; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -15651,6 +16035,8 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okSS2kResistanceSample3
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: ss2kResistanceSample3TextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.ss2k_resistance_sample_3 = ss2kResistanceSample3TextField.value; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -15675,6 +16061,8 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okSS2kShiftStepSample3
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: ss2kShiftStepSample3TextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.ss2k_shift_step_sample_3 = ss2kShiftStepSample3TextField.value; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -15700,6 +16088,8 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okSS2kResistanceSample4
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: ss2kResistanceSample4TextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.ss2k_resistance_sample_4 = ss2kResistanceSample4TextField.value; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -15724,6 +16114,8 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okSS2kShiftStepSample4
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: ss2kShiftStepSample4TextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.ss2k_shift_step_sample_4 = ss2kShiftStepSample4TextField.value; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -15780,6 +16172,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okFitmetriaFanFitModeTextField
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.fitmetria_fanfit_mode = fitmetriaFanFitModeTextField.value; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -15806,6 +16200,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okFitmetriaFanFitMin
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: fitmetriaFanFitMinTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.fitmetria_fanfit_min = fitmetriaFanFitMinTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -15833,6 +16229,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     id: okFitmetriaFanFitMax
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: fitmetriaFanFitMaxTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.fitmetria_fanfit_max = fitmetriaFanFitMaxTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -15883,6 +16281,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.fitmetria_fanfit_mode = headWindModeTextField.value; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -15907,6 +16307,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: headWindMinTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.fitmetria_fanfit_min = headWindMinTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -15932,6 +16334,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: headWindMaxTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.fitmetria_fanfit_max = headWindMaxTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -15982,6 +16386,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.fitmetria_fanfit_mode = eliteAriaModeTextField.value; toast.show(qsTr("Setting saved!")); }
                                 }
@@ -16006,6 +16412,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: eliteAriaMinTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.fitmetria_fanfit_min = eliteAriaMinTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -16031,6 +16439,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: eliteAriaMaxTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.fitmetria_fanfit_max = eliteAriaMaxTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -16062,17 +16472,17 @@ import AndroidStatusBar 1.0
                                 onClicked: { settings.sram_axs_controller = checked; window.settings_restart_to_apply = true; }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Use it to change the gears on QZ!")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
                         }
                     }*/
@@ -16099,17 +16509,17 @@ import AndroidStatusBar 1.0
                                 onClicked: { settings.thinkrider_controller = checked; window.settings_restart_to_apply = true; }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Thinkrider VS200 remote controller. Use it to change gears on QZ!")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
                         }
                     }
@@ -16136,17 +16546,17 @@ import AndroidStatusBar 1.0
                                 onClicked: { settings.cycplus_bc2_controller = checked; window.settings_restart_to_apply = true; }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("CYCPLUS BC2 virtual shifter. Use it to change gears on QZ!")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
                         }
                     }
@@ -16173,17 +16583,17 @@ import AndroidStatusBar 1.0
                                 onClicked: { settings.zwift_click = checked; window.settings_restart_to_apply = true; }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Use it to change the gears on QZ!")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             IndicatorOnlySwitch {
@@ -16200,17 +16610,17 @@ import AndroidStatusBar 1.0
                                 onClicked: { settings.zwift_play = checked; window.settings_restart_to_apply = true; }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Also for Elite Square. Use it to change the gears on QZ!")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             IndicatorOnlySwitch {
@@ -16227,17 +16637,17 @@ import AndroidStatusBar 1.0
                                 onClicked: { settings.zwift_play_vibration = checked; }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Enable vibration feedback on Zwift Play controllers when changing gears. Default: enabled.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }                            
 
                             IndicatorOnlySwitch {
@@ -16254,17 +16664,17 @@ import AndroidStatusBar 1.0
                                 onClicked: { settings.gears_volume_debouncing = checked; }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Debounce the buttons, so you will only see 1 gear step even if you are keep pressing the buttons.  Default is off.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             IndicatorOnlySwitch {
@@ -16281,17 +16691,17 @@ import AndroidStatusBar 1.0
                                 onClicked: { settings.zwiftplay_swap = checked; }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("You can swap the left to the right controller and viceversa.  Default is off.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             IndicatorOnlySwitch {
@@ -16308,17 +16718,17 @@ import AndroidStatusBar 1.0
                                 onClicked: { settings.gears_zwift_ratio = checked; }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Use the zwift gears table instead of the QZ classic gears algorithm.  Default is off.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             Label {
@@ -16329,17 +16739,17 @@ import AndroidStatusBar 1.0
                                 Layout.topMargin: 20
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Assign each physical button to Gear Up, Gear Down or Disabled. Applies before the Swap sides option above.")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             RowLayout {
@@ -16458,22 +16868,24 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: zwiftDevPollTimeTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.poll_device_time = zwiftDevPollTimeTextField.value; toast.show(qsTr("Setting saved!")); window.settings_restart_to_apply = true;}
                                 }
                             }
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Default: 200ms. Lower it if you want to improve the gear reactivity. Warning: lowering this value will cause more power used on the QZ device")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
                         }
                     }                    
@@ -16522,6 +16934,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okMapsType
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: { settings.maps_type = mapsTypeTextField.displayText; toast.show(qsTr("Setting saved!")); }
                         }
@@ -16576,6 +16990,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: okVideoWindow
                             text: qsTr("OK")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             enabled: videoWindowTextField.valid
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                             onClicked: settings.video_playback_window_s = videoWindowTextField.value
@@ -16611,17 +17027,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.gym_mode = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Useful in gyms with multiple similar machines. When enabled, QZ scans nearby equipment at startup and asks you which trainer to use before opening any Bluetooth connection.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -16639,17 +17055,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.bluetooth_relaxed = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Leave this setting off unless the Support staff asks you to turn it on during troubleshooting. Can improve the Android Bluetooth connection to Zwift. Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -16667,17 +17083,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.bluetooth_30m_hangs = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Same as “Relaxed Bluetooth for mad devices”. Leave off unless the Support staff asks you to turn it on. Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -16695,17 +17111,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.battery_service = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Leave this off unless the Support staff asks you to turn it on. Enables a new Bluetooth service, indicating the battery level of your device. Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
         /*
                     IndicatorOnlySwitch {
@@ -16750,17 +17166,17 @@ import AndroidStatusBar 1.0
                                         onClicked: { settings.virtual_device_onlyheart = checked; window.settings_restart_to_apply = true; }
                                     }
 
-                                    Label {
+                                    SettingHelp {
                                         text: qsTr("Forces QZ to communicate ONLY the Heart Rate metric to third-party apps. Default is off.")
-                                        font.bold: true
-                                        font.italic: true
+                                        font.bold: false
+                                        font.italic: false
                                         font.pixelSize: Qt.application.font.pixelSize - 2
                                         textFormat: Text.PlainText
                                         wrapMode: Text.WordWrap
                                         verticalAlignment: Text.AlignVCenter
                                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                         Layout.fillWidth: true
-                                        color: Material.color(Material.Lime)
+                                        color: "#9a9aa8"
                                     }
 
                                     IndicatorOnlySwitch {
@@ -16778,17 +17194,17 @@ import AndroidStatusBar 1.0
                                         onClicked: { settings.virtual_device_echelon = checked; window.settings_restart_to_apply = true; }
                                     }
 
-                                    Label {
+                                    SettingHelp {
                                         text: qsTr("Enables QZ to communicate with the Echelon app. This setting can only be used with iOS running QZ and iOS running the Echelon app. Default is off.")
-                                        font.bold: true
-                                        font.italic: true
+                                        font.bold: false
+                                        font.italic: false
                                         font.pixelSize: Qt.application.font.pixelSize - 2
                                         textFormat: Text.PlainText
                                         wrapMode: Text.WordWrap
                                         verticalAlignment: Text.AlignVCenter
                                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                         Layout.fillWidth: true
-                                        color: Material.color(Material.Lime)
+                                        color: "#9a9aa8"
                                     }
 
                                     IndicatorOnlySwitch {
@@ -16806,17 +17222,17 @@ import AndroidStatusBar 1.0
                                         onClicked: { settings.virtual_device_rower = checked; window.settings_restart_to_apply = true; }
                                     }
 
-                                    Label {
+                                    SettingHelp {
                                         text: qsTr("Enables QZ to send a rower Bluetooth profile instead of a bike profile to third party apps that support rowing (examples: Kinomap and BitGym). This should be off for Zwift. Default is off.")
-                                        font.bold: true
-                                        font.italic: true
+                                        font.bold: false
+                                        font.italic: false
                                         font.pixelSize: Qt.application.font.pixelSize - 2
                                         textFormat: Text.PlainText
                                         wrapMode: Text.WordWrap
                                         verticalAlignment: Text.AlignVCenter
                                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                         Layout.fillWidth: true
-                                        color: Material.color(Material.Lime)
+                                        color: "#9a9aa8"
                                     }
 
                                     IndicatorOnlySwitch {
@@ -16835,10 +17251,10 @@ import AndroidStatusBar 1.0
                                         onClicked: { settings.virtual_device_rower_pm5 = checked; window.settings_restart_to_apply = true; }
                                     }
 
-                                    Label {
+                                    SettingHelp {
                                         text: qsTr("When enabled, the virtual rower will use the Concept2 PM5 protocol instead of FTMS. This provides compatibility with apps like Mywhoosh that only support PM5 rowers. Default is off.")
-                                        font.bold: true
-                                        font.italic: true
+                                        font.bold: false
+                                        font.italic: false
                                         font.pixelSize: Qt.application.font.pixelSize - 2
                                         textFormat: Text.PlainText
                                         wrapMode: Text.WordWrap
@@ -16846,7 +17262,7 @@ import AndroidStatusBar 1.0
                                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                         Layout.fillWidth: true
                                         visible: settings.virtual_device_rower
-                                        color: Material.color(Material.Lime)
+                                        color: "#9a9aa8"
                                     }
 
                                     IndicatorOnlySwitch {
@@ -16864,17 +17280,17 @@ import AndroidStatusBar 1.0
                                         onClicked: { settings.virtual_device_force_treadmill = checked; window.settings_restart_to_apply = true; }
                                     }
 
-                                    Label {
+                                    SettingHelp {
                                         text: qsTr("When enabled, forces QZ to impersonate a virtual treadmill regardless of the original device type. This allows any device (bike, rower, elliptical, etc.) to appear as a treadmill to third party apps. Default is off.")
-                                        font.bold: true
-                                        font.italic: true
+                                        font.bold: false
+                                        font.italic: false
                                         font.pixelSize: Qt.application.font.pixelSize - 2
                                         textFormat: Text.PlainText
                                         wrapMode: Text.WordWrap
                                         verticalAlignment: Text.AlignVCenter
                                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                         Layout.fillWidth: true
-                                        color: Material.color(Material.Lime)
+                                        color: "#9a9aa8"
                                     }
 
                                     IndicatorOnlySwitch {
@@ -16892,17 +17308,17 @@ import AndroidStatusBar 1.0
                                         onClicked: settings.virtualbike_forceresistance = checked
                                     }
 
-                                    Label {
+                                    SettingHelp {
                                         text: qsTr("Enables third-party apps to change the resistance of your equipment. Default is on.")
-                                        font.bold: true
-                                        font.italic: true
+                                        font.bold: false
+                                        font.italic: false
                                         font.pixelSize: Qt.application.font.pixelSize - 2
                                         textFormat: Text.PlainText
                                         wrapMode: Text.WordWrap
                                         verticalAlignment: Text.AlignVCenter
                                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                         Layout.fillWidth: true
-                                        color: Material.color(Material.Lime)
+                                        color: "#9a9aa8"
                                     }
 
 
@@ -16921,17 +17337,17 @@ import AndroidStatusBar 1.0
                                         onClicked: { settings.bike_power_sensor = checked; window.settings_restart_to_apply = true; }
                                     }
 
-                                    Label {
+                                    SettingHelp {
                                         text: qsTr("This changes the virtual Bluetooth bridge from the standard FTMS to the Power Sensor interface. Default is off.")
-                                        font.bold: true
-                                        font.italic: true
+                                        font.bold: false
+                                        font.italic: false
                                         font.pixelSize: Qt.application.font.pixelSize - 2
                                         textFormat: Text.PlainText
                                         wrapMode: Text.WordWrap
                                         verticalAlignment: Text.AlignVCenter
                                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                         Layout.fillWidth: true
-                                        color: Material.color(Material.Lime)
+                                        color: "#9a9aa8"
                                     }
 
                                     IndicatorOnlySwitch {
@@ -16949,17 +17365,17 @@ import AndroidStatusBar 1.0
                                         onClicked: { settings.virtual_device_ifit = checked; window.settings_restart_to_apply = true; }
                                     }
 
-                                    Label {
+                                    SettingHelp {
                                         text: qsTr("Enables a virtual Bluetooth bridge to the iFit App. This setting requires that at least one device be Android. For example, this setting does NOT work with QZ on iOS and iFit to iOS, but DOES work with QZ on iOS and iFit to Android. On Android remember to rename your device into I_EL into the android settings and reboot your device.")
-                                        font.bold: true
-                                        font.italic: true
+                                        font.bold: false
+                                        font.italic: false
                                         font.pixelSize: Qt.application.font.pixelSize - 2
                                         textFormat: Text.PlainText
                                         wrapMode: Text.WordWrap
                                         verticalAlignment: Text.AlignVCenter
                                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                         Layout.fillWidth: true
-                                        color: Material.color(Material.Lime)
+                                        color: "#9a9aa8"
                                     }
 
                                     SwitchDelegate {
@@ -16976,17 +17392,17 @@ import AndroidStatusBar 1.0
                                         onClicked: { settings.virtual_device_tacx = checked; window.settings_restart_to_apply = true; }
                                     }
 
-                                    Label {
+                                    SettingHelp {
                                         text: qsTr("Enables a virtual bluetooth bridge to the Tacx App.")
-                                        font.bold: true
-                                        font.italic: true
+                                        font.bold: false
+                                        font.italic: false
                                         font.pixelSize: 9
                                         textFormat: Text.PlainText
                                         wrapMode: Text.WordWrap
                                         verticalAlignment: Text.AlignVCenter
                                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                         Layout.fillWidth: true
-                                        color: Material.color(Material.Lime)
+                                        color: "#9a9aa8"
                                     }
                                 }
                             }
@@ -17013,17 +17429,17 @@ import AndroidStatusBar 1.0
                                         onClicked: { settings.wahoo_rgt_dircon = checked; window.settings_restart_to_apply = true; }
                                     }
 
-                                    Label {
+                                    SettingHelp {
                                         text: qsTr("Enables the compatibility of the Wahoo KICKR protocol to MyWhoosh app. Leave the MyWhoosh compatibility disabled in order to use Zwift.")
-                                        font.bold: true
-                                        font.italic: true
+                                        font.bold: false
+                                        font.italic: false
                                         font.pixelSize: Qt.application.font.pixelSize - 2
                                         textFormat: Text.PlainText
                                         wrapMode: Text.WordWrap
                                         verticalAlignment: Text.AlignVCenter
                                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                         Layout.fillWidth: true
-                                        color: Material.color(Material.Lime)
+                                        color: "#9a9aa8"
                                     }
 
                                     RowLayout {
@@ -17045,23 +17461,25 @@ import AndroidStatusBar 1.0
                                         }
                                         Button {
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: dirconIdTextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.dircon_id = dirconIdTextField.value; toast.show(qsTr("Setting saved!")); window.settings_restart_to_apply = true; }
                                         }
                                     }
 
-                                    Label {
+                                    SettingHelp {
                                         text: qsTr("If you have multiple QZ instances, you can change the id of the virtual wahoo device. Default: 0")
-                                        font.bold: true
-                                        font.italic: true
+                                        font.bold: false
+                                        font.italic: false
                                         font.pixelSize: Qt.application.font.pixelSize - 2
                                         textFormat: Text.PlainText
                                         wrapMode: Text.WordWrap
                                         verticalAlignment: Text.AlignVCenter
                                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                         Layout.fillWidth: true
-                                        color: Material.color(Material.Lime)
+                                        color: "#9a9aa8"
                                     }
 
                                     RowLayout {
@@ -17086,6 +17504,8 @@ import AndroidStatusBar 1.0
                                         Button {
                                             id: okDirconServerPort
                                             text: qsTr("OK")
+                                            flat: true
+                                            Material.foreground: "#B388FF"
                                             enabled: dirconServerPortTextField.valid
                                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                             onClicked: { settings.dircon_server_base_port = dirconServerPortTextField.value; toast.show(qsTr("Setting saved!")); }
@@ -17122,22 +17542,24 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.mqtt_host = mqttHostTextField.text; toast.show(qsTr("Setting saved!")); }
                                 }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Enter the MQTT broker hostname or IP address")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             RowLayout {
@@ -17161,23 +17583,25 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: mqttPortTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.mqtt_port = mqttPortTextField.value; toast.show(qsTr("Setting saved!")); }
                                 }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Enter the MQTT broker port (default: 1883)")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             // Username field
@@ -17198,22 +17622,24 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.mqtt_username = mqttUsernameTextField.text; toast.show(qsTr("Setting saved!")); }
                                 }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Enter the MQTT broker username (if required)")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             // Password field
@@ -17235,22 +17661,24 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.mqtt_password = mqttPasswordTextField.text; toast.show(qsTr("Setting saved!")); }
                                 }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Enter the MQTT broker password (if required)")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
 
                             // Device ID field
@@ -17271,22 +17699,24 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.mqtt_deviceid = mqttDeviceIdTextField.text; toast.show(qsTr("Setting saved!")); }
                                 }
                             }
 
-                            Label {
+                            SettingHelp {
                                 text: qsTr("Enter a unique device identifier for MQTT client")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                 Layout.fillWidth: true
-                                color: Material.color(Material.Lime)
+                                color: "#9a9aa8"
                             }
                         }
                     }               
@@ -17319,6 +17749,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: oscIPTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.osc_ip = oscIPTextField.text; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -17347,6 +17779,8 @@ import AndroidStatusBar 1.0
                                 }
                                 Button {
                                     text: qsTr("OK")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     enabled: oscPortTextField.valid
                                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                     onClicked: { settings.osc_port = oscPortTextField.value; window.settings_restart_to_apply = true; toast.show(qsTr("Setting saved!")); }
@@ -17369,17 +17803,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.race_mode = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("By default QZ sends the info to Zwift or any other 3rd party apps with a 1000ms interval rate. Enabling the Race Mode setting will cause QZ to send them to 100ms (10hz). Of course the bottleneck will be always your bike/treadmill.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -17397,17 +17831,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.run_cadence_sensor = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Forces the virtual Bluetooth bridge to send only the cadence information instead of the full FTMS metrics. Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     AccordionElement {
@@ -17470,17 +17904,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.android_wakelock = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Forces Android devices to remain awake while QZ is running. Default is on.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -17498,17 +17932,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.ios_peloton_workaround = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("This MUST be always ON on an iOS device. Turning it OFF will lead to unexpected crashes of QZ. Default is on.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -17525,17 +17959,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.ios_btdevice_native = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("If you are experiencing crash on iOS midride, try to turn this on. Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -17553,17 +17987,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.applewatch_fakedevice = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Simulates QZ being connected to a bike. When this is turned on QZ will calculate KCal based on your heart rate. Examples of when to use this setting: ○ To capture Peloton class data for classes without connected equipment (e.g., a strength or yoga workout).. ○ To arrange tiles on the QZ dashboard without connecting to your equipment. ○ To use the QZ Apple Watch app without connecting to your equipment.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -17581,17 +18015,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.fakedevice_treadmill = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Same as Fake Device but instead of simulating a bike it simulates a treadmill.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -17609,17 +18043,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.applewatch_as_treadmill_speed = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("iOS only. For Fake Treadmill mode: when no physical treadmill is connected, derives Speed from Apple Watch step cadence using the Wheel Ratio under Accessories > Cadence Sensor Options. The cycling default is far too high for running - try 0.04-0.15 depending on pace, from walking to running, and tune to taste. Useful with apps like Kinomap or Zwift. Default is off.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -17637,17 +18071,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.fakedevice_elliptical = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Same as Fake Device but instead of simulating a bike it simulates an elliptical.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -17664,17 +18098,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.fakedevice_rower = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Same as Fake Device but instead of simulating a bike it simulates a rower.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -17692,17 +18126,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.ios_cache_heart_device = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Leave this on unless you have issues connecting your Bluetooth HRM to QZ. If turning this off does not solve the connection issue, open a support ticket on GitHub. Default is on.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -17721,17 +18155,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.android_notification_v2 = checked; rootItem.android_notification_apply(checked); }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Android Only: enable this to force Android to don't kill QZ when it's running on background")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     IndicatorOnlySwitch {
@@ -17748,17 +18182,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.android_documents_folder = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Android Only: force QZ to use the /Documents/QZ folder for debug log and fit files")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }                    
 
                     IndicatorOnlySwitch {
@@ -17776,17 +18210,17 @@ import AndroidStatusBar 1.0
                         onClicked: { settings.log_debug = checked; window.settings_restart_to_apply = true; }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Turn this on to save a debug log to your device for use when requesting help with a bug.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
 
                     GridLayout {
@@ -17814,17 +18248,17 @@ import AndroidStatusBar 1.0
                         }
                     }
 
-                    Label {
+                    SettingHelp {
                         text: qsTr("Clears all the QZ logs, QZ .fit files and QZ images (these files are saved by QZ for every session) from your device while maintaining your saved Profiles and Settings.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Lime)
+                        color: "#9a9aa8"
                     }
                 }
             }

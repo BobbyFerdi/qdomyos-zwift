@@ -117,13 +117,13 @@ ScrollView {
             onClicked: settings.shortcuts_enabled = checked
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Click on a field and press a key to assign a shortcut. Press Backspace to clear. Preset fields follow the same left-to-right order as the preset buttons.")
-            font.italic: true
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         component ShortcutField : TextField {

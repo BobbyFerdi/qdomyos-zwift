@@ -421,23 +421,25 @@ ScrollView {
                 Button {
                     id: okSpeedOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_speed_order = speedOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Speed in kilometers per hour. (To set your speed units to miles, go to Settings > General Options > Use Miles unit in UI).")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -467,6 +469,8 @@ ScrollView {
                 Button {
                     id: okinclinationOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_inclination_order = inclinationOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
@@ -494,17 +498,17 @@ ScrollView {
                     onClicked: settings.tile_cadence_color_enabled = checked
                 }
 
-                Label {
+                SettingHelp {
                     text: qsTr("Bike pedal cadence changes color to indicate how your cadence compares to the cadence called out in Peloton classes. The tile displays the following colors: white if there is no target cadence in the program, red if your cadence is lower than the target, green if your cadence matches the target, and orange if your cadence is higher than the target.")
-                    font.bold: true
-                    font.italic: true
+                    font.bold: false
+                    font.italic: false
                     font.pixelSize: Qt.application.font.pixelSize - 2
                     textFormat: Text.PlainText
                     wrapMode: Text.WordWrap
                     verticalAlignment: Text.AlignVCenter
                     Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                     Layout.fillWidth: true
-                    color: Material.color(Material.Lime)
+                    color: "#9a9aa8"
                 }
 
                 RowLayout {
@@ -529,6 +533,8 @@ ScrollView {
                     Button {
                         id: okcadenceOrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_cadence_order = cadenceOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -536,17 +542,17 @@ ScrollView {
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Bike pedal cadence in rotations per minute (RPM) or Treadmill cadence if a shoe-mounted cadence sensor or Apple Watch QZ app is used.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -576,6 +582,8 @@ ScrollView {
                 Button {
                     id: okelevationOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_elevation_order = elevationOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
@@ -607,23 +615,25 @@ ScrollView {
                 }
                 Button {
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_negative_inclination_order = negativeInclinationOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays the total negative elevation gain (descent) in meters or feet accumulated during the workout.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -653,23 +663,25 @@ ScrollView {
                 Button {
                     id: okcaloriesOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_calories_order = caloriesOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Estimated calories burned during session, calculated on weight, age, and watts.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -699,23 +711,25 @@ ScrollView {
                 Button {
                     id: okodometerOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_odometer_order = odometerOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Estimated distance traveled during the session.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -761,6 +775,8 @@ ScrollView {
                     Button {
                         id: okpaceOrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_pace_order = paceOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -795,6 +811,8 @@ ScrollView {
                 Button {
                     id: okavgpaceOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_avg_pace_order = avgpaceOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
@@ -834,30 +852,30 @@ ScrollView {
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Current pace per mile or kilometer (Treadmill, Elliptical and Rower)")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Flat-equivalent pace computed from treadmill incline using the Minetti cost model.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -887,23 +905,25 @@ ScrollView {
                 Button {
                     id: okresistanceOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_resistance_order = resistanceOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays your bike’s resistance. The +/- buttons can be used to change resistance, if your bike is compatible.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -949,6 +969,8 @@ ScrollView {
                     Button {
                         id: okwattOrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_watt_order = wattOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -956,17 +978,17 @@ ScrollView {
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays the watts generated by your current effort. Watt is also referred to as output (for example, in Peloton). If your equipment does not communicate watts, QZ will calculate watts using resistance and cadence.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -996,23 +1018,25 @@ ScrollView {
                 Button {
                     id: okweightLossOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_weight_loss_order = weightLossOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Estimation of weight loss during the session.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
 
@@ -1043,23 +1067,25 @@ ScrollView {
                 Button {
                     id: okavgwattOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_avgwatt_order = avgwattOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Average watts produced for the session.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
 
@@ -1090,6 +1116,8 @@ ScrollView {
 					 Button {
 					     id: okavgwattLapOrderButton
 						  text: qsTr("OK")
+						  flat: true
+						  Material.foreground: "#B388FF"
 						  Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 						  onClicked: {settings.tile_avg_watt_lap_order = avgwattLapOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
 						}
@@ -1123,23 +1151,25 @@ ScrollView {
                 Button {
                     id: okftpOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_ftp_order = ftpOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Percentage of current FTP and current FTP zone.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -1163,17 +1193,17 @@ ScrollView {
                     onClicked: settings.tile_heart_show_as_percent = checked
                 }
 
-                Label {
+                SettingHelp {
                     text: qsTr("When enabled, displays heart rate as percentage of maximum heart rate (%FC Max) instead of BPM. AVG and MAX values will also show percentages.")
-                    font.bold: true
-                    font.italic: true
+                    font.bold: false
+                    font.italic: false
                     font.pixelSize: Qt.application.font.pixelSize - 2
                     textFormat: Text.PlainText
                     wrapMode: Text.WordWrap
                     verticalAlignment: Text.AlignVCenter
                     Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                     Layout.fillWidth: true
-                    color: Material.color(Material.Lime)
+                    color: "#9a9aa8"
                 }
 
                 RowLayout {
@@ -1198,6 +1228,8 @@ ScrollView {
                     Button {
                         id: okheartrateOrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_heart_order = heartrateOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -1232,23 +1264,25 @@ ScrollView {
                 Button {
                     id: okfanOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_fan_order = fanOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Built-in treadmill fan speed (Treadmill only)")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -1278,23 +1312,25 @@ ScrollView {
                 Button {
                     id: okjoulsOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_jouls_order = joulsOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Cumulative power produced during the session in kilojoules.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -1324,23 +1360,25 @@ ScrollView {
                 Button {
                     id: okelapsedOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_elapsed_order = elapsedOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Total time from start of the session.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -1370,23 +1408,25 @@ ScrollView {
                 Button {
                     id: okmovingTimeOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_moving_time_order = movingTimeOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Total time moving during the session.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -1416,23 +1456,25 @@ ScrollView {
                 Button {
                     id: okpelotonOffsetOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_peloton_offset_order = pelotonOffsetOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Allows you to sync resistance and cadence target changes with the Peloton coach’s callouts. If the targets are changing in QZ after the coach’s callouts, use the ‘+’ button to add seconds (essentially speeding QZ up). Use the ‘-’ button to slow QZ down. Use this tile in conjunction with the Remaining Time/Row tile (see below).")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -1462,23 +1504,25 @@ ScrollView {
                 Button {
                     id: okPelotonRemainingOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_peloton_remaining_order = pelotonRemainingOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays time remaining in Peloton class.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         /*
@@ -1508,6 +1552,8 @@ ScrollView {
                 Button {
                     id: okpelotonDifficultyOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_peloton_difficulty_order = pelotonDifficultyOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
@@ -1541,6 +1587,8 @@ ScrollView {
                 Button {
                     id: oklapElapsedOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_lapelapsed_order = lapElapsedOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
@@ -1589,6 +1637,8 @@ ScrollView {
                     Button {
                         id: okpeloton_resistanceOrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_peloton_resistance_order = peloton_resistanceOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -1596,17 +1646,17 @@ ScrollView {
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Resistance of your bike converted to the Peloton bike scale of 1 to 100.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -1636,23 +1686,25 @@ ScrollView {
                 Button {
                     id: oktarget_resistanceOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_target_resistance_order = target_resistanceOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays target resistance in your bike’s resistance scale. For example, during a Peloton class or Zwift session, you want the resistance displayed in this tile to match the Resistance Tile. During a Peloton class (bike only), +/- shifts the class's resistance target up or down for the rest of the ride.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
 
@@ -1683,23 +1735,25 @@ ScrollView {
                 Button {
                     id: oktarget_peloton_resistanceOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_target_peloton_resistance_order = target_peloton_resistanceOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays target resistance converted to the Peloton bike scale of 1 to 100. For example, during a Peloton class, you want the resistance displayed in this tile to match the Peloton Resistance Tile.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -1729,23 +1783,25 @@ ScrollView {
                 Button {
                     id: oktarget_cadenceOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_target_cadence_order = target_cadenceOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays target cadence.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -1775,23 +1831,25 @@ ScrollView {
                 Button {
                     id: oktarget_powerOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_target_power_order = target_powerOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays target output (watts) when this information is provided by third-party apps.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
 
@@ -1822,23 +1880,25 @@ ScrollView {
                 Button {
                     id: oktarget_zoneOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_target_zone_order = target_zoneOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays the target power zone when this information is provided by third-party apps.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -1868,6 +1928,8 @@ ScrollView {
                 Button {
                     id: oktarget_speedOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_target_speed_order = target_speedOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
@@ -1901,6 +1963,8 @@ ScrollView {
                 Button {
                     id: oktarget_paceOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_target_pace_order = target_paceOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
@@ -1934,6 +1998,8 @@ ScrollView {
                 Button {
                     id: oktarget_inclineOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_target_incline_order = target_inclineOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
@@ -1966,23 +2032,25 @@ ScrollView {
                 Button {
                     id: okwatt_kgOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_watt_kg_order = watt_kgOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Calculates your output (watts) divided by your weight. This is the primary metric used by Zwift and similar apps to calculate your virtual speed. NOTE: This is a much better metric to use than Output/Watts when comparing your effort to other users. This is why Peloton’s leaderboard, which uses only Output, is flawed.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2012,23 +2080,25 @@ ScrollView {
                 Button {
                     id: okgearsOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_gears_order = gearsOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Allows you to change resistance while in Auto-Follow Mode.This tile allows you override the target resistance sent by third-party apps. For example, you would use the Gears Tile to increase resistance and generate more watts for sprinting in Zwift.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2056,6 +2126,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_biggears_order = biggearsOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -2076,17 +2148,17 @@ ScrollView {
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("It shows 2 big gear buttons on the UI")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2117,23 +2189,25 @@ ScrollView {
                 Button {
                     id: okremainingTimeTrainingProgramRowOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_remainingtimetrainprogramrow_order = remainingTimeTrainingProgramRowOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays the time remaining until the next cadence and/or resistance interval.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2164,23 +2238,25 @@ ScrollView {
                 Button {
                     id: oknextRowsTrainingProgramOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_nextrowstrainprogram_order = nextRowsTrainingProgramOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays the next Peloton interval with duration and FTP Zone (in Power Zone classes) or Peloton Resistance (non–Power Zone classes).")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2210,23 +2286,25 @@ ScrollView {
                 Button {
                     id: okmetsOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_mets_order = metsOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays metabolic equivalents (METs), a measurement of energy expenditure and amount of oxygen used by the body compared to the body at rest. (e.g., 4 METS requires the body to use 4 times as much oxygen than when at rest, which means it requires more energy and burns more calories).")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2256,6 +2334,8 @@ ScrollView {
                 Button {
                     id: oktargetmetsOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_targetmets_order = targetmetsOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
@@ -2289,23 +2369,25 @@ ScrollView {
                 Button {
                     id: okdatetimeOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_datetime_order = datetimeOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays the current time.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2335,23 +2417,25 @@ ScrollView {
                 Button {
                     id: okstrokes_countOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_strokes_count_order = strokes_countOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("(Rower only) Displays the number of strokes rowed.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2381,23 +2465,25 @@ ScrollView {
                 Button {
                     id: okstrokes_lengthOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_strokes_length_order = strokes_lengthOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("(Rower only) Displays the stroke length.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2427,23 +2513,25 @@ ScrollView {
                 Button {
                     id: oksteeringAngleOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_steering_angle_order = steeringAngleOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("(Elite Rizer only) Displays steering angle.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2473,23 +2561,25 @@ ScrollView {
                 Button {
                     id: okpidHROrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_pid_hr_order = pidHROrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Use this tile to display the target heart rate zone in which you’ve chosen to work out in Settings > Training Program Options.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2519,23 +2609,25 @@ ScrollView {
                 Button {
                     id: okextInclineOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_ext_incline_order = extInclineOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("(Elite Rizer only) Allows control of the incline of external inclination equipment.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2565,23 +2657,25 @@ ScrollView {
                 Button {
                     id: okStrideLengthOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_instantaneous_stride_length_order = strideLengthOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("(requires a compatible footpod with accelerometer; treadmill only) Displays stride while walking or running.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2611,23 +2705,25 @@ ScrollView {
                 Button {
                     id: okGroundContactOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_ground_contact_order = groundContactOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("(requires a compatible footpod with accelerometer; treadmill only) Displays time foot is on contact with ground while walking or running.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2657,23 +2753,25 @@ ScrollView {
                 Button {
                     id: okVerticalOscillationOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_vertical_oscillation_order = verticalOscillationOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("(requires a compatible footpod with accelerometer; treadmill only) Displays the up and down movement while walking or running.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2703,6 +2801,8 @@ ScrollView {
                 Button {
                     id: okPacelast500mOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_pace_last500m_order = pacelast500mOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
@@ -2736,6 +2836,8 @@ ScrollView {
                 Button {
                     id: okStepCountOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_step_count_order = stepCountOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
@@ -2769,6 +2871,8 @@ ScrollView {
                 Button {
                     id: okErgModeOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_erg_mode_order = ergModeOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
@@ -2799,6 +2903,8 @@ ScrollView {
                 }
                 Button {
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_rss_order = rssOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
@@ -2833,6 +2939,8 @@ ScrollView {
                     Button {
                         id: okPresetResistance1OrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_resistance_1_order = presetResistance1TextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -2855,6 +2963,8 @@ ScrollView {
                     Button {
                         id: okPresetResistance1ValueButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_resistance_1_value = presetResistance1ValueTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -2877,6 +2987,8 @@ ScrollView {
                     Button {
                         id: okPresetResistance1LabelButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_resistance_1_label = presetResistance1LabelTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -2912,6 +3024,8 @@ ScrollView {
 						  Button {
 						      id: okPresetResistance1ColorButton
 								text: qsTr("OK")
+								flat: true
+								Material.foreground: "#B388FF"
 								Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 								onClicked: {settings.tile_preset_resistance_1_color = presetResistance1ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
 						  }
@@ -2946,6 +3060,8 @@ ScrollView {
                     Button {
                         id: okPresetResistance2OrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_resistance_2_order = presetResistance2TextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -2968,6 +3084,8 @@ ScrollView {
                     Button {
                         id: okPresetResistance2ValueButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_resistance_2_value = presetResistance2ValueTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -2990,6 +3108,8 @@ ScrollView {
                     Button {
                         id: okPresetResistance2LabelButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_resistance_2_label = presetResistance2LabelTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3025,6 +3145,8 @@ ScrollView {
 						  Button {
 						      id: okPresetResistance2ColorButton
 								text: qsTr("OK")
+								flat: true
+								Material.foreground: "#B388FF"
 								Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 								onClicked: {settings.tile_preset_resistance_2_color = presetResistance2ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
 						  }
@@ -3059,6 +3181,8 @@ ScrollView {
                     Button {
                         id: okPresetResistance3OrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_resistance_3_order = presetResistance3TextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3081,6 +3205,8 @@ ScrollView {
                     Button {
                         id: okPresetResistance3ValueButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_resistance_3_value = presetResistance3ValueTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3103,6 +3229,8 @@ ScrollView {
                     Button {
                         id: okPresetResistance3LabelButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_resistance_3_label = presetResistance3LabelTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3138,6 +3266,8 @@ ScrollView {
 						  Button {
 						      id: okPresetResistance3ColorButton
 								text: qsTr("OK")
+								flat: true
+								Material.foreground: "#B388FF"
 								Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 								onClicked: {settings.tile_preset_resistance_3_color = presetResistance3ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
 						  }
@@ -3172,6 +3302,8 @@ ScrollView {
                     Button {
                         id: okPresetResistance4OrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_resistance_4_order = presetResistance4TextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3194,6 +3326,8 @@ ScrollView {
                     Button {
                         id: okPresetResistance4ValueButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_resistance_4_value = presetResistance4ValueTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3216,6 +3350,8 @@ ScrollView {
                     Button {
                         id: okPresetResistance4LabelButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_resistance_4_label = presetResistance4LabelTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3251,6 +3387,8 @@ ScrollView {
 						  Button {
 						      id: okPresetResistance4ColorButton
 								text: qsTr("OK")
+								flat: true
+								Material.foreground: "#B388FF"
 								Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 								onClicked: {settings.tile_preset_resistance_4_color = presetResistance4ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
 						  }
@@ -3285,6 +3423,8 @@ ScrollView {
                     Button {
                         id: okPresetResistance5OrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_resistance_5_order = presetResistance5TextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3307,6 +3447,8 @@ ScrollView {
                     Button {
                         id: okPresetResistance5ValueButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_resistance_5_value = presetResistance5ValueTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3329,6 +3471,8 @@ ScrollView {
                     Button {
                         id: okPresetResistance5LabelButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_resistance_5_label = presetResistance5LabelTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3364,6 +3508,8 @@ ScrollView {
 						  Button {
 						      id: okPresetResistance5ColorButton
 								text: qsTr("OK")
+								flat: true
+								Material.foreground: "#B388FF"
 								Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 								onClicked: {settings.tile_preset_resistance_5_color = presetResistance5ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
 						  }
@@ -3398,6 +3544,8 @@ ScrollView {
                     Button {
                         id: okPresetSpeed1OrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_speed_1_order = presetSpeed1TextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3420,6 +3568,8 @@ ScrollView {
                     Button {
                         id: okPresetSpeed1ValueButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {
                             settings.tile_preset_speed_1_value = settingsTilesPane.parsePresetSpeedValue(presetSpeed1ValueTextField.displayText);
@@ -3446,6 +3596,8 @@ ScrollView {
                     Button {
                         id: okPresetSpeed1LabelButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_speed_1_label = presetSpeed1LabelTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3481,6 +3633,8 @@ ScrollView {
 						  Button {
 						      id: okPresetSpeed1ColorButton
 								text: qsTr("OK")
+								flat: true
+								Material.foreground: "#B388FF"
 								Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 								onClicked: {settings.tile_preset_speed_1_color = presetSpeed1ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
 						  }
@@ -3515,6 +3669,8 @@ ScrollView {
                     Button {
                         id: okPresetSpeed2OrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_speed_2_order = presetSpeed2TextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3537,6 +3693,8 @@ ScrollView {
                     Button {
                         id: okPresetSpeed2ValueButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {
                             settings.tile_preset_speed_2_value = settingsTilesPane.parsePresetSpeedValue(presetSpeed2ValueTextField.displayText);
@@ -3563,6 +3721,8 @@ ScrollView {
                     Button {
                         id: okPresetSpeed2LabelButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_speed_2_label = presetSpeed2LabelTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3598,6 +3758,8 @@ ScrollView {
 						  Button {
 						      id: okPresetSpeed2ColorButton
 								text: qsTr("OK")
+								flat: true
+								Material.foreground: "#B388FF"
 								Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 								onClicked: {settings.tile_preset_speed_2_color = presetSpeed2ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
 						  }
@@ -3632,6 +3794,8 @@ ScrollView {
                     Button {
                         id: okPresetSpeed3OrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_speed_3_order = presetSpeed3TextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3654,6 +3818,8 @@ ScrollView {
                     Button {
                         id: okPresetSpeed3ValueButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {
                             settings.tile_preset_speed_3_value = settingsTilesPane.parsePresetSpeedValue(presetSpeed3ValueTextField.displayText);
@@ -3680,6 +3846,8 @@ ScrollView {
                     Button {
                         id: okPresetSpeed3LabelButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_speed_3_label = presetSpeed3LabelTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3715,6 +3883,8 @@ ScrollView {
 						  Button {
 						      id: okPresetSpeed3ColorButton
 								text: qsTr("OK")
+								flat: true
+								Material.foreground: "#B388FF"
 								Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 								onClicked: {settings.tile_preset_speed_3_color = presetSpeed3ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
 						  }
@@ -3749,6 +3919,8 @@ ScrollView {
                     Button {
                         id: okPresetSpeed4OrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_speed_4_order = presetSpeed4TextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3771,6 +3943,8 @@ ScrollView {
                     Button {
                         id: okPresetSpeed4ValueButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {
                             settings.tile_preset_speed_4_value = settingsTilesPane.parsePresetSpeedValue(presetSpeed4ValueTextField.displayText);
@@ -3797,6 +3971,8 @@ ScrollView {
                     Button {
                         id: okPresetSpeed4LabelButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_speed_4_label = presetSpeed4LabelTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3832,6 +4008,8 @@ ScrollView {
 						  Button {
 						      id: okPresetSpeed4ColorButton
 								text: qsTr("OK")
+								flat: true
+								Material.foreground: "#B388FF"
 								Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 								onClicked: {settings.tile_preset_speed_4_color = presetSpeed4ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
 						  }
@@ -3866,6 +4044,8 @@ ScrollView {
                     Button {
                         id: okPresetSpeed5OrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_speed_5_order = presetSpeed5TextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3888,6 +4068,8 @@ ScrollView {
                     Button {
                         id: okPresetSpeed5ValueButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {
                             settings.tile_preset_speed_5_value = settingsTilesPane.parsePresetSpeedValue(presetSpeed5ValueTextField.displayText);
@@ -3914,6 +4096,8 @@ ScrollView {
                     Button {
                         id: okPresetSpeed5LabelButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_speed_5_label = presetSpeed5LabelTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -3949,6 +4133,8 @@ ScrollView {
 						  Button {
 						      id: okPresetSpeed5ColorButton
 								text: qsTr("OK")
+								flat: true
+								Material.foreground: "#B388FF"
 								Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 								onClicked: {settings.tile_preset_speed_5_color = presetSpeed5ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
 						  }
@@ -3983,6 +4169,8 @@ ScrollView {
                     Button {
                         id: okPresetInclination1OrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_inclination_1_order = presetInclination1TextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4005,6 +4193,8 @@ ScrollView {
                     Button {
                         id: okPresetInclination1ValueButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_inclination_1_value = presetInclination1ValueTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4027,6 +4217,8 @@ ScrollView {
                     Button {
                         id: okPresetInclination1LabelButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_inclination_1_label = presetInclination1LabelTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4062,6 +4254,8 @@ ScrollView {
 						  Button {
 						      id: okPresetInclination1ColorButton
 								text: qsTr("OK")
+								flat: true
+								Material.foreground: "#B388FF"
 								Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 								onClicked: {settings.tile_preset_inclination_1_color = presetInclination1ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
 						  }
@@ -4096,6 +4290,8 @@ ScrollView {
                     Button {
                         id: okPresetInclination2OrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_inclination_2_order = presetInclination2TextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4118,6 +4314,8 @@ ScrollView {
                     Button {
                         id: okPresetInclination2ValueButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_inclination_2_value = presetInclination2ValueTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4140,6 +4338,8 @@ ScrollView {
                     Button {
                         id: okPresetInclination2LabelButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_inclination_2_label = presetInclination2LabelTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4176,6 +4376,8 @@ ScrollView {
 					 Button {
 					     id: okPresetInclination2ColorButton
 						  text: qsTr("OK")
+						  flat: true
+						  Material.foreground: "#B388FF"
 						  Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 						  onClicked: {settings.tile_preset_inclination_2_color = presetInclination2ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
 						}
@@ -4209,6 +4411,8 @@ ScrollView {
                     Button {
                         id: okPresetInclination3OrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_inclination_3_order = presetInclination3TextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4231,6 +4435,8 @@ ScrollView {
                     Button {
                         id: okPresetInclination3ValueButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_inclination_3_value = presetInclination3ValueTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4253,6 +4459,8 @@ ScrollView {
                     Button {
                         id: okPresetInclination3LabelButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_inclination_3_label = presetInclination3LabelTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4288,6 +4496,8 @@ ScrollView {
 						  Button {
 						      id: okPresetInclination3ColorButton
 								text: qsTr("OK")
+								flat: true
+								Material.foreground: "#B388FF"
 								Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 								onClicked: {settings.tile_preset_inclination_3_color = presetInclination3ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
 						  }
@@ -4322,6 +4532,8 @@ ScrollView {
                     Button {
                         id: okPresetInclination4OrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_inclination_4_order = presetInclination4TextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4344,6 +4556,8 @@ ScrollView {
                     Button {
                         id: okPresetInclination4ValueButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_inclination_4_value = presetInclination4ValueTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4366,6 +4580,8 @@ ScrollView {
                     Button {
                         id: okPresetInclination4LabelButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_inclination_4_label = presetInclination4LabelTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4401,6 +4617,8 @@ ScrollView {
 						  Button {
 						      id: okPresetInclination4ColorButton
 								text: qsTr("OK")
+								flat: true
+								Material.foreground: "#B388FF"
 								Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 								onClicked: {settings.tile_preset_inclination_4_color = presetInclination4ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
 						  }
@@ -4435,6 +4653,8 @@ ScrollView {
                     Button {
                         id: okPresetInclination5OrderButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_inclination_5_order = presetInclination5TextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4457,6 +4677,8 @@ ScrollView {
                     Button {
                         id: okPresetInclination5ValueButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_inclination_5_value = presetInclination5ValueTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4479,6 +4701,8 @@ ScrollView {
                     Button {
                         id: okPresetInclination5LabelButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_inclination_5_label = presetInclination5LabelTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4514,6 +4738,8 @@ ScrollView {
 						  Button {
 						      id: okPresetInclination5ColorButton
 								text: qsTr("OK")
+								flat: true
+								Material.foreground: "#B388FF"
 								Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 								onClicked: {settings.tile_preset_inclination_5_color = presetInclination5ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
 						  }
@@ -4546,6 +4772,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_1_order = presetPowerZone1OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4566,6 +4794,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_1_value = parseFloat(presetPowerZone1Value.text); toast.show(qsTr("Setting saved!")); }
                     }
@@ -4585,6 +4815,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_1_label = presetPowerZone1Label.text; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4618,6 +4850,8 @@ ScrollView {
                     Button {
                         id: okPresetPowerzone1ColorButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_1_color = presetPowerzone1ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4651,6 +4885,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_2_order = presetPowerZone2OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4671,6 +4907,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_2_value = parseFloat(presetPowerZone2Value.text); toast.show(qsTr("Setting saved!")); }
                     }
@@ -4690,6 +4928,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_2_label = presetPowerZone2Label.text; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4723,6 +4963,8 @@ ScrollView {
                     Button {
                         id: okPresetPowerzone2ColorButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_2_color = presetPowerzone2ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4756,6 +4998,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_3_order = presetPowerZone3OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4776,6 +5020,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_3_value = parseFloat(presetPowerZone3Value.text); toast.show(qsTr("Setting saved!")); }
                     }
@@ -4795,6 +5041,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_3_label = presetPowerZone3Label.text; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4828,6 +5076,8 @@ ScrollView {
                     Button {
                         id: okPresetPowerzone3ColorButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_3_color = presetPowerzone3ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4861,6 +5111,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_4_order = presetPowerZone4OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4881,6 +5133,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_4_value = parseFloat(presetPowerZone4Value.text); toast.show(qsTr("Setting saved!")); }
                     }
@@ -4900,6 +5154,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_4_label = presetPowerZone4Label.text; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4933,6 +5189,8 @@ ScrollView {
                     Button {
                         id: okPresetPowerzone4ColorButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_4_color = presetPowerzone4ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4966,6 +5224,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_5_order = presetPowerZone5OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -4986,6 +5246,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_5_value = parseFloat(presetPowerZone5Value.text); toast.show(qsTr("Setting saved!")); }
                     }
@@ -5005,6 +5267,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_5_label = presetPowerZone5Label.text; toast.show(qsTr("Setting saved!")); }
                     }
@@ -5038,6 +5302,8 @@ ScrollView {
                     Button {
                         id: okPresetPowerzone5ColorButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_5_color = presetPowerzone5ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -5071,6 +5337,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_6_order = presetPowerZone6OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -5091,6 +5359,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_6_value = parseFloat(presetPowerZone6Value.text); toast.show(qsTr("Setting saved!")); }
                     }
@@ -5110,6 +5380,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_6_label = presetPowerZone6Label.text; toast.show(qsTr("Setting saved!")); }
                     }
@@ -5143,6 +5415,8 @@ ScrollView {
                     Button {
                         id: okPresetPowerzone6ColorButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_6_color = presetPowerzone6ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -5176,6 +5450,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_7_order = presetPowerZone7OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -5196,6 +5472,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_7_value = parseFloat(presetPowerZone7Value.text); toast.show(qsTr("Setting saved!")); }
                     }
@@ -5215,6 +5493,8 @@ ScrollView {
                     }
                     Button {
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_7_label = presetPowerZone7Label.text; toast.show(qsTr("Setting saved!")); }
                     }
@@ -5248,6 +5528,8 @@ ScrollView {
                     Button {
                         id: okPresetPowerzone7ColorButton
                         text: qsTr("OK")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: {settings.tile_preset_powerzone_7_color = presetPowerzone7ColorTextField.displayText; toast.show(qsTr("Setting saved!")); }
                     }
@@ -5255,17 +5537,17 @@ ScrollView {
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Power zone presets allow quick access to specific training zones with customizable labels and values.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -5295,23 +5577,25 @@ ScrollView {
                 Button {
                     id: okHrTimeInZone1OrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_hr_time_in_zone_1_order = hrTimeInZone1OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays total time spent in heart rate Zone 1 or higher during the session.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -5341,23 +5625,25 @@ ScrollView {
                 Button {
                     id: okHrTimeInZone2OrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_hr_time_in_zone_2_order = hrTimeInZone2OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays total time spent in heart rate Zone 2 or higher during the session.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -5387,23 +5673,25 @@ ScrollView {
                 Button {
                     id: okHrTimeInZone3OrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_hr_time_in_zone_3_order = hrTimeInZone3OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays total time spent in heart rate Zone 3 or higher during the session.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -5433,23 +5721,25 @@ ScrollView {
                 Button {
                     id: okHrTimeInZone4OrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_hr_time_in_zone_4_order = hrTimeInZone4OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays total time spent in heart rate Zone 4 or higher during the session.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -5479,23 +5769,25 @@ ScrollView {
                 Button {
                     id: okHrTimeInZone5OrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_hr_time_in_zone_5_order = hrTimeInZone5OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays total time spent in heart rate Zone 5 or higher during the session.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         RowLayout {
@@ -5554,23 +5846,25 @@ ScrollView {
                 Button {
                     id: okcoretemperatureOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_coretemperature_order = coretemperatureOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Shows Core, Body Temperature and Heat Strain Index from a Core Temperature sensor.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -5600,23 +5894,25 @@ ScrollView {
                 Button {
                     id: okHeatTimeInZone1OrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_heat_time_in_zone_1_order = heatTimeInZone1OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays total time spent in heat Zone 1 during the session.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -5646,23 +5942,25 @@ ScrollView {
                 Button {
                     id: okHeatTimeInZone2OrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_heat_time_in_zone_2_order = heatTimeInZone2OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays total time spent in heat Zone 2 during the session.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -5692,23 +5990,25 @@ ScrollView {
                 Button {
                     id: okHeatTimeInZone3OrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_heat_time_in_zone_3_order = heatTimeInZone3OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays total time spent in heat Zone 3 during the session.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -5738,23 +6038,25 @@ ScrollView {
                 Button {
                     id: okHeatTimeInZone4OrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_heat_time_in_zone_4_order = heatTimeInZone4OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Displays total time spent in heat Zone 4 during the session.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -5782,23 +6084,25 @@ ScrollView {
                 }
                 Button {
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_auto_virtual_shifting_cruise_order = autoVirtualShiftingCruiseOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Button tile to switch automatic virtual shifting to Cruise profile.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -5826,23 +6130,25 @@ ScrollView {
                 }
                 Button {
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_auto_virtual_shifting_climb_order = autoVirtualShiftingClimbOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Button tile to switch automatic virtual shifting to Climb profile.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -5870,23 +6176,25 @@ ScrollView {
                 }
                 Button {
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_auto_virtual_shifting_sprint_order = autoVirtualShiftingSprintOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Button tile to switch automatic virtual shifting to Sprint profile.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -5914,23 +6222,25 @@ ScrollView {
                 }
                 Button {
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_power_avg_order = powerAvgOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Button tile to cycle through power averaging modes: Off, 3s avg (harmonic), 5s avg (harmonic). Tap to cycle between modes. Only for bikes.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -5960,23 +6270,25 @@ ScrollView {
                 Button {
                     id: okhrvOrderButton
                     text: qsTr("OK")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     onClicked: {settings.tile_hrv_order = hrvOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
         }
 
-        Label {
+        SettingHelp {
             text: qsTr("Shows Heart Rate Variability (HRV) from a compatible heart rate belt. Displays RMSSD value in milliseconds.")
-            font.bold: true
-            font.italic: true
+            font.bold: false
+            font.italic: false
             font.pixelSize: Qt.application.font.pixelSize - 2
             textFormat: Text.PlainText
             wrapMode: Text.WordWrap
             verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             Layout.fillWidth: true
-            color: Material.color(Material.Lime)
+            color: "#9a9aa8"
         }
     }
 }
