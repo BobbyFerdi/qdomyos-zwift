@@ -1478,6 +1478,8 @@ ApplicationWindow {
             }
                 ItemDelegate {
                     text: qsTr("Swag Bag")
+                    // Hidden in TrainDeck: it sells the original app's support subscription, which does not work under this app ID
+                    visible: false
                     width: parent.width
                     onClicked: {
                         stackView.push("SwagBagView.qml")
