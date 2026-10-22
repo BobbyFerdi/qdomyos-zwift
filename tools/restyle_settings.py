@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
 """Calm the look of the settings pages (TrainDeck).
 
-The settings QML files repeat the same two patterns hundreds of times:
+The settings QML files repeat the same few patterns hundreds of times, in the original loud styling:
 
 * a help Label in bright yellow-green, bold and italic, under every setting
-* a heavy grey "OK" Button next to every number / text field
+* a heavy grey Button ("OK", "Refresh Devices List", ...) next to or under the fields
+* sub-section titles in bright yellow or blue
+* warning and hint Labels in bold italic red, orange or blue
 
-This script restyles both in place:
+This script restyles all of them in place:
 
 * the help text becomes muted grey, regular weight; and every help Label that only uses the usual properties
   becomes a SettingHelp (src/SettingHelp.qml): a small "?" button that shows the description when tapped
-* the OK buttons become flat accent-coloured buttons
+* buttons become flat, accent-coloured text buttons
+* sub-section titles become the soft brand violet
+* warning and hint Labels keep their meaning (red stays red) but lose the bold italic and get softer shades
 
 It only changes style and the help Label itself, never a setting, a binding or a layout, and running it twice
 changes nothing the second time. Help Labels with anything unusual in them (nested items, handlers, other
@@ -36,14 +40,27 @@ FILES = [
 
 OLD_HELP_COLOR = "color: Material.color(Material.Lime)"
 NEW_HELP_COLOR = 'color: "#9a9aa8"'
-OK_BUTTON_TEXT = 'text: qsTr("OK")'
-OK_BUTTON_COLOR = 'Material.foreground: "#B388FF"'
+BUTTON_COLOR = 'Material.foreground: "#B388FF"'
 
 # the properties a help Label may set for it to become a SettingHelp, which supports exactly these
 HELP_PROPERTIES = {
     "text", "color", "font.bold", "font.italic", "font.pixelSize", "wrapMode", "textFormat",
     "verticalAlignment", "visible", "Layout.fillWidth", "Layout.alignment",
     "width",  # overridden by the layout anyway once the item fills the row
+}
+
+# sub-section titles: the loud colours become the soft brand violet (red stays: those sections are risky ones)
+SUBSECTION_TITLE_COLORS = {
+    "textColor: Material.color(Material.Yellow)": 'textColor: "#B388FF"',
+    "textColor: Material.color(Material.Blue)": 'textColor: "#B388FF"',
+}
+
+# warning / hint Labels: same meaning, softer shade, no bold italic
+HINT_COLORS = {
+    "color: Material.color(Material.Red)": 'color: "#FF8A80"',
+    "color: Material.color(Material.Orange)": 'color: "#FFB74D"',
+    'color: "steelblue"': 'color: "#90CAF9"',
+    "color: Material.color(Material.Grey)": NEW_HELP_COLOR,
 }
 
 
@@ -76,13 +93,11 @@ def is_plain_help(lines, start, end):
 
 
 def restyle(text):
-    """Return (new_text, help_labels_restyled, help_buttons_added, ok_buttons_restyled)."""
+    """Return (new_text, counts) where counts says how many of each kind of item were changed."""
     newline = "\r\n" if "\r\n" in text else "\n"
     lines = text.replace("\r\n", "\n").split("\n")
     has_material = any(line.strip().startswith("import QtQuick.Controls.Material") for line in lines)
-    help_changed = 0
-    help_buttons = 0
-    ok_changed = 0
+    counts = {"help muted": 0, "help buttons": 0, "buttons": 0, "titles": 0, "hints": 0}
 
     # help labels: muted colour, no bold, no italic
     i = 0
@@ -101,7 +116,27 @@ def restyle(text):
                             lines[k] = pad + "font.bold: false"
                         elif stripped == "font.italic: true":
                             lines[k] = pad + "font.italic: false"
-                    help_changed += 1
+                    counts["help muted"] += 1
+        i += 1
+
+    # warning / hint labels that are still bold or italic: softer shade, regular weight
+    i = 0
+    while i < len(lines):
+        if lines[i].strip() == "Label {":
+            end = block_end(lines, i)
+            if end > i:
+                stripped_block = [line.strip() for line in lines[i + 1:end]]
+                if "font.italic: true" in stripped_block and any(s in HINT_COLORS for s in stripped_block):
+                    for k in range(i + 1, end):
+                        stripped = lines[k].strip()
+                        pad = lines[k][:indent_of(lines[k])]
+                        if stripped in HINT_COLORS:
+                            lines[k] = pad + HINT_COLORS[stripped]
+                        elif stripped == "font.bold: true":
+                            lines[k] = pad + "font.bold: false"
+                        elif stripped == "font.italic: true":
+                            lines[k] = pad + "font.italic: false"
+                    counts["hints"] += 1
         i += 1
 
     # muted help labels that only use the usual properties become a tap-to-reveal SettingHelp
@@ -112,49 +147,59 @@ def restyle(text):
             if end > i and any(line.strip() == NEW_HELP_COLOR for line in lines[i + 1:end]) \
                     and is_plain_help(lines, i, end):
                 lines[i] = lines[i].replace("Label {", "SettingHelp {", 1)
-                help_buttons += 1
+                counts["help buttons"] += 1
         i += 1
 
-    # OK buttons: flat, accent coloured text (inserted right after the text line, so the order stays readable)
+    # sub-section titles: soft violet instead of bright yellow or blue
+    for k in range(len(lines)):
+        stripped = lines[k].strip()
+        if stripped in SUBSECTION_TITLE_COLORS:
+            lines[k] = lines[k][:indent_of(lines[k])] + SUBSECTION_TITLE_COLORS[stripped]
+            counts["titles"] += 1
+
+    # buttons with a text: flat, accent coloured text (inserted right after the text line, so the order stays
+    # readable). Buttons that already are flat, are the primary action (highlighted) or draw their own
+    # background are left alone.
     i = 0
     while i < len(lines):
         if lines[i].strip() == "Button {":
             end = block_end(lines, i)
             if end > i:
                 block = [line.strip() for line in lines[i + 1:end]]
-                if OK_BUTTON_TEXT in block and "flat: true" not in block:
-                    at = next(k for k in range(i + 1, end) if lines[k].strip() == OK_BUTTON_TEXT)
+                has_text = any(s.startswith("text:") for s in block)
+                skip = "flat: true" in block or "highlighted: true" in block \
+                    or any(s.startswith("background:") for s in block)
+                if has_text and not skip:
+                    at = next(k for k in range(i + 1, end) if lines[k].strip().startswith("text:"))
                     pad = lines[at][:indent_of(lines[at])]
                     extra = [pad + "flat: true"]
                     if has_material:
-                        extra.append(pad + OK_BUTTON_COLOR)
+                        extra.append(pad + BUTTON_COLOR)
                     lines[at + 1:at + 1] = extra
-                    ok_changed += 1
+                    counts["buttons"] += 1
         i += 1
 
-    return newline.join(lines), help_changed, help_buttons, ok_changed
+    return newline.join(lines), counts
 
 
 def main():
     check_only = "--check" in sys.argv[1:]
     root = Path(__file__).resolve().parent.parent
-    total_help = total_buttons = total_ok = 0
+    totals = {}
     for name in FILES:
         path = root / name
         if not path.exists():
             print("skipped (not found): %s" % name)
             continue
         original = path.read_text(encoding="utf-8", newline="")
-        updated, help_changed, help_buttons, ok_changed = restyle(original)
-        print("%-50s muted: %-4d help buttons: %-4d OK buttons: %-4d" % (name, help_changed, help_buttons, ok_changed))
-        total_help += help_changed
-        total_buttons += help_buttons
-        total_ok += ok_changed
+        updated, counts = restyle(original)
+        print("%-50s %s" % (name, "  ".join("%s: %d" % (k, v) for k, v in counts.items())))
+        for key, value in counts.items():
+            totals[key] = totals.get(key, 0) + value
         if not check_only and updated != original:
             path.write_text(updated, encoding="utf-8", newline="")
-    print("total: %d help labels muted, %d turned into help buttons, %d OK buttons restyled %s"
-          % (total_help, total_buttons, total_ok, "(would change)" if check_only else ""))
-    if check_only and (total_help or total_buttons or total_ok):
+    print("total: " + ", ".join("%d %s" % (v, k) for k, v in totals.items()) + (" (would change)" if check_only else ""))
+    if check_only and any(totals.values()):
         sys.exit(1)
 
 

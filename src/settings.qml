@@ -2367,6 +2367,8 @@ import AndroidStatusBar 1.0
 
                 Button {
                     text: qsTr("Changed")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     checkable: true
                     checked: settingsPane.changedOnly
                     onClicked: settingsPane.setChangedOnly(checked)
@@ -2374,6 +2376,8 @@ import AndroidStatusBar 1.0
 
                 Button {
                     text: qsTr("Clear")
+                    flat: true
+                    Material.foreground: "#B388FF"
                     onClicked: settingsPane.hideSettingsSearch()
                 }
             }
@@ -2483,6 +2487,8 @@ import AndroidStatusBar 1.0
                                 Button {
                                     visible: entry.catalogKind === "page"
                                     text: qsTr("Open")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     onClicked: settingsPane.openPageResult(entry)
                                 }
                             }
@@ -3381,19 +3387,21 @@ import AndroidStatusBar 1.0
                     Label {
                         id: appleWatchLabel
                         text: qsTr("Apple Watch users: leave it disabled! Just open the app on your watch")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.fillWidth: true
-                        color: Material.color(Material.Red)
+                        color: "#FF8A80"
                     }
 
                     Button {
                         id: refreshHeartBeltNameButton
                         text: qsTr("Refresh Devices List")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: refresh_bluetooth_devices_clicked();
                     }
@@ -3402,7 +3410,7 @@ import AndroidStatusBar 1.0
                         id: heartRateZoneAccordion
                         title: qsTr("Heart Rate Zone Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -3664,7 +3672,7 @@ import AndroidStatusBar 1.0
                                 id: powerFromHeartRateAccordion
                                 title: qsTr("Power from Heart Rate Options")
                                 indicatRectColor: Material.color(Material.Grey)
-                                textColor: Material.color(Material.Yellow)
+                                textColor: "#B388FF"
                                 color: Material.backgroundColor
                                 accordionContent: ColumnLayout {
                                     spacing: 0
@@ -3971,10 +3979,10 @@ import AndroidStatusBar 1.0
                     Label {
                         id: labelRollingResistanceInfo
                         text: qsTr("0.005 = Clinchers\n0.004 = Tubulars\n0.012 = MTB")
-                        font.italic: true
+                        font.italic: false
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         font.pixelSize: Qt.application.font.pixelSize - 2
-                        color: "steelblue"
+                        color: "#90CAF9"
                     }
                     RowLayout {
                         spacing: 10
@@ -4311,13 +4319,13 @@ import AndroidStatusBar 1.0
 
                             Label {
                                 text: qsTr("Note: Left and Right paddles are fixed to Steer Left/Right and cannot be configured")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 wrapMode: Text.WordWrap
                                 Layout.fillWidth: true
                                 Layout.topMargin: 10
-                                color: Material.color(Material.Orange)
+                                color: "#FFB74D"
                             }
                         }
                     }
@@ -4699,7 +4707,7 @@ import AndroidStatusBar 1.0
                     NewPageElement {
                         title: qsTr("Custom Gear Table")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: "customgears.qml"
                     }
@@ -4707,7 +4715,7 @@ import AndroidStatusBar 1.0
                     NewPageElement {
                         title: qsTr("Custom Inclination to Resistance Table")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: "custominclinationresistance.qml"
                     }
@@ -5240,7 +5248,7 @@ import AndroidStatusBar 1.0
                     NewPageElement {
                         title: qsTr("Wahoo Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: "gears.qml"
                     }
@@ -5249,7 +5257,7 @@ import AndroidStatusBar 1.0
                         id: schwinnBikeAccordion
                         title: qsTr("Schwinn Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -5340,7 +5348,7 @@ import AndroidStatusBar 1.0
                         id: horizonBikeAccordion
                         title: qsTr("Horizon Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: RowLayout {
                             spacing: 10
@@ -5375,7 +5383,7 @@ import AndroidStatusBar 1.0
                         id: echelonBikeOptionsAccordion
                         title: qsTr("Echelon Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         //width: 640
                         //anchors.top: acc1.bottom
@@ -5487,7 +5495,7 @@ import AndroidStatusBar 1.0
                         id: inspireBikeAccordion
                         title: qsTr("Inspire Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -5526,7 +5534,7 @@ import AndroidStatusBar 1.0
                         id: renphoBikeAccordion
                         title: qsTr("Renpho Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -5577,7 +5585,7 @@ import AndroidStatusBar 1.0
                         id: hammerBikeAccordion
                         title: qsTr("Hammer Racer Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: IndicatorOnlySwitch {
                             id: hammerBikeDelegate
@@ -5598,7 +5606,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         title: qsTr("Saris/Cycleops Hammer trainer Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: IndicatorOnlySwitch {
                             text: qsTr("Enable support")
@@ -5619,7 +5627,7 @@ import AndroidStatusBar 1.0
                         id: cardioFitBikeAccordion
                         title: qsTr("CardioFIT Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: IndicatorOnlySwitch {
                             id: spht9600iEBikeDelegate
@@ -5640,7 +5648,7 @@ import AndroidStatusBar 1.0
                         id: yesoulBikeAccordion
                         title: qsTr("Yesoul Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: IndicatorOnlySwitch {
                             id: yesoulBikeDelegate
@@ -5662,7 +5670,7 @@ import AndroidStatusBar 1.0
                         id: snodeBikeAccordion
                         title: qsTr("Snode Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: IndicatorOnlySwitch {
                             id: snodeBikeDelegate
@@ -5683,7 +5691,7 @@ import AndroidStatusBar 1.0
                         id: skandikaBikeAccordion
                         title: qsTr("Skandika Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -5719,7 +5727,7 @@ import AndroidStatusBar 1.0
                         id: fitplusBikeAccordion
                         title: qsTr("Fitplus Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent:
 												ColumnLayout {
@@ -5786,7 +5794,7 @@ import AndroidStatusBar 1.0
                         id: lifespanBikeAccordion
                         title: qsTr("LifeSpan Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -5810,7 +5818,7 @@ import AndroidStatusBar 1.0
                         id: flywheelBikeAccordion
                         title: qsTr("Flywheel Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -5876,7 +5884,7 @@ import AndroidStatusBar 1.0
                         id: domyosBikeAccordion
                         title: qsTr("Domyos Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -5965,7 +5973,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         title: qsTr("Tacx Neo Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             IndicatorOnlySwitch {
@@ -6013,7 +6021,7 @@ import AndroidStatusBar 1.0
                         id: proformBikeAccordion
                         title: qsTr("Proform/Norditrack Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             RowLayout {
@@ -6320,7 +6328,7 @@ import AndroidStatusBar 1.0
                         id: computrainerBikeAccordion
                         title: qsTr("Computrainer Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         RowLayout {
                             spacing: 10
@@ -6355,7 +6363,7 @@ import AndroidStatusBar 1.0
                         id: kettlerUsbBikeAccordion
                         title: qsTr("Kettler USB Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
 												accordionContent: ColumnLayout {
                             spacing: 0
@@ -6423,7 +6431,7 @@ import AndroidStatusBar 1.0
                         id: freebeatBikeAccordion
                         title: qsTr("Freebeat Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -6460,7 +6468,7 @@ import AndroidStatusBar 1.0
                         id: m3iBikeAccordion
                         title: qsTr("M3i Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         //width: 640
                         //anchors.top: acc1.bottom
@@ -6561,7 +6569,7 @@ import AndroidStatusBar 1.0
                         id: soleBikeAccordion
                         title: qsTr("Sole Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -6585,7 +6593,7 @@ import AndroidStatusBar 1.0
                         id: technogymBikeAccordion
                         title: qsTr("Technogym Bike Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -6660,7 +6668,7 @@ import AndroidStatusBar 1.0
                         id: toputureBikeAccordion
                         title: qsTr("Toputure Bikes")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -6711,13 +6719,13 @@ import AndroidStatusBar 1.0
                     Label {
                         id: antSpeedLabel
                         text: qsTr("Set 100mm as wheel circumference in settings of ant+ speed sensor")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
-                        color: Material.color(Material.Red)
+                        color: "#FF8A80"
                         Layout.fillWidth: true
                     }
 
@@ -7235,6 +7243,8 @@ import AndroidStatusBar 1.0
 
                     Button {
                         text: qsTr("Open Floating on a Browser")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: openFloatingWindowBrowser();
                     }
@@ -7342,7 +7352,7 @@ import AndroidStatusBar 1.0
                         id: themesOptionsAccordion
                         title: qsTr("UI Themes")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -9076,6 +9086,8 @@ import AndroidStatusBar 1.0
 
                     Button {
                         text: qsTr("Test Garmin Login")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignHCenter
                         onClicked: { rootItem.garmin_connect_login(); }
                     }
@@ -9116,8 +9128,8 @@ import AndroidStatusBar 1.0
                                 Layout.fillWidth: true
                                 horizontalAlignment: Text.AlignHCenter
                                 font.pixelSize: 12
-                                font.italic: true
-                                color: Material.color(Material.Grey)
+                                font.italic: false
+                                color: "#9a9aa8"
                             }
 
                             TextField {
@@ -9142,6 +9154,8 @@ import AndroidStatusBar 1.0
 
                                 Button {
                                     text: qsTr("Cancel")
+                                    flat: true
+                                    Material.foreground: "#B388FF"
                                     Layout.fillWidth: true
                                     onClicked: {
                                         mfaCodeTextField.text = "";
@@ -9932,15 +9946,15 @@ import AndroidStatusBar 1.0
 
                     Label {
                         text: qsTr("IMPORTANT: You must set your real Garmin device UNIT ID here to see your actual device in Garmin Connect. You can find your device UNIT ID in the Garmin Connect app. The default value (3313379353) is just a placeholder. If you want to see also the Acute load in Garmin Connect leave the default Unit ID here.")
-                        font.bold: true
-                        font.italic: true
+                        font.bold: false
+                        font.italic: false
                         font.pixelSize: Qt.application.font.pixelSize - 2
                         textFormat: Text.PlainText
                         wrapMode: Text.WordWrap
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
-                        color: Material.color(Material.Orange)
+                        color: "#FFB74D"
                     }
                 }
             }
@@ -11512,7 +11526,7 @@ import AndroidStatusBar 1.0
                         id: proformTreadmillAccordion
                         title: qsTr("Proform/Nordictrack Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0    
@@ -11912,7 +11926,7 @@ import AndroidStatusBar 1.0
                         id: pafersTreadmillAccordion
                         title: qsTr("Pafers Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -11950,7 +11964,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         title: qsTr("GEM Module Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -11973,7 +11987,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         title: qsTr("Echelon Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -11997,7 +12011,7 @@ import AndroidStatusBar 1.0
                         id: kingsmithTreadmillAccordion
                         title: qsTr("KingSmith Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -12107,7 +12121,7 @@ import AndroidStatusBar 1.0
                         id: runnerTTreadmillAccordion
                         title: qsTr("RunnerT Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -12158,7 +12172,7 @@ import AndroidStatusBar 1.0
                         id: domyosTreadmillAccordion
                         title: qsTr("Domyos Treadmill Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -12413,7 +12427,7 @@ import AndroidStatusBar 1.0
                         id:soleTreadmillAccordion
                         title: qsTr("Sole Treadmill Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -12507,7 +12521,7 @@ import AndroidStatusBar 1.0
                         id: technogymTreadmillAccordion
                         title: qsTr("Technogym Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -12532,7 +12546,7 @@ import AndroidStatusBar 1.0
                         id: fitshowAccordion
                         title: qsTr("Fitshow Treadmill Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             IndicatorOnlySwitch {
@@ -12625,7 +12639,7 @@ import AndroidStatusBar 1.0
                         id: eslinkerTreadmillAccordion
                         title: qsTr("ESLinker Treadmill Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             IndicatorOnlySwitch {
@@ -12676,7 +12690,7 @@ import AndroidStatusBar 1.0
                         id: horizonTreadmillAccordion
                         title: qsTr("Horizon Treadmill Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -12898,7 +12912,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         title: qsTr("Bodytone Treadmill Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -12922,7 +12936,7 @@ import AndroidStatusBar 1.0
                         id: bowflexTreadmillAccordion
                         title: qsTr("Bowflex Treadmill Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -13325,7 +13339,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         title: qsTr("PM3, PM4 Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             RowLayout {
@@ -13385,6 +13399,8 @@ import AndroidStatusBar 1.0
 
                     Button {
                         text: qsTr("Refresh Devices List")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: refresh_bluetooth_devices_clicked();
                     }
@@ -13435,7 +13451,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         title: qsTr("Proform/Nordictrack Rower Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             IndicatorOnlySwitch {
@@ -13513,7 +13529,7 @@ import AndroidStatusBar 1.0
                         id: domyosEllipticalAccordion
                         title: qsTr("Domyos Elliptical Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: RowLayout {
                             spacing: 10
@@ -13560,7 +13576,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         title: "Life Fitness 95xi (CSAFE)"
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             RowLayout {
@@ -13620,6 +13636,8 @@ import AndroidStatusBar 1.0
 
                     Button {
                         text: qsTr("Refresh Devices List")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: refresh_bluetooth_devices_clicked();
                     }
@@ -13655,7 +13673,7 @@ import AndroidStatusBar 1.0
                         id: proformEllipticalAccordion
                         title: qsTr("Proform/Nordictrack Elliptical Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             IndicatorOnlySwitch {
@@ -13771,7 +13789,7 @@ import AndroidStatusBar 1.0
                         id: soleEllipticalAccordion
                         title: qsTr("Sole Elliptical Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             IndicatorOnlySwitch {
@@ -13808,7 +13826,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         title: qsTr("iConcept Elliptical Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             IndicatorOnlySwitch {
@@ -13873,6 +13891,8 @@ import AndroidStatusBar 1.0
                     Button {
                         id: refreshFilterDeviceButton
                         text: qsTr("Refresh Devices List")
+                        flat: true
+                        Material.foreground: "#B388FF"
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: refresh_bluetooth_devices_clicked();
                     }
@@ -14885,7 +14905,7 @@ import AndroidStatusBar 1.0
                         id: cadenceSensorOptionsAccordion
                         title: qsTr("Cadence Sensor Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -14893,13 +14913,13 @@ import AndroidStatusBar 1.0
                             Label {
                                 id: cadenceSensorLabel
                                 text: qsTr("Don't touch these settings if your bike works properly!")
-                                font.bold: true
-                                font.italic: true
+                                font.bold: false
+                                font.italic: false
                                 font.pixelSize: Qt.application.font.pixelSize - 2
                                 textFormat: Text.PlainText
                                 wrapMode: Text.WordWrap
                                 verticalAlignment: Text.AlignVCenter
-                                color: Material.color(Material.Red)
+                                color: "#FF8A80"
                                 Layout.fillWidth: true
                             }
 
@@ -14989,6 +15009,8 @@ import AndroidStatusBar 1.0
                             Button {
                                 id: refreshCadenceSensorNameButton
                                 text: qsTr("Refresh Devices List")
+                                flat: true
+                                Material.foreground: "#B388FF"
                                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                 onClicked: refresh_bluetooth_devices_clicked();
                             }
@@ -15224,7 +15246,7 @@ import AndroidStatusBar 1.0
                         id: powerSensorOptionsAccordion
                         title: qsTr("Power Sensor Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -15610,6 +15632,8 @@ import AndroidStatusBar 1.0
                             Button {
                                 id: refreshPowerSensorNameButton
                                 text: qsTr("Refresh Devices List")
+                                flat: true
+                                Material.foreground: "#B388FF"
                                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                 onClicked: refresh_bluetooth_devices_clicked();
                             }
@@ -15633,7 +15657,7 @@ import AndroidStatusBar 1.0
                         id: eliteAccesoriesAccordion
                         title: qsTr("Elite™ Products")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -15641,7 +15665,7 @@ import AndroidStatusBar 1.0
                                 id: eliteRizerOptionsAccordion
                                 title: qsTr("Elite Rizer Options")
                                 indicatRectColor: Material.color(Material.Grey)
-                                textColor: Material.color(Material.Blue)
+                                textColor: "#B388FF"
                                 color: Material.backgroundColor
                                 accordionContent: ColumnLayout {
                                     spacing: 0
@@ -15678,6 +15702,8 @@ import AndroidStatusBar 1.0
                                     Button {
                                         id: refreshEliteRizerNameButton
                                         text: qsTr("Refresh Devices List")
+                                        flat: true
+                                        Material.foreground: "#B388FF"
                                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                         onClicked: refresh_bluetooth_devices_clicked();
                                     }
@@ -15714,7 +15740,7 @@ import AndroidStatusBar 1.0
                                 id: eliteSterzoSmartOptionsAccordion
                                 title: qsTr("Elite Sterzo Smart Options")
                                 indicatRectColor: Material.color(Material.Grey)
-                                textColor: Material.color(Material.Blue)
+                                textColor: "#B388FF"
                                 color: Material.backgroundColor
                                 accordionContent: ColumnLayout {
                                     spacing: 0
@@ -15751,6 +15777,8 @@ import AndroidStatusBar 1.0
                                     Button {
                                         id: refreshEliteSterzoSmartNameButton
                                         text: qsTr("Refresh Devices List")
+                                        flat: true
+                                        Material.foreground: "#B388FF"
                                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                         onClicked: refresh_bluetooth_devices_clicked();
                                     }
@@ -15763,7 +15791,7 @@ import AndroidStatusBar 1.0
                         id: ftmsAccessoryOptionsAccordion
                         title: qsTr("SmartSpin2k Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -15800,6 +15828,8 @@ import AndroidStatusBar 1.0
                             Button {
                                 id: refreshFTMSAccessoryNameButton
                                 text: qsTr("Refresh Devices List")
+                                flat: true
+                                Material.foreground: "#B388FF"
                                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                 onClicked: refresh_bluetooth_devices_clicked();
                             }                                                        
@@ -15905,7 +15935,7 @@ import AndroidStatusBar 1.0
                                 id: ftmsAccessoryAdvancedOptionsAccordion
                                 title: qsTr("Advanced SmartSpin2k Calibration")
                                 indicatRectColor: Material.color(Material.Grey)
-                                textColor: Material.color(Material.Blue)
+                                textColor: "#B388FF"
                                 color: Material.backgroundColor
                                 accordionContent: ColumnLayout {
                                     spacing: 10
@@ -16130,7 +16160,7 @@ import AndroidStatusBar 1.0
                         id: fitmetriaFanFitOptionsAccordion
                         title: qsTr("Fitmetria Fitfan™ Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
 
                         accordionContent: ColumnLayout {
@@ -16242,7 +16272,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         title: qsTr("Wahoo Kickr HeadWind Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
 
                         accordionContent: ColumnLayout {
@@ -16347,7 +16377,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         title: qsTr("Elite Aria Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
 
                         accordionContent: ColumnLayout {
@@ -16453,7 +16483,7 @@ import AndroidStatusBar 1.0
                 AccordionElement {
                         title: qsTr("SRAM Devices Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
 
                         accordionContent: ColumnLayout {
@@ -16490,7 +16520,7 @@ import AndroidStatusBar 1.0
                 AccordionElement {
                         title: qsTr("Thinkrider Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
 
                         accordionContent: ColumnLayout {
@@ -16527,7 +16557,7 @@ import AndroidStatusBar 1.0
                 AccordionElement {
                         title: qsTr("CYCPLUS Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
 
                         accordionContent: ColumnLayout {
@@ -16564,7 +16594,7 @@ import AndroidStatusBar 1.0
                 AccordionElement {
                         title: qsTr("Zwift Devices Options")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
 
                         accordionContent: ColumnLayout {
@@ -17520,7 +17550,7 @@ import AndroidStatusBar 1.0
                         id: mqttAccordion
                         title: qsTr("MQTT Settings")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                             spacing: 0
@@ -17725,7 +17755,7 @@ import AndroidStatusBar 1.0
                         id: oscAccordion
                         title: qsTr("OSC Settings")
                         indicatRectColor: Material.color(Material.Grey)
-                        textColor: Material.color(Material.Yellow)
+                        textColor: "#B388FF"
                         color: Material.backgroundColor
                         accordionContent: ColumnLayout {
                         spacing: 0
@@ -18232,6 +18262,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: clearLogs
                             text: qsTr("Clear History")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.fillWidth: true
                             Layout.minimumWidth: 0
                             onClicked: rootItem.clearFiles();
@@ -18240,6 +18272,8 @@ import AndroidStatusBar 1.0
                         Button {
                             id: showLogs
                             text: qsTr("Show Logs Folder")
+                            flat: true
+                            Material.foreground: "#B388FF"
                             Layout.fillWidth: true
                             Layout.minimumWidth: 0
                             onClicked: {
