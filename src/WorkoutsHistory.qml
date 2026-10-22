@@ -197,6 +197,7 @@ Page {
                 anchors.verticalCenter: parent.verticalCenter
 
                 Text {
+                    color: "#ececf1"
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: qsTr("Workout History")
@@ -517,6 +518,7 @@ Page {
                                 color: "transparent"
                                 
                                 Text {
+                                    color: "#ececf1"
                                     id: titleText
                                     text: title
                                     font.bold: true
@@ -577,11 +579,13 @@ Page {
                                 spacing: 16
 
                                 Text {
+                                    color: "#ececf1"
                                     text: wrapEmoji("⏱ ") + duration
                                     textFormat: Qt.platform.os === "android" ? Text.RichText : Text.PlainText
                                 }
 
                                 Text {
+                                    color: "#ececf1"
                                     text: {
                                         var useMiles = settings && settings.miles_unit
                                         var displayDistance = useMiles ? (distance / 1.60934) : distance
@@ -595,6 +599,7 @@ Page {
                                 spacing: 16
 
                                 Text {
+                                    color: "#ececf1"
                                     text: Qt.platform.os === "android" ? 
                                           wrapEmoji("🔥 ") + Math.round(calories) + " " + qsTr("kcal") :
                                           "🔥 " + Math.round(calories) + " " + qsTr("kcal")
@@ -748,6 +753,7 @@ Page {
         y: (parent.height - height) / 2
 
         Text {
+            color: "#ececf1"
             text: qsTr("Are you sure you want to delete '%1'?").arg(confirmDialog.workoutTitle)
         }
 
@@ -798,6 +804,7 @@ Page {
             spacing: 16
 
             Text {
+                color: "#ececf1"
                 Layout.margins: 20
                 Layout.preferredWidth: 300
                 Layout.preferredHeight: 120
@@ -1058,6 +1065,7 @@ Page {
                 }
                 
                 Text {
+                    color: "#ececf1"
                     Layout.fillWidth: true
                     text: calendar.selectedDate.toLocaleDateString(Qt.locale(), "MMMM yyyy")
                     font.pixelSize: 18

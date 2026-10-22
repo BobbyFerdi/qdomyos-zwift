@@ -48,7 +48,7 @@
 **
 ****************************************************************************/
 
-import QtQuick 2.7
+import QtQuick 2.14 // Text.linkColor needs 2.14
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.3
 import org.cagnulein.qdomyoszwift 1.0
@@ -92,6 +92,7 @@ Item {
         font.pointSize: 8
         wrapMode: TextArea.Wrap
         text: qsTr("<html><style type='text/css'></style>Swag bag feature:<br>• an auto-renewable subscription<br>• 1 month ($1.99)<br>• Your subscription will be charged to your iTunes account at confirmation of purchase and will automatically renew (at the duration selected) unless auto-renew is turned off at least 24 hours before the end of the current period.<br>• Current subscription may not be cancelled during the active subscription period; however, you can manage your subscription and/or turn off auto-renewal by visiting your iTunes Account Settings after purchase.<br>• Privacy policy: <a href='https://robertoviola.cloud/privacy-policy-qdomyos-zwift/'>https://robertoviola.cloud/privacy-policy-qdomyos-zwift/</a><br>• Licensed Application end user license agreement: <a href='https://www.apple.com/legal/internet-services/itunes/dev/stdeula/'>https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a><br></html>")
+        linkColor: "#B388FF"
         onLinkActivated: Qt.openUrlExternally(link)
     }
 

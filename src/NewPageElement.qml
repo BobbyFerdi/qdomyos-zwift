@@ -25,6 +25,8 @@ ColumnLayout {
         Layout.rightMargin: 8
         height: 52
         radius: 12
+        border.width: 1
+        border.color: Qt.rgba(1, 1, 1, 0.14)
 
         Accessible.role: Accessible.Button 
         Accessible.name: title 

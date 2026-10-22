@@ -346,7 +346,7 @@ The following questions will customize QZ for your equipment and goals."))
 
                     Text {
                         Layout.alignment: Qt.AlignHCenter
-                        text: qsTr("QZ allows you to connect to both of them, even simultaneously if you want!")
+                        text: brand(qsTr("QZ allows you to connect to both of them, even simultaneously if you want!"))
                         font.pixelSize: 20
                         wrapMode: Text.WordWrap
                         Layout.fillWidth: true
@@ -503,7 +503,7 @@ The following questions will customize QZ for your equipment and goals."))
                     }
 
                     Text {
-                        text: qsTr("Typically, Peloton coaches call out a range for target incline, resistance and/or speed. Use this setting to choose the difficulty of the target QZ communicates. Difficulty level can be set to lower, upper or average")
+                        text: brand(qsTr("Typically, Peloton coaches call out a range for target incline, resistance and/or speed. Use this setting to choose the difficulty of the target QZ communicates. Difficulty level can be set to lower, upper or average"))
                         font.pixelSize: 20
                         wrapMode: Text.WordWrap
                         width: stackViewLocal.width * 0.8
@@ -800,7 +800,7 @@ The following questions will customize QZ for your equipment and goals."))
 
                     Text {
                         Layout.alignment: Qt.AlignHCenter
-                        text: qsTr("QZ will read the inclination in real time from the Zwift app and will adjust the inclination on your treadmill. It doesn't work on workout")
+                        text: brand(qsTr("QZ will read the inclination in real time from the Zwift app and will adjust the inclination on your treadmill. It doesn't work on workout"))
                         wrapMode: Text.WordWrap
                         Layout.fillWidth: true
                         width: stackViewLocal.width * 0.8
@@ -911,7 +911,7 @@ The following questions will customize QZ for your equipment and goals."))
                     Text {
                         id: zwiftPlayClickDescription
                         Layout.alignment: Qt.AlignHCenter
-                        text: qsTr("Enable the one that you would like to use directly with QZ. Remember to update their firmware before using it.")
+                        text: brand(qsTr("Enable the one that you would like to use directly with QZ. Remember to update their firmware before using it."))
                         wrapMode: Text.WordWrap
                         Layout.fillWidth: true
                         width: stackViewLocal.width * 0.8
@@ -1017,7 +1017,7 @@ The following questions will customize QZ for your equipment and goals."))
 
                     Text {
                         Layout.alignment: Qt.AlignHCenter
-                        text: qsTr("Virtual shifting enabled! You can change gears using the gears tile in QZ directly, or you can also add a bluetooth remote or a Zwift Play or a Zwift Click to control it!")
+                        text: brand(qsTr("Virtual shifting enabled! You can change gears using the gears tile in QZ directly, or you can also add a bluetooth remote or a Zwift Play or a Zwift Click to control it!"))
                         wrapMode: Text.WordWrap
                         width: stackViewLocal.width * 0.8
                         horizontalAlignment: Text.AlignHCenter
@@ -1133,7 +1133,7 @@ The following questions will customize QZ for your equipment and goals."))
                         horizontalAlignment: Text.AlignHCenter
                         Layout.fillWidth: true
                         Layout.alignment: Qt.AlignHCenter
-                        text: qsTr("Thank you for setting up QZ!")
+                        text: brand(qsTr("Thank you for setting up QZ!"))
                         font.pixelSize: 20
                         font.bold: true
                         color: "white"

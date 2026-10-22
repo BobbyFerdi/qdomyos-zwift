@@ -564,3 +564,28 @@ canvas {
 .custom-dialog-footer button {
     min-width: 80px;
 }
+
+/* Phones: stack the toolbar and let long rows wrap instead of running off the screen */
+@media (max-width: 640px) {
+    #app {
+        padding: 12px;
+    }
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .toolbar-controls {
+        width: 100%;
+    }
+    .toolbar-controls label {
+        flex: 1 1 140px;
+        min-width: 0;
+    }
+    .toolbar-controls input[type="text"],
+    .toolbar-controls select {
+        width: 100%;
+    }
+    .card-header {
+        flex-wrap: wrap;
+    }
+}

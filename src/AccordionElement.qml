@@ -28,6 +28,8 @@ ColumnLayout {
         Layout.rightMargin: 8
         height: 52
         radius: 12
+        border.width: 1
+        border.color: Qt.rgba(1, 1, 1, 0.14)
         // Header presses fade a little so the whole card feels tappable
         opacity: headerMouse.pressed ? 0.8 : 1.0
         Behavior on opacity { NumberAnimation { duration: 80 } }
