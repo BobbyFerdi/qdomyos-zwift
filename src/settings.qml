@@ -3235,6 +3235,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: heartRateZoneAccordion
                         title: qsTr("Heart Rate Zone Options")
+                        icon: "favorite"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -3377,6 +3378,7 @@ import AndroidStatusBar 1.0
                             AccordionElement {
                                 id: heartRatemaxOverrideAccordion
                                 title: qsTr("Heart Rate Max Override")
+                                icon: "favorite"
                                 indicatRectColor: Material.color(Material.Grey)
                                 textColor: Material.color(Material.Red)
                                 color: Material.backgroundColor
@@ -3474,6 +3476,7 @@ import AndroidStatusBar 1.0
                             AccordionElement {
                                 id: powerFromHeartRateAccordion
                                 title: qsTr("Power from Heart Rate Options")
+                                icon: "bolt"
                                 indicatRectColor: Material.color(Material.Grey)
                                 textColor: "#B388FF"
                                 color: Material.backgroundColor
@@ -3863,6 +3866,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: openBikeControlAccordion
                         title: qsTr("OpenBikeControl")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: Material.color(Material.Grey)
                         color: Material.backgroundColor
@@ -4369,6 +4373,7 @@ import AndroidStatusBar 1.0
 
                     NewPageElement {
                         title: qsTr("Custom Gear Table")
+                        icon: "tune"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -4377,6 +4382,7 @@ import AndroidStatusBar 1.0
 
                     NewPageElement {
                         title: qsTr("Custom Inclination to Resistance Table")
+                        icon: "tune"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -4418,6 +4424,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: automaticVirtualShiftingAccordion
                         title: qsTr("Automatic Virtual Shifting")
+                        icon: "settings"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: Material.color(Material.Red)
                         color: Material.backgroundColor
@@ -4897,11 +4904,13 @@ import AndroidStatusBar 1.0
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
+                        Layout.topMargin: 8
                         color: "#9a9aa8"
                     }                    
 
                     NewPageElement {
                         title: qsTr("Wahoo Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -4911,6 +4920,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: schwinnBikeAccordion
                         title: qsTr("Schwinn Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -4995,6 +5005,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: horizonBikeAccordion
                         title: qsTr("Horizon Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5030,6 +5041,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: echelonBikeOptionsAccordion
                         title: qsTr("Echelon Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5142,6 +5154,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: inspireBikeAccordion
                         title: qsTr("Inspire Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5181,6 +5194,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: renphoBikeAccordion
                         title: qsTr("Renpho Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5232,6 +5246,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: hammerBikeAccordion
                         title: qsTr("Hammer Racer Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5253,6 +5268,7 @@ import AndroidStatusBar 1.0
 
                     AccordionElement {
                         title: qsTr("Saris/Cycleops Hammer trainer Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5274,6 +5290,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: cardioFitBikeAccordion
                         title: qsTr("CardioFIT Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5295,6 +5312,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: yesoulBikeAccordion
                         title: qsTr("Yesoul Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5317,6 +5335,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: snodeBikeAccordion
                         title: qsTr("Snode Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5338,6 +5357,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: skandikaBikeAccordion
                         title: qsTr("Skandika Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5363,6 +5383,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: fitplusBikeAccordion
                         title: qsTr("Fitplus Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5430,6 +5451,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: lifespanBikeAccordion
                         title: qsTr("LifeSpan Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5454,6 +5476,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: flywheelBikeAccordion
                         title: qsTr("Flywheel Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5520,6 +5543,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: domyosBikeAccordion
                         title: qsTr("Domyos Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5609,6 +5633,7 @@ import AndroidStatusBar 1.0
                     }                
                     AccordionElement {
                         title: qsTr("Tacx Neo Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5646,6 +5671,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: proformBikeAccordion
                         title: qsTr("Proform/Norditrack Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5953,6 +5979,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: computrainerBikeAccordion
                         title: qsTr("Computrainer Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -5988,6 +6015,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: kettlerUsbBikeAccordion
                         title: qsTr("Kettler USB Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -6056,6 +6084,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: freebeatBikeAccordion
                         title: qsTr("Freebeat Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -6093,6 +6122,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: m3iBikeAccordion
                         title: qsTr("M3i Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -6194,6 +6224,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: soleBikeAccordion
                         title: qsTr("Sole Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -6218,6 +6249,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: technogymBikeAccordion
                         title: qsTr("Technogym Bike Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -6293,6 +6325,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: toputureBikeAccordion
                         title: qsTr("Toputure Bikes")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -6862,6 +6895,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: themesOptionsAccordion
                         title: qsTr("UI Themes")
+                        icon: "palette"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -10257,6 +10291,7 @@ import AndroidStatusBar 1.0
                     NewPageElement {
                         //: Section title: table that replaces each incline value the treadmill receives with a user-defined value. Avoid the technical word "override".
                         title: qsTr("Inclination Overrides")
+                        icon: "directions_run"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: Material.color(Material.Grey)
                         color: Material.backgroundColor
@@ -10342,12 +10377,14 @@ import AndroidStatusBar 1.0
                         verticalAlignment: Text.AlignVCenter
                         Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                         Layout.fillWidth: true
+                        Layout.topMargin: 8
                         color: "#9a9aa8"
                     }
 
                     AccordionElement {
                         id: proformTreadmillAccordion
                         title: qsTr("Proform/Nordictrack Options")
+                        icon: "directions_run"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -10748,6 +10785,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: pafersTreadmillAccordion
                         title: qsTr("Pafers Options")
+                        icon: "directions_run"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -10786,6 +10824,7 @@ import AndroidStatusBar 1.0
 
                     AccordionElement {
                         title: qsTr("GEM Module Options")
+                        icon: "directions_run"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -10809,6 +10848,7 @@ import AndroidStatusBar 1.0
 
                     AccordionElement {
                         title: qsTr("Echelon Options")
+                        icon: "directions_run"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -10833,6 +10873,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: kingsmithTreadmillAccordion
                         title: qsTr("KingSmith Options")
+                        icon: "directions_run"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -10932,6 +10973,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: runnerTTreadmillAccordion
                         title: qsTr("RunnerT Options")
+                        icon: "directions_run"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -10983,6 +11025,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: domyosTreadmillAccordion
                         title: qsTr("Domyos Treadmill Options")
+                        icon: "directions_run"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -11231,6 +11274,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id:soleTreadmillAccordion
                         title: qsTr("Sole Treadmill Options")
+                        icon: "directions_run"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -11325,6 +11369,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: technogymTreadmillAccordion
                         title: qsTr("Technogym Options")
+                        icon: "directions_run"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -11350,6 +11395,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: fitshowAccordion
                         title: qsTr("Fitshow Treadmill Options")
+                        icon: "directions_run"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -11443,6 +11489,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: eslinkerTreadmillAccordion
                         title: qsTr("ESLinker Treadmill Options")
+                        icon: "directions_run"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -11494,6 +11541,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: horizonTreadmillAccordion
                         title: qsTr("Horizon Treadmill Options")
+                        icon: "directions_run"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -11716,6 +11764,7 @@ import AndroidStatusBar 1.0
 
                     AccordionElement {
                         title: qsTr("Bodytone Treadmill Options")
+                        icon: "directions_run"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -11740,6 +11789,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: bowflexTreadmillAccordion
                         title: qsTr("Bowflex Treadmill Options")
+                        icon: "directions_run"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -12145,6 +12195,7 @@ import AndroidStatusBar 1.0
                     spacing: 0
                     AccordionElement {
                         title: qsTr("PM3, PM4 Options")
+                        icon: "rowing"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -12257,6 +12308,7 @@ import AndroidStatusBar 1.0
 
                     AccordionElement {
                         title: qsTr("Proform/Nordictrack Rower Options")
+                        icon: "rowing"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -12336,6 +12388,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: domyosEllipticalAccordion
                         title: qsTr("Domyos Elliptical Options")
+                        icon: "directions_walk"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -12383,6 +12436,7 @@ import AndroidStatusBar 1.0
                     }
                     AccordionElement {
                         title: "Life Fitness 95xi (CSAFE)"
+                        icon: "directions_walk"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -12480,6 +12534,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: proformEllipticalAccordion
                         title: qsTr("Proform/Nordictrack Elliptical Options")
+                        icon: "directions_walk"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -12596,6 +12651,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: soleEllipticalAccordion
                         title: qsTr("Sole Elliptical Options")
+                        icon: "directions_walk"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -12633,6 +12689,7 @@ import AndroidStatusBar 1.0
 
                     AccordionElement {
                         title: qsTr("iConcept Elliptical Options")
+                        icon: "directions_walk"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -13451,6 +13508,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: cadenceSensorOptionsAccordion
                         title: qsTr("Cadence Sensor Options")
+                        icon: "sensors"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -13741,6 +13799,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: powerSensorOptionsAccordion
                         title: qsTr("Power Sensor Options")
+                        icon: "bolt"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -14044,6 +14103,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: eliteAccesoriesAccordion
                         title: qsTr("Elite™ Products")
+                        icon: "extension"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -14052,6 +14112,7 @@ import AndroidStatusBar 1.0
                             AccordionElement {
                                 id: eliteRizerOptionsAccordion
                                 title: qsTr("Elite Rizer Options")
+                                icon: "extension"
                                 indicatRectColor: Material.color(Material.Grey)
                                 textColor: "#B388FF"
                                 color: Material.backgroundColor
@@ -14127,6 +14188,7 @@ import AndroidStatusBar 1.0
                             AccordionElement {
                                 id: eliteSterzoSmartOptionsAccordion
                                 title: qsTr("Elite Sterzo Smart Options")
+                                icon: "extension"
                                 indicatRectColor: Material.color(Material.Grey)
                                 textColor: "#B388FF"
                                 color: Material.backgroundColor
@@ -14178,6 +14240,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: ftmsAccessoryOptionsAccordion
                         title: qsTr("SmartSpin2k Options")
+                        icon: "pedal_bike"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -14322,6 +14385,7 @@ import AndroidStatusBar 1.0
                             AccordionElement {
                                 id: ftmsAccessoryAdvancedOptionsAccordion
                                 title: qsTr("Advanced SmartSpin2k Calibration")
+                                icon: "extension"
                                 indicatRectColor: Material.color(Material.Grey)
                                 textColor: "#B388FF"
                                 color: Material.backgroundColor
@@ -14547,6 +14611,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: fitmetriaFanFitOptionsAccordion
                         title: qsTr("Fitmetria Fitfan™ Options")
+                        icon: "mode_fan"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -14659,6 +14724,7 @@ import AndroidStatusBar 1.0
 
                     AccordionElement {
                         title: qsTr("Wahoo Kickr HeadWind Options")
+                        icon: "mode_fan"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -14764,6 +14830,7 @@ import AndroidStatusBar 1.0
 
                     AccordionElement {
                         title: qsTr("Elite Aria Options")
+                        icon: "mode_fan"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -14870,6 +14937,7 @@ import AndroidStatusBar 1.0
 /*
                 AccordionElement {
                         title: qsTr("SRAM Devices Options")
+                        icon: "extension"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -14896,6 +14964,7 @@ import AndroidStatusBar 1.0
 
                 AccordionElement {
                         title: qsTr("Thinkrider Options")
+                        icon: "extension"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -14922,6 +14991,7 @@ import AndroidStatusBar 1.0
 
                 AccordionElement {
                         title: qsTr("CYCPLUS Options")
+                        icon: "extension"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -14948,6 +15018,7 @@ import AndroidStatusBar 1.0
 
                 AccordionElement {
                         title: qsTr("Zwift Devices Options")
+                        icon: "extension"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -15678,6 +15749,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: mqttAccordion
                         title: qsTr("MQTT Settings")
+                        icon: "cloud_upload"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -15844,6 +15916,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: oscAccordion
                         title: qsTr("OSC Settings")
+                        icon: "cloud_upload"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: "#B388FF"
                         color: Material.backgroundColor
@@ -15943,6 +16016,7 @@ import AndroidStatusBar 1.0
                     AccordionElement {
                         id: templateSettingsAccordion
                         title: qsTr("Template Settings")
+                        icon: "cloud_upload"
                         indicatRectColor: Material.color(Material.Grey)
                         textColor: Material.color(Material.Grey)
                         color: Material.backgroundColor

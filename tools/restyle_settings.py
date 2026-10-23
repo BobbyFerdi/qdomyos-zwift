@@ -101,7 +101,7 @@ def restyle(text, card_page=False):
     newline = "\r\n" if "\r\n" in text else "\n"
     lines = text.replace("\r\n", "\n").split("\n")
     has_material = any(line.strip().startswith("import QtQuick.Controls.Material") for line in lines)
-    counts = {"help muted": 0, "help buttons": 0, "buttons": 0, "titles": 0, "hints": 0, "card help spacing": 0, "card help folded": 0, "inline help": 0, "label wrap": 0}
+    counts = {"help muted": 0, "help buttons": 0, "buttons": 0, "titles": 0, "hints": 0, "card help spacing": 0, "card help folded": 0, "inline help": 0, "label wrap": 0, "stacked help": 0}
 
     # help labels: muted colour, no bold, no italic
     i = 0
@@ -257,6 +257,27 @@ def restyle(text, card_page=False):
                         del lines[nxt + shift:stop]
                         counts["inline help"] += 1
             i += 1
+
+    # two "?" buttons one under the other would overlap (each is pulled up under the row above): space the lower one
+    if not card_page:
+        for i in range(len(lines) - 1, -1, -1):  # from the end, so an insert never moves a line still to visit
+            if lines[i].strip() != "SettingHelp {":
+                continue
+            prev = i - 1
+            while prev >= 0 and lines[prev].strip() == "":
+                prev -= 1
+            if prev < 0 or lines[prev].strip() != "}" or indent_of(lines[prev]) != indent_of(lines[i]):
+                continue
+            opener_at = next((k for k in range(prev - 1, -1, -1) if indent_of(lines[k]) == indent_of(lines[prev])
+                              and lines[k].strip() != ""), None)
+            if opener_at is None or lines[opener_at].strip() != "SettingHelp {":
+                continue
+            end = block_end(lines, i)
+            if end > i and not any(line.strip().startswith("Layout.topMargin") for line in lines[i + 1:end]):
+                at = next((k for k in range(i + 1, end) if lines[k].strip() == "Layout.fillWidth: true"), None)
+                if at is not None:
+                    lines.insert(at + 1, lines[at][:indent_of(lines[at])] + "Layout.topMargin: 8")
+                    counts["stacked help"] += 1
 
     # a long label next to a "?" wraps instead of running under it
     if not card_page:

@@ -388,6 +388,7 @@ ScrollView {
         NewPageElement {
             id: labelShortcutsSettings
             title: qsTr("Keyboard Shortcuts ⌨️")
+            icon: "keyboard"
             indicatRectColor: Material.color(Material.Grey)
             textColor: Material.color(Material.Grey)
             color: Material.backgroundColor
