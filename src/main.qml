@@ -1647,7 +1647,8 @@ ApplicationWindow {
                     leftPadding: 60
                     ShapeIcon { name: "logout"; color: "#B388FF"; size: 22; x: 20; anchors.verticalCenter: parent.verticalCenter }
                     width: parent.width
-                    visible: OS_VERSION === "Other" ? true : false
+                    // Shown on Android too; only iOS apps are not meant to quit themselves
+                    visible: OS_VERSION !== "iOS"
                     onClicked: {
                         console.log("closing...")
                         Qt.callLater(Qt.quit)
