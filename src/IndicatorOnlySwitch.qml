@@ -35,6 +35,22 @@ SwitchDelegate {
         configureTextItem(contentItem)
     }
 
+    // description of the setting: shows as a "?" right after the title
+    property string helpText: ""
+
+    TextMetrics {
+        id: titleMetrics
+        font: root.font
+        text: root.text
+    }
+
+    SettingHelpButton {
+        helpText: root.helpText
+        anchors.verticalCenter: parent.verticalCenter
+        x: Math.min(root.leftPadding + titleMetrics.width + 10,
+                    root.width - root.indicator.width - root.rightPadding - width - 8)
+    }
+
     Component.onCompleted: Qt.callLater(configureContentItem)
     onContentItemChanged: Qt.callLater(configureContentItem)
     onTextChanged: Qt.callLater(configureContentItem)

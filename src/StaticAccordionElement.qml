@@ -5,6 +5,7 @@ ColumnLayout {
     id: rootElement
     property bool isOpen: false
     property string title: ""
+    property string icon: ""
     property alias color: accordionHeader.color
     property alias textColor: accordionText.color
     property alias textFont: accordionText.font.family
@@ -34,6 +35,16 @@ ColumnLayout {
            width: 8; height: 8
            radius: 4
            color: "white"
+           visible: rootElement.icon === ""
+        }
+        // A section with an icon shows it instead of the dot
+        ShapeIcon {
+            visible: rootElement.icon !== ""
+            x: 15
+            anchors.verticalCenter: parent.verticalCenter
+            name: rootElement.icon
+            color: "#B388FF"
+            size: 22
         }
 
         Text {

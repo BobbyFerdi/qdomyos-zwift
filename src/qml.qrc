@@ -140,6 +140,7 @@
         <file>ValueComboBox.qml</file>
         <file>UiComboBox.qml</file>
         <file>SettingHelp.qml</file>
+        <file>SettingHelpButton.qml</file>
         <file>StaticAccordionElement.qml</file>
         <file>inner_templates/chartjs/dotreadmillchartlive.js</file>
         <file>inner_templates/chartjs/treadmillchartlive.htm</file>

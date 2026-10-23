@@ -92,12 +92,16 @@ def is_plain_help(lines, start, end):
     return True
 
 
-def restyle(text):
+# pages whose items are cards (AccordionCheckElement): a help button follows a card, so it is not pulled up
+CARD_PAGES = {"src/settings-tiles.qml"}
+
+
+def restyle(text, card_page=False):
     """Return (new_text, counts) where counts says how many of each kind of item were changed."""
     newline = "\r\n" if "\r\n" in text else "\n"
     lines = text.replace("\r\n", "\n").split("\n")
     has_material = any(line.strip().startswith("import QtQuick.Controls.Material") for line in lines)
-    counts = {"help muted": 0, "help buttons": 0, "buttons": 0, "titles": 0, "hints": 0}
+    counts = {"help muted": 0, "help buttons": 0, "buttons": 0, "titles": 0, "hints": 0, "card help spacing": 0, "card help folded": 0, "inline help": 0, "label wrap": 0}
 
     # help labels: muted colour, no bold, no italic
     i = 0
@@ -150,6 +154,126 @@ def restyle(text):
                 counts["help buttons"] += 1
         i += 1
 
+    # on a card page the help button sits below a card: normal spacing and the card's own right inset, not the
+    # negative top margin that tucks it under a settings row
+    if card_page:
+        i = 0
+        while i < len(lines):
+            if lines[i].strip() == "SettingHelp {":
+                end = block_end(lines, i)
+                if end > i:
+                    block = [line.strip() for line in lines[i + 1:end]]
+                    if not any(s.startswith("Layout.rightMargin") for s in block):
+                        at = next((k for k in range(i + 1, end) if lines[k].strip() == "Layout.fillWidth: true"), None)
+                        if at is not None:
+                            pad = lines[at][:indent_of(lines[at])]
+                            lines[at + 1:at + 1] = [pad + "Layout.topMargin: 4", pad + "Layout.rightMargin: 8"]
+                            counts["card help spacing"] += 1
+            i += 1
+
+    # on a card page the help of a card moves into the card: a "?" right after the card's title (helpText).
+    # Only a SettingHelp that directly follows the card at the same indentation and has a one-line text moves.
+    if card_page:
+        i = 0
+        while i < len(lines):
+            if lines[i].strip() == "AccordionCheckElement {":
+                end = block_end(lines, i)
+                nxt = end + 1
+                while end > i and nxt < len(lines) and lines[nxt].strip() == "":
+                    nxt += 1
+                if end > i and nxt < len(lines) and lines[nxt].strip() == "SettingHelp {" \
+                        and indent_of(lines[nxt]) == indent_of(lines[i]):
+                    help_end = block_end(lines, nxt)
+                    card_has_help = any(line.strip().startswith("helpText:") for line in lines[i + 1:end])
+                    text_line = next((lines[k].strip() for k in range(nxt + 1, help_end)
+                                      if lines[k].strip().startswith("text:")), None)
+                    title_at = next((k for k in range(i + 1, end)
+                                     if indent_of(lines[k]) == indent_of(lines[i]) + 4
+                                     and lines[k].strip().startswith("title:")), None)
+                    if help_end > nxt and not card_has_help and text_line is not None and title_at is not None:
+                        pad = lines[title_at][:indent_of(lines[title_at])]
+                        lines[title_at + 1:title_at + 1] = [pad + "helpText:" + text_line[len("text:"):]]
+                        shift = 1
+                        stop = help_end + shift + 1
+                        if stop < len(lines) and lines[stop].strip() == "":
+                            stop += 1  # the blank line that separated the help from what follows
+                        del lines[nxt + shift:stop]
+                        counts["card help folded"] += 1
+            i += 1
+
+    # help of an ordinary setting moves next to its title: into the switch (helpText) or, for a row that starts
+    # with a Label, a SettingHelpButton right after that Label. Only a SettingHelp that directly follows the
+    # item at the same indentation and has a one-line text moves; any other stays below the row.
+    if not card_page:
+        i = 0
+        while i < len(lines):
+            opener = lines[i].strip()
+            if opener in ("IndicatorOnlySwitch {", "RowLayout {"):
+                end = block_end(lines, i)
+                nxt = end + 1
+                while end > i and nxt < len(lines) and lines[nxt].strip() == "":
+                    nxt += 1
+                if end > i and nxt < len(lines) and lines[nxt].strip() == "SettingHelp {" \
+                        and indent_of(lines[nxt]) == indent_of(lines[i]):
+                    help_end = block_end(lines, nxt)
+                    help_lines = [line.strip() for line in lines[nxt + 1:help_end]]
+                    text_line = next((s for s in help_lines if s.startswith("text:")), None)
+                    # a row that already has its "?" takes no second help: that one belongs to another setting
+                    has_help = any(line.strip() == "SettingHelpButton {" or line.strip().startswith("helpText:")
+                                   for line in lines[i + 1:end])
+                    movable = help_end > nxt and text_line is not None and text_line.endswith(")") \
+                        and not has_help and not any(s.startswith("visible:") for s in help_lines)
+                    pad_in = " " * (indent_of(lines[i]) + 4)
+                    if movable and opener == "IndicatorOnlySwitch {":
+                        at = next((k for k in range(i + 1, end) if indent_of(lines[k]) == len(pad_in)
+                                   and lines[k].strip().startswith("text:")), None)
+                        if at is not None and not any(line.strip().startswith("helpText:") for line in lines[i + 1:end]):
+                            lines[at + 1:at + 1] = [pad_in + "helpText:" + text_line[len("text:"):]]
+                            insert = "switch"
+                        else:
+                            insert = None
+                    elif movable:
+                        label_at = next((k for k in range(i + 1, end) if lines[k].strip() == "Label {"
+                                         and indent_of(lines[k]) == len(pad_in)), None)
+                        if label_at is not None and label_at == next(
+                                k for k in range(i + 1, end) if lines[k].strip().endswith("{")):
+                            label_end = block_end(lines, label_at)
+                            lines[label_end + 1:label_end + 1] = [
+                                pad_in + "SettingHelpButton {",
+                                pad_in + "    helpText:" + text_line[len("text:"):],
+                                pad_in + "    Layout.alignment: Qt.AlignVCenter",
+                                pad_in + "}",
+                            ]
+                            insert = "row"
+                        else:
+                            insert = None
+                    else:
+                        insert = None
+                    if insert:
+                        shift = 1 if insert == "switch" else 4
+                        stop = help_end + shift + 1
+                        if stop < len(lines) and lines[stop].strip() == "":
+                            stop += 1
+                        del lines[nxt + shift:stop]
+                        counts["inline help"] += 1
+            i += 1
+
+    # a long label next to a "?" wraps instead of running under it
+    if not card_page:
+        for i in range(len(lines) - 1, -1, -1):  # from the end, so an insert never moves a line still to visit
+            if lines[i].strip() != "SettingHelpButton {":
+                continue
+            close = i - 1
+            if lines[close].strip() != "}" or indent_of(lines[close]) != indent_of(lines[i]):
+                continue
+            open_at = next((k for k in range(close - 1, -1, -1)
+                            if indent_of(lines[k]) == indent_of(lines[close]) and lines[k].strip() != ""), None)
+            if open_at is None or lines[open_at].strip() != "Label {":
+                continue
+            if not any(line.strip().startswith("wrapMode:") for line in lines[open_at + 1:close]):
+                lines.insert(close, " " * (indent_of(lines[close]) + 4) + "wrapMode: Text.WordWrap")
+                counts["label wrap"] += 1
+
     # sub-section titles: soft violet instead of bright yellow or blue
     for k in range(len(lines)):
         stripped = lines[k].strip()
@@ -192,7 +316,7 @@ def main():
             print("skipped (not found): %s" % name)
             continue
         original = path.read_text(encoding="utf-8", newline="")
-        updated, counts = restyle(original)
+        updated, counts = restyle(original, card_page=name in CARD_PAGES)
         print("%-50s %s" % (name, "  ".join("%s: %d" % (k, v) for k, v in counts.items())))
         for key, value in counts.items():
             totals[key] = totals.get(key, 0) + value

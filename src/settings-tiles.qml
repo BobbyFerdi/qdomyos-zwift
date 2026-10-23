@@ -397,6 +397,7 @@ ScrollView {
         AccordionCheckElement {
             id: speedEnabledAccordion
             title: qsTr("Speed")
+            helpText: qsTr("Speed in kilometers per hour. (To set your speed units to miles, go to Settings > General Options > Use Miles unit in UI).")
             linkedBoolSetting: "tile_speed_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -427,19 +428,6 @@ ScrollView {
                     onClicked: {settings.tile_speed_order = speedOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
-        }
-
-        SettingHelp {
-            text: qsTr("Speed in kilometers per hour. (To set your speed units to miles, go to Settings > General Options > Use Miles unit in UI).")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -480,6 +468,7 @@ ScrollView {
         AccordionCheckElement {
             id: cadenceEnabledAccordion
             title: qsTr("Cadence")
+            helpText: qsTr("Bike pedal cadence in rotations per minute (RPM) or Treadmill cadence if a shoe-mounted cadence sensor or Apple Watch QZ app is used.")
             linkedBoolSetting: "tile_cadence_enabled"
             settings: settings
             accordionContent:  ColumnLayout {
@@ -508,6 +497,8 @@ ScrollView {
                     verticalAlignment: Text.AlignVCenter
                     Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                     Layout.fillWidth: true
+                    Layout.topMargin: 4
+                    Layout.rightMargin: 8
                     color: "#9a9aa8"
                 }
 
@@ -540,19 +531,6 @@ ScrollView {
                     }
                 }
             }
-        }
-
-        SettingHelp {
-            text: qsTr("Bike pedal cadence in rotations per minute (RPM) or Treadmill cadence if a shoe-mounted cadence sensor or Apple Watch QZ app is used.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -593,6 +571,7 @@ ScrollView {
         AccordionCheckElement {
             id: negativeInclinationEnabledAccordion
             title: qsTr("Negative Elevation Gain (Descent)")
+            helpText: qsTr("Displays the total negative elevation gain (descent) in meters or feet accumulated during the workout.")
             linkedBoolSetting: "tile_negative_inclination_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -623,22 +602,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays the total negative elevation gain (descent) in meters or feet accumulated during the workout.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: caloriesEnabledAccordion
             title: qsTr("Calories")
+            helpText: qsTr("Estimated calories burned during session, calculated on weight, age, and watts.")
             linkedBoolSetting: "tile_calories_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -671,22 +638,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Estimated calories burned during session, calculated on weight, age, and watts.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: odometerEnabledAccordion
             title: qsTr("Odometer")
+            helpText: qsTr("Estimated distance traveled during the session.")
             linkedBoolSetting: "tile_odometer_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -719,22 +674,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Estimated distance traveled during the session.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: paceEnabledAccordion
             title: qsTr("Pace")
+            helpText: qsTr("Current pace per mile or kilometer (Treadmill, Elliptical and Rower)")
             linkedBoolSetting: "tile_pace_enabled"
             settings: settings
             accordionContent: ColumnLayout {
@@ -822,6 +765,7 @@ ScrollView {
         AccordionCheckElement {
             id: gradeAdjustedPaceEnabledAccordion
             title: qsTr("Grade Adjusted Pace")
+            helpText: qsTr("Flat-equivalent pace computed from treadmill incline using the Minetti cost model.")
             linkedBoolSetting: "tile_grade_adjusted_pace_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -854,35 +798,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Current pace per mile or kilometer (Treadmill, Elliptical and Rower)")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
-        SettingHelp {
-            text: qsTr("Flat-equivalent pace computed from treadmill incline using the Minetti cost model.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: resistanceEnabledAccordion
             title: qsTr("Resistance")
+            helpText: qsTr("Displays your bike’s resistance. The +/- buttons can be used to change resistance, if your bike is compatible.")
             linkedBoolSetting: "tile_resistance_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -915,22 +834,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays your bike’s resistance. The +/- buttons can be used to change resistance, if your bike is compatible.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: wattEnabledAccordion
             title: qsTr("Watt")
+            helpText: qsTr("Displays the watts generated by your current effort. Watt is also referred to as output (for example, in Peloton). If your equipment does not communicate watts, QZ will calculate watts using resistance and cadence.")
             linkedBoolSetting: "tile_watt_enabled"
             settings: settings
             accordionContent:  ColumnLayout {
@@ -980,22 +887,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays the watts generated by your current effort. Watt is also referred to as output (for example, in Peloton). If your equipment does not communicate watts, QZ will calculate watts using resistance and cadence.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: weightLossEnabledAccordion
             title: qsTr("Weight loss")
+            helpText: qsTr("Estimation of weight loss during the session.")
             linkedBoolSetting: "tile_weight_loss_enabled"
             settings: settings
             accordionContent:  RowLayout {
@@ -1028,23 +923,11 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Estimation of weight loss during the session.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
 
         AccordionCheckElement {
             id: avgwattEnabledAccordion
             title: qsTr("AVG Watt")
+            helpText: qsTr("Average watts produced for the session.")
             linkedBoolSetting: "tile_avgwatt_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -1075,19 +958,6 @@ ScrollView {
                     onClicked: {settings.tile_avgwatt_order = avgwattOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
-        }
-
-        SettingHelp {
-            text: qsTr("Average watts produced for the session.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
         }
 
 
@@ -1129,6 +999,7 @@ ScrollView {
         AccordionCheckElement {
             id: ftpEnabledAccordion
             title: "FTP %"
+            helpText: qsTr("Percentage of current FTP and current FTP zone.")
             linkedBoolSetting: "tile_ftp_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -1159,19 +1030,6 @@ ScrollView {
                     onClicked: {settings.tile_ftp_order = ftpOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
-        }
-
-        SettingHelp {
-            text: qsTr("Percentage of current FTP and current FTP zone.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -1205,6 +1063,8 @@ ScrollView {
                     verticalAlignment: Text.AlignVCenter
                     Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                     Layout.fillWidth: true
+                    Layout.topMargin: 4
+                    Layout.rightMargin: 8
                     color: "#9a9aa8"
                 }
 
@@ -1242,6 +1102,7 @@ ScrollView {
         AccordionCheckElement {
             id: fanEnabledAccordion
             title: qsTr("Fan")
+            helpText: qsTr("Built-in treadmill fan speed (Treadmill only)")
             linkedBoolSetting: "tile_fan_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -1274,22 +1135,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Built-in treadmill fan speed (Treadmill only)")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: joulsEnabledAccordion
             title: qsTr("Jouls")
+            helpText: qsTr("Cumulative power produced during the session in kilojoules.")
             linkedBoolSetting: "tile_jouls_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -1322,22 +1171,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Cumulative power produced during the session in kilojoules.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: elapsedEnabledAccordion
             title: qsTr("Elapsed")
+            helpText: qsTr("Total time from start of the session.")
             linkedBoolSetting: "tile_elapsed_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -1370,22 +1207,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Total time from start of the session.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: movingTimeEnabledAccordion
             title: qsTr("Moving Time")
+            helpText: qsTr("Total time moving during the session.")
             linkedBoolSetting: "tile_moving_time_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -1418,22 +1243,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Total time moving during the session.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: pelotonOffsetEnabledAccordion
             title: qsTr("Peloton Offset")
+            helpText: qsTr("Allows you to sync resistance and cadence target changes with the Peloton coach’s callouts. If the targets are changing in QZ after the coach’s callouts, use the ‘+’ button to add seconds (essentially speeding QZ up). Use the ‘-’ button to slow QZ down. Use this tile in conjunction with the Remaining Time/Row tile (see below).")
             linkedBoolSetting: "tile_peloton_offset_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -1466,22 +1279,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Allows you to sync resistance and cadence target changes with the Peloton coach’s callouts. If the targets are changing in QZ after the coach’s callouts, use the ‘+’ button to add seconds (essentially speeding QZ up). Use the ‘-’ button to slow QZ down. Use this tile in conjunction with the Remaining Time/Row tile (see below).")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: pelotonRemainingEnabledAccordion
             title: qsTr("Peloton Remaining")
+            helpText: qsTr("Displays time remaining in Peloton class.")
             linkedBoolSetting: "tile_peloton_remaining_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -1512,19 +1313,6 @@ ScrollView {
                     onClicked: {settings.tile_peloton_remaining_order = pelotonRemainingOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
-        }
-
-        SettingHelp {
-            text: qsTr("Displays time remaining in Peloton class.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
         }
 
         /*
@@ -1600,6 +1388,7 @@ ScrollView {
         AccordionCheckElement {
             id: pelotonResistanceEnabledAccordion
             title: qsTr("Peloton Resistance")
+            helpText: qsTr("Resistance of your bike converted to the Peloton bike scale of 1 to 100.")
             linkedBoolSetting: "tile_peloton_resistance_enabled"
             settings: settings
             accordionContent: ColumnLayout {
@@ -1648,22 +1437,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Resistance of your bike converted to the Peloton bike scale of 1 to 100.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: targetResistanceEnabledAccordion
             title: qsTr("Target Resistance")
+            helpText: qsTr("Displays target resistance in your bike’s resistance scale. For example, during a Peloton class or Zwift session, you want the resistance displayed in this tile to match the Resistance Tile. During a Peloton class (bike only), +/- shifts the class's resistance target up or down for the rest of the ride.")
             linkedBoolSetting: "tile_target_resistance_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -1696,23 +1473,11 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays target resistance in your bike’s resistance scale. For example, during a Peloton class or Zwift session, you want the resistance displayed in this tile to match the Resistance Tile. During a Peloton class (bike only), +/- shifts the class's resistance target up or down for the rest of the ride.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
 
         AccordionCheckElement {
             id: targetPelotonResistanceEnabledAccordion
             title: qsTr("Target Peloton Resistance")
+            helpText: qsTr("Displays target resistance converted to the Peloton bike scale of 1 to 100. For example, during a Peloton class, you want the resistance displayed in this tile to match the Peloton Resistance Tile.")
             linkedBoolSetting: "tile_target_peloton_resistance_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -1745,22 +1510,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays target resistance converted to the Peloton bike scale of 1 to 100. For example, during a Peloton class, you want the resistance displayed in this tile to match the Peloton Resistance Tile.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: targetCadenceEnabledAccordion
             title: qsTr("Target Cadence")
+            helpText: qsTr("Displays target cadence.")
             linkedBoolSetting: "tile_target_cadence_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -1793,22 +1546,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays target cadence.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: targetPowerEnabledAccordion
             title: qsTr("Target Power")
+            helpText: qsTr("Displays target output (watts) when this information is provided by third-party apps.")
             linkedBoolSetting: "tile_target_power_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -1841,23 +1582,11 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays target output (watts) when this information is provided by third-party apps.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
 
         AccordionCheckElement {
             id: targetZoneEnabledAccordion
             title: qsTr("Target Power Zone")
+            helpText: qsTr("Displays the target power zone when this information is provided by third-party apps.")
             linkedBoolSetting: "tile_target_zone_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -1888,19 +1617,6 @@ ScrollView {
                     onClicked: {settings.tile_target_zone_order = target_zoneOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
-        }
-
-        SettingHelp {
-            text: qsTr("Displays the target power zone when this information is provided by third-party apps.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2010,6 +1726,7 @@ ScrollView {
         AccordionCheckElement {
             id: wattKgEnabledAccordion
             title: qsTr("Watt/Kg")
+            helpText: qsTr("Calculates your output (watts) divided by your weight. This is the primary metric used by Zwift and similar apps to calculate your virtual speed. NOTE: This is a much better metric to use than Output/Watts when comparing your effort to other users. This is why Peloton’s leaderboard, which uses only Output, is flawed.")
             linkedBoolSetting: "tile_watt_kg_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -2042,22 +1759,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Calculates your output (watts) divided by your weight. This is the primary metric used by Zwift and similar apps to calculate your virtual speed. NOTE: This is a much better metric to use than Output/Watts when comparing your effort to other users. This is why Peloton’s leaderboard, which uses only Output, is flawed.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: gearsEnabledAccordion
             title: qsTr("Gears")
+            helpText: qsTr("Allows you to change resistance while in Auto-Follow Mode.This tile allows you override the target resistance sent by third-party apps. For example, you would use the Gears Tile to increase resistance and generate more watts for sprinting in Zwift.")
             linkedBoolSetting: "tile_gears_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -2090,21 +1795,9 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Allows you to change resistance while in Auto-Follow Mode.This tile allows you override the target resistance sent by third-party apps. For example, you would use the Gears Tile to increase resistance and generate more watts for sprinting in Zwift.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             title: qsTr("Gears Big Buttons")
+            helpText: qsTr("It shows 2 big gear buttons on the UI")
             linkedBoolSetting: "tile_biggears_enabled"
             settings: settings
             accordionContent: ColumnLayout {
@@ -2150,23 +1843,11 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("It shows 2 big gear buttons on the UI")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: remainingTimeTrainingProgramRowEnabledAccordion
             //: Tile title: time left in the current step (row) of the workout program, not rowing and not a lap.
             title: qsTr("Remaining Time/Row")
+            helpText: qsTr("Displays the time remaining until the next cadence and/or resistance interval.")
             linkedBoolSetting: "tile_remainingtimetrainprogramrow_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -2199,23 +1880,11 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays the time remaining until the next cadence and/or resistance interval.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: nextRowsTrainingProgramRowEnabledAccordion
             //: Tile title: the next steps (rows) of the loaded workout program, not a table row and not rowing.
             title: qsTr("Next Rows")
+            helpText: qsTr("Displays the next Peloton interval with duration and FTP Zone (in Power Zone classes) or Peloton Resistance (non–Power Zone classes).")
             linkedBoolSetting: "tile_nextrowstrainprogram_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -2248,22 +1917,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays the next Peloton interval with duration and FTP Zone (in Power Zone classes) or Peloton Resistance (non–Power Zone classes).")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: metsEnabledAccordion
             title: qsTr("METS")
+            helpText: qsTr("Displays metabolic equivalents (METs), a measurement of energy expenditure and amount of oxygen used by the body compared to the body at rest. (e.g., 4 METS requires the body to use 4 times as much oxygen than when at rest, which means it requires more energy and burns more calories).")
             linkedBoolSetting: "tile_mets_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -2294,19 +1951,6 @@ ScrollView {
                     onClicked: {settings.tile_mets_order = metsOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
-        }
-
-        SettingHelp {
-            text: qsTr("Displays metabolic equivalents (METs), a measurement of energy expenditure and amount of oxygen used by the body compared to the body at rest. (e.g., 4 METS requires the body to use 4 times as much oxygen than when at rest, which means it requires more energy and burns more calories).")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -2347,6 +1991,7 @@ ScrollView {
         AccordionCheckElement {
             id: datetimeEnabledAccordion
             title: qsTr("Time")
+            helpText: qsTr("Displays the current time.")
             linkedBoolSetting: "tile_datetime_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -2379,22 +2024,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays the current time.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: targetStrokesCountAccordion
             title: qsTr("Strokes Count")
+            helpText: qsTr("(Rower only) Displays the number of strokes rowed.")
             linkedBoolSetting: "tile_strokes_count_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -2427,22 +2060,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("(Rower only) Displays the number of strokes rowed.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: targetStrokesLengthAccordion
             title: qsTr("Stroke Length")
+            helpText: qsTr("(Rower only) Displays the stroke length.")
             linkedBoolSetting: "tile_strokes_length_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -2475,22 +2096,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("(Rower only) Displays the stroke length.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: targetSteeringAngleEnabledAccordion
             title: qsTr("Steering Angle")
+            helpText: qsTr("(Elite Rizer only) Displays steering angle.")
             linkedBoolSetting: "tile_steering_angle_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -2523,22 +2132,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("(Elite Rizer only) Displays steering angle.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: targetPIDHrAccordion
             title: qsTr("PID HR Zone")
+            helpText: qsTr("Use this tile to display the target heart rate zone in which you’ve chosen to work out in Settings > Training Program Options.")
             linkedBoolSetting: "tile_pid_hr_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -2571,22 +2168,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Use this tile to display the target heart rate zone in which you’ve chosen to work out in Settings > Training Program Options.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: extInclineAccordion
             title: qsTr("External Incline")
+            helpText: qsTr("(Elite Rizer only) Allows control of the incline of external inclination equipment.")
             linkedBoolSetting: "tile_ext_incline_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -2619,22 +2204,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("(Elite Rizer only) Allows control of the incline of external inclination equipment.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: strideLength
             title: qsTr("Stride Length")
+            helpText: qsTr("(requires a compatible footpod with accelerometer; treadmill only) Displays stride while walking or running.")
             linkedBoolSetting: "tile_instantaneous_stride_length_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -2667,22 +2240,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("(requires a compatible footpod with accelerometer; treadmill only) Displays stride while walking or running.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: groundContact
             title: qsTr("Ground Contact")
+            helpText: qsTr("(requires a compatible footpod with accelerometer; treadmill only) Displays time foot is on contact with ground while walking or running.")
             linkedBoolSetting: "tile_ground_contact_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -2715,22 +2276,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("(requires a compatible footpod with accelerometer; treadmill only) Displays time foot is on contact with ground while walking or running.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: verticalOscillation
             title: qsTr("Vertical Oscillation")
+            helpText: qsTr("(requires a compatible footpod with accelerometer; treadmill only) Displays the up and down movement while walking or running.")
             linkedBoolSetting: "tile_vertical_oscillation_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -2761,19 +2310,6 @@ ScrollView {
                     onClicked: {settings.tile_vertical_oscillation_order = verticalOscillationOrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
-        }
-
-        SettingHelp {
-            text: qsTr("(requires a compatible footpod with accelerometer; treadmill only) Displays the up and down movement while walking or running.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
         }
 
         AccordionCheckElement {
@@ -5429,6 +4965,7 @@ ScrollView {
         AccordionCheckElement {
             id: presetPowerZone7EnabledAccordion
             title: qsTr("Preset Power Zone 7")
+            helpText: qsTr("Power zone presets allow quick access to specific training zones with customizable labels and values.")
             linkedBoolSetting: "tile_preset_powerzone_7_enabled"
             settings: settings
             accordionContent: ColumnLayout {
@@ -5539,22 +5076,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Power zone presets allow quick access to specific training zones with customizable labels and values.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: hrTimeInZone1EnabledAccordion
             title: qsTr("Heart Rate Time in Zone 1+")
+            helpText: qsTr("Displays total time spent in heart rate Zone 1 or higher during the session.")
             linkedBoolSetting: "tile_hr_time_in_zone_1_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -5587,22 +5112,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays total time spent in heart rate Zone 1 or higher during the session.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: hrTimeInZone2EnabledAccordion
             title: qsTr("Heart Rate Time in Zone 2+")
+            helpText: qsTr("Displays total time spent in heart rate Zone 2 or higher during the session.")
             linkedBoolSetting: "tile_hr_time_in_zone_2_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -5635,22 +5148,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays total time spent in heart rate Zone 2 or higher during the session.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: hrTimeInZone3EnabledAccordion
             title: qsTr("Heart Rate Time in Zone 3+")
+            helpText: qsTr("Displays total time spent in heart rate Zone 3 or higher during the session.")
             linkedBoolSetting: "tile_hr_time_in_zone_3_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -5683,22 +5184,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays total time spent in heart rate Zone 3 or higher during the session.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: hrTimeInZone4EnabledAccordion
             title: qsTr("Heart Rate Time in Zone 4+")
+            helpText: qsTr("Displays total time spent in heart rate Zone 4 or higher during the session.")
             linkedBoolSetting: "tile_hr_time_in_zone_4_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -5731,22 +5220,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays total time spent in heart rate Zone 4 or higher during the session.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: hrTimeInZone5EnabledAccordion
             title: qsTr("Heart Rate Time in Zone 5+")
+            helpText: qsTr("Displays total time spent in heart rate Zone 5 or higher during the session.")
             linkedBoolSetting: "tile_hr_time_in_zone_5_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -5777,19 +5254,6 @@ ScrollView {
                     onClicked: {settings.tile_hr_time_in_zone_5_order = hrTimeInZone5OrderTextField.displayText; toast.show(qsTr("Setting saved!")); }
                 }
             }
-        }
-
-        SettingHelp {
-            text: qsTr("Displays total time spent in heart rate Zone 5 or higher during the session.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
         }
 
         RowLayout {
@@ -5824,6 +5288,7 @@ ScrollView {
         AccordionCheckElement {
             id: coreTemperatureAccordion
             title: qsTr("Core Temperature")
+            helpText: qsTr("Shows Core, Body Temperature and Heat Strain Index from a Core Temperature sensor.")
             linkedBoolSetting: "tile_coretemperature_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -5856,22 +5321,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Shows Core, Body Temperature and Heat Strain Index from a Core Temperature sensor.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: heatTimeInZone1EnabledAccordion
             title: qsTr("Heat Time in Zone 1")
+            helpText: qsTr("Displays total time spent in heat Zone 1 during the session.")
             linkedBoolSetting: "tile_heat_time_in_zone_1_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -5904,22 +5357,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays total time spent in heat Zone 1 during the session.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: heatTimeInZone2EnabledAccordion
             title: qsTr("Heat Time in Zone 2")
+            helpText: qsTr("Displays total time spent in heat Zone 2 during the session.")
             linkedBoolSetting: "tile_heat_time_in_zone_2_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -5952,22 +5393,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays total time spent in heat Zone 2 during the session.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: heatTimeInZone3EnabledAccordion
             title: qsTr("Heat Time in Zone 3")
+            helpText: qsTr("Displays total time spent in heat Zone 3 during the session.")
             linkedBoolSetting: "tile_heat_time_in_zone_3_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -6000,22 +5429,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays total time spent in heat Zone 3 during the session.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: heatTimeInZone4EnabledAccordion
             title: qsTr("Heat Time in Zone 4")
+            helpText: qsTr("Displays total time spent in heat Zone 4 during the session.")
             linkedBoolSetting: "tile_heat_time_in_zone_4_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -6048,22 +5465,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Displays total time spent in heat Zone 4 during the session.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: autoVirtualShiftingCruiseEnabledAccordion
             title: qsTr("Auto Virtual Shifting Cruise")
+            helpText: qsTr("Button tile to switch automatic virtual shifting to Cruise profile.")
             linkedBoolSetting: "tile_auto_virtual_shifting_cruise_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -6094,22 +5499,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Button tile to switch automatic virtual shifting to Cruise profile.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: autoVirtualShiftingClimbEnabledAccordion
             title: qsTr("Auto Virtual Shifting Climb")
+            helpText: qsTr("Button tile to switch automatic virtual shifting to Climb profile.")
             linkedBoolSetting: "tile_auto_virtual_shifting_climb_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -6140,22 +5533,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Button tile to switch automatic virtual shifting to Climb profile.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: autoVirtualShiftingSprintEnabledAccordion
             title: qsTr("Auto Virtual Shifting Sprint")
+            helpText: qsTr("Button tile to switch automatic virtual shifting to Sprint profile.")
             linkedBoolSetting: "tile_auto_virtual_shifting_sprint_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -6186,22 +5567,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Button tile to switch automatic virtual shifting to Sprint profile.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: powerAvgEnabledAccordion
             title: qsTr("Power Averaging")
+            helpText: qsTr("Button tile to cycle through power averaging modes: Off, 3s avg (harmonic), 5s avg (harmonic). Tap to cycle between modes. Only for bikes.")
             linkedBoolSetting: "tile_power_avg_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -6232,22 +5601,10 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Button tile to cycle through power averaging modes: Off, 3s avg (harmonic), 5s avg (harmonic). Tap to cycle between modes. Only for bikes.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
-
         AccordionCheckElement {
             id: hrvEnabledAccordion
             title: qsTr("HRV (Heart Rate Variability)")
+            helpText: qsTr("Shows Heart Rate Variability (HRV) from a compatible heart rate belt. Displays RMSSD value in milliseconds.")
             linkedBoolSetting: "tile_hrv_enabled"
             settings: settings
             accordionContent: RowLayout {
@@ -6280,17 +5637,5 @@ ScrollView {
             }
         }
 
-        SettingHelp {
-            text: qsTr("Shows Heart Rate Variability (HRV) from a compatible heart rate belt. Displays RMSSD value in milliseconds.")
-            font.bold: false
-            font.italic: false
-            font.pixelSize: Qt.application.font.pixelSize - 2
-            textFormat: Text.PlainText
-            wrapMode: Text.WordWrap
-            verticalAlignment: Text.AlignVCenter
-            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Layout.fillWidth: true
-            color: "#9a9aa8"
-        }
     }
 }

@@ -1446,6 +1446,8 @@ ApplicationWindow {
 
                 ItemDelegate {
                     text: qsTr("Profile: ") + settings.profile_name
+                    leftPadding: 60
+                    ShapeIcon { name: "account_circle"; color: "#B388FF"; size: 22; x: 20; anchors.verticalCenter: parent.verticalCenter }
                     width: parent.width
                     onClicked: {
                         toolButtonLoadSettings.visible = true;
@@ -1458,6 +1460,8 @@ ApplicationWindow {
 
                 ItemDelegate {
                     text: qsTr("Settings")
+                    leftPadding: 60
+                    ShapeIcon { name: "settings"; color: "#B388FF"; size: 22; x: 20; anchors.verticalCenter: parent.verticalCenter }
                     width: parent.width
                     onClicked: {
                         toolButtonLoadSettings.visible = true;
@@ -1469,6 +1473,8 @@ ApplicationWindow {
 
             ItemDelegate {
                 text: qsTr("Workouts History")
+                leftPadding: 60
+                ShapeIcon { name: "history"; color: "#B388FF"; size: 22; x: 20; anchors.verticalCenter: parent.verticalCenter }
                 width: parent.width
                 onClicked: {
                     stackView.push("WorkoutsHistory.qml")
@@ -1489,6 +1495,8 @@ ApplicationWindow {
 
                 ItemDelegate {
                     text: qsTr("Charts")
+                    leftPadding: 60
+                    ShapeIcon { name: "bar_chart"; color: "#B388FF"; size: 22; x: 20; anchors.verticalCenter: parent.verticalCenter }
                     width: parent.width
                     onClicked: {
                         console.log(CHARTJS)
@@ -1502,6 +1510,8 @@ ApplicationWindow {
                 ItemDelegate {
                     id: gpx_open
                     text: qsTr("Open GPX")
+                    leftPadding: 60
+                    ShapeIcon { name: "folder_open"; color: "#B388FF"; size: 22; x: 20; anchors.verticalCenter: parent.verticalCenter }
                     width: parent.width
                     onClicked: {
                         stackView.push("GPXList.qml")
@@ -1518,6 +1528,8 @@ ApplicationWindow {
                 ItemDelegate {
                     id: trainprogram_open
                     text: qsTr("Open Train Program")
+                    leftPadding: 60
+                    ShapeIcon { name: "event_note"; color: "#B388FF"; size: 22; x: 20; anchors.verticalCenter: parent.verticalCenter }
                     width: parent.width
                     onClicked: {
                         if(CHARTJS)
@@ -1536,6 +1548,8 @@ ApplicationWindow {
                 }
                 ItemDelegate {
                     text: qsTr("Workout Editor")
+                    leftPadding: 60
+                    ShapeIcon { name: "edit_note"; color: "#B388FF"; size: 22; x: 20; anchors.verticalCenter: parent.verticalCenter }
                     width: parent.width
                     onClicked: {
                         var editorPage = stackView.push("WorkoutEditor.qml")
@@ -1564,6 +1578,8 @@ ApplicationWindow {
                 ItemDelegate {
                     id: gpx_save
                     text: qsTr("Save GPX")
+                    leftPadding: 60
+                    ShapeIcon { name: "save"; color: "#B388FF"; size: 22; x: 20; anchors.verticalCenter: parent.verticalCenter }
                     width: parent.width
                     onClicked: {
                         gpx_save_clicked()
@@ -1574,6 +1590,8 @@ ApplicationWindow {
                 ItemDelegate {
                     id: fit_save
                     text: qsTr("Save FIT")
+                    leftPadding: 60
+                    ShapeIcon { name: "save"; color: "#B388FF"; size: 22; x: 20; anchors.verticalCenter: parent.verticalCenter }
                     width: parent.width
                     onClicked: {
                         fit_save_clicked()
@@ -1584,6 +1602,8 @@ ApplicationWindow {
                 ItemDelegate {
                     id: wizardItem
                     text: qsTr("Wizard")
+                    leftPadding: 60
+                    ShapeIcon { name: "rocket_launch"; color: "#B388FF"; size: 22; x: 20; anchors.verticalCenter: parent.verticalCenter }
                     width: parent.width
                     onClicked: {
                         stackView.push("Wizard.qml")
@@ -1593,6 +1613,8 @@ ApplicationWindow {
                 ItemDelegate {
                     id: help
                     text: qsTr("Help")
+                    leftPadding: 60
+                    ShapeIcon { name: "help"; color: "#B388FF"; size: 22; x: 20; anchors.verticalCenter: parent.verticalCenter }
                     width: parent.width
                     onClicked: {
                         Qt.openUrlExternally("https://robertoviola.cloud/qdomyos-zwift-guide/");
@@ -1602,6 +1624,8 @@ ApplicationWindow {
                 ItemDelegate {
                     id: community
                     text: qsTr("Community")
+                    leftPadding: 60
+                    ShapeIcon { name: "groups"; color: "#B388FF"; size: 22; x: 20; anchors.verticalCenter: parent.verticalCenter }
                     width: parent.width
                     onClicked: {
                         Qt.openUrlExternally("https://www.facebook.com/groups/149984563348738");
@@ -1610,6 +1634,8 @@ ApplicationWindow {
                 }
                 ItemDelegate {
                     text: qsTr("Credits")
+                    leftPadding: 60
+                    ShapeIcon { name: "info"; color: "#B388FF"; size: 22; x: 20; anchors.verticalCenter: parent.verticalCenter }
                     width: parent.width
                     onClicked: {
                         stackView.push("Credits.qml")
@@ -1618,6 +1644,8 @@ ApplicationWindow {
                 }
                 ItemDelegate {
                     text: qsTr("Quit")
+                    leftPadding: 60
+                    ShapeIcon { name: "logout"; color: "#B388FF"; size: 22; x: 20; anchors.verticalCenter: parent.verticalCenter }
                     width: parent.width
                     visible: OS_VERSION === "Other" ? true : false
                     onClicked: {
